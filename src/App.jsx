@@ -5,6 +5,7 @@ import NavBar from './components/NavBar.jsx'
 import './index.css'
 import Carousel from './components/Carousel.jsx'
 import Card from './components/Card'
+import ProductDetail from './components/ProductDetail'
 
 const logoUrl = '/assets/test.png';
 const logo = 'TEAM 3';
@@ -21,6 +22,7 @@ function App() {
     <>
       <NavBar logoUrl={reactLogo} logo = {logo} pages={pages} />
       <Card/>
+      <ProductDetail/>
       <Carousel/>
     </>
   )
