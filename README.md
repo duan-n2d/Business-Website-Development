@@ -1,8 +1,24 @@
-# React + Vite
+# ECOMMERCE WEBSITE - MERN
+## Project at UEL
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+**MERN**
+1. MongoDB
+2. Express JS
+3. React framework
+4. Node JS
 
-Currently, two official plugins are available:
+**Install package**
+```
+npm init
+```
+```
+npm i express jsonwebtoken mongoose dotenv argon2 cors
+```
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+*express* : server express
+*jsonwebtoken* : login/logout -> Authentication
+*mongoose* : server database mongodb
+*dotenv* : variant enviroment
+*argon2* : hash password
+*cors* : connect FE vs BE
+*nodemon* : auto reload serve -> enviroment dev
