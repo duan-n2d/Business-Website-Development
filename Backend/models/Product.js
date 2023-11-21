@@ -1,44 +1,39 @@
 const mongoose = require('mongoose');
 
 const UserSchema = new mongoose.Schema({
-    customer_id: {
-        type: Number,
-        required: true,
+    product_id: {
+        type: String,
+        required: true
         // Cái này là primary key
     },
-    username: {
+    product_name: {
         type: String,
         required: true
     },
-    password: {
+    description:{
         type: String,
-        required: true
+        required: false
     },
-    createdAt: {
-        type: Date,
-        default: Date.now
-    },
-    first_name: {
-        type: String,
-        required: true
-    },
-    last_name: {
-        type: String,
-        required: true
-    },
-    email: {
-        type: String,
-        required: true
-    },
-    phone_number: {
+    quantity_in_stock: {
         type: Number,
         required: true
     },
-    address: {
+    purchase_price: {
+        type: Number,
+        required: true
+    },
+    selling_price: {
+        type: Number,
+        required: true
+    },
+    brand_id: {
         type: String,
         required: true
     },
-
+    category_id:{
+        type: String,
+        required: true
+    }
 });
 
 module.exports = mongoose.model('User', UserSchema);
