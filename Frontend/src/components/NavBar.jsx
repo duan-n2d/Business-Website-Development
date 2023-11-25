@@ -2,44 +2,110 @@ import img1 from "../assets/logoweb__.png";
 import { useState } from 'react';
 
 function NavBar({ logoUrl, logo, pages }) {
-  const [isDropdownOpen, setIsDropdownOpen] = useState(null);
+ const [showDetails, setShowDetails] = useState(false);
+  const [subMenu, setSubMenu] = useState([]);
 
+  const handleHover = (category, subItems) => {
+    setShowDetails(true);
+    switch (category) {
+      case 'brand':
+        setSubMenu(['Rosen', 'Ba Đờn', 'Yamaha']);
+        break;
+      case 'product':
+        setSubMenu(['Đàn guitar', 'Ukulele']);
+        break;
+      default:
+        setSubMenu([]);
+        break;
+    }
+  };
+  const handleLeave = () => {
+    setShowDetails(false);
+    setSubMenu([]);
+  };
   return (
-    <nav className=' left-0 bg-green-400 flex '>
-      <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto">
-        <div className="logo flex md:cursor-pointer h-9 ">
-          <img src={img1} alt="Logo" />
-        </div>
-        <div className='nav flex-1'>
-          <ul className='flex p-3 font-medium md:flex-row md:space-x-8 md:mt-0 al'>
-            {pages.map((page) => (
-              <li
-                key={page.name}
-                className=' relative align-middle'
-                onMouseEnter={() => setIsDropdownOpen(page)}
-                onMouseLeave={() => setIsDropdownOpen(null)}
-              >
-                <a href={page.url}>
-                  {page.name}
-                </a>
-                {isDropdownOpen === page && (
-                  <div className="absolute bg-green-200 p-2  object-cover rounded-md hover:opacity-100 opacity-50 ">
-                    <ul>
-                      {page.dt.map((item, index) => (
-                        <li  key={index} className="text-gray-800 bg-cover"><a  className="" href="#">{item}</a></li>
-                      ))}
-                    </ul>
-                  </div>
-                )}
-              </li>
-            ))}
-          </ul>
+    <nav className='bg-green-400'>
+      <div className='container flex'>
+        <div className='flex items-center justify-between flex-row pl-12 px-8 py-4 my-auto'>
+          <div className='flex items-center capitalize font-medium md:flex-row md:space-x-8 md:mt-0 al'>
+            <a
+              href="#"
+              className='text-green-950 hover:text-white transition'
+              
+            >
+              TRANG CHỦ
+            </a>
+            <p className='text-gray-400'>|</p>
+
+            <a
+              href="#"
+              className='text-green-950 hover:text-white transition'
+              
+            >
+              CÓ GÌ MỚI
+            </a>
+            <p className='text-gray-400'>|</p>
+
+            <a
+              href="#"
+              className='text-green-950 hover:text-white transition'
+              onMouseEnter={() => handleHover('brand')}
+              onMouseLeave={handleLeave}
+            >
+              THƯƠNG HIỆU
+            </a>
+            <p className='text-gray-400'>|</p>
+
+            <a
+              href="#"
+              className='text-green-950 hover:text-white transition'
+              onMouseEnter={() => handleHover('product')}
+              onMouseLeave={handleLeave}
+            >
+              SẢN PHẨM
+            </a>
+            <p className='text-gray-400'>|</p>
+
+            <a
+              href="#"
+              className='text-green-950 hover:text-white transition'
+              
+            >
+              SALE OFF
+            </a>
+            <p className='text-gray-400'>|</p>
+
+            <a
+              href="#"
+              className='text-green-950 hover:text-white transition'
+             
+            >
+              BLOG
+            </a>
+            <p className='text-gray-400'>|</p>
+
+            <a
+              href="#"
+              className='text-green-950 hover:text-white transition'
+           
+            >
+              VỀ GAKKI
+            </a>
+          </div>
         </div>
       </div>
+      {showDetails && (
+        <div className='details-container'>
+          {subMenu.map((item, index) => (
+            <div key={index} className='detail-item'>
+              {item}
+            </div>
+          ))}
+        </div>
+      )}
     </nav>
   );
 }
-
 export default NavBar;
 
 
