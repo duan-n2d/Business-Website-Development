@@ -1,12 +1,11 @@
 # ECOMMERCE WEBSITE - MERN
 ## Project at UEL
-=======
-# React + Vite + Tailwind CSS
 **MERN**
 1. MongoDB
 2. Express JS
 3. React framework with Vite.
 4. Node JS
+5. CSS: Tailwind CSS
 
 ## Overview
 
