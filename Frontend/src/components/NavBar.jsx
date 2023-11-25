@@ -1,7 +1,17 @@
 function NavBar({ logoUrl, logo, pages }) {
   return (
-    <nav className='top-0 left-0 bg-red-300 sticky'>
-      <div className='max-w-screen-xl flex flex-wrap items-center justify-between mx-auto'>
+    <nav className='sticky'>
+      <div className="top-0 left-0 bg-black-300">
+        <div className='max-w-screen-xl flex flex-wrap items-center justify-between mx-auto'>
+          <div className="notification">
+            <span className="">
+              Sale 50% off for all products!
+            </span>
+          </div>
+        </div>
+      </div>
+      <div className="top-0 left-0 bg-red-300 ">
+        <div className='max-w-screen-xl flex flex-wrap items-center justify-between mx-auto'>
 
         <div className="logo flex">
           <img src={logoUrl} alt="" />
@@ -104,7 +114,9 @@ function NavBar({ logoUrl, logo, pages }) {
 
               
       </div>
-    </nav>
+
+    </div>
+  </nav>
   );
 };
 
