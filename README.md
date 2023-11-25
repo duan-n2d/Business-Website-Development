@@ -74,16 +74,15 @@ JWT_SECRET=your_secret_key
 => Replace your_secret_key with a secure secret for JWT.
 Configure other environment variables as needed for external services.
 ## Usage
-Start the server:
+1. Start the backend:
     ```
-    Copy code
-    cd server
-    npm start
+    cd backend
+    npm run server
     ```
-Start the client:
+2. Start the frontend:
     ```
-    cd client
-    npm start
+    cd frontend
+    npm run dev
     ```
 Open your browser and visit http://localhost:3000 to view the application.
 ## Folder Structure
