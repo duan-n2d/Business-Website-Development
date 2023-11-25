@@ -22,6 +22,7 @@ This project is an E-commerce website built using the MERN (MongoDB, Express.js,
 - [Folder Structure](#folder-structure)
 - [Contributing](#contributing)
 - [License](#license)
+- [Others](#others)
 
 ## Features
 
@@ -45,21 +46,73 @@ Before you begin, ensure you have met the following requirements:
 
 1. Clone the repository:
     ```
-   git clone https://github.com/your-username/project-ecommerce.git
-   ```
+    git clone https://github.com/your-username/project-ecommerce.git
+    ```
 2. Navigate to the project directory:
-  ```
-  cd project-ecommerce
-  ```
+    ```
+    cd project-ecommerce
+    ```
 3. Install dependencies for both the server and the client:
-   Backend
-  ```
-  cd Backend
-  npm install
-  ```
-  Frontend
-  ```
-  cd Frontend
-  npm install
-  ```
-- Guide: https://vitejs.dev/guide/
+Backend
+    ```
+    cd Backend
+    npm install
+    ```
+Frontend
+    ```
+    cd Frontend
+    npm install
+    ```
+## Configuration
+Create a .env file in the server directory and add the following:
+```
+Copy code
+PORT=3001
+MONGODB_URI=mongodb://localhost:27017/ecommerce
+JWT_SECRET=your_secret_key
+```
+=> Replace your_secret_key with a secure secret for JWT.
+Configure other environment variables as needed for external services.
+## Usage
+Start the server:
+    ```
+    Copy code
+    cd server
+    npm start
+    ```
+Start the client:
+    ```
+    cd client
+    npm start
+    ```
+Open your browser and visit http://localhost:3000 to view the application.
+## Folder Structure
+```
+project-ecommerce/
+│
+├── server/                 # Server-side code (Node.js, Express)
+│   ├── controllers/        # Controllers for handling business logic
+│   ├── models/             # MongoDB models
+│   ├── routes/             # Express routes
+│   └── ...
+│
+├── client/                 # Client-side code (React with Vite)
+│   ├── public/             # Public assets
+│   ├── src/                # Source code
+│   │   ├── components/     # React components
+│   │   ├── pages/          # Page components
+│   │   ├── services/       # API services
+│   │   └── ...
+│   └── ...
+│
+├── .gitignore              # Git ignore file
+├── .env                    # Environment variables
+├── package.json            # Node.js dependencies and scripts
+└── README.md               # Project documentation
+```
+## Contributing
+If you'd like to contribute to this project, please follow the Contribution Guidelines.
+## License:
+...
+## Others:
+- Vite guide: https://vitejs.dev/guide/
