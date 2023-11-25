@@ -1,13 +1,13 @@
 const mongoose = require('mongoose');
 
-const UserSchema = new mongoose.Schema({
+const OrderSchema = new mongoose.Schema({
     order_id: {
         type: String,
         required: true
-        // Cái này là primary key
     },
-    customer_id:{
-        type: String,
+    customer:{
+        type: Schema.Types.ObjectId,
+        ref: 'User',
         required: true
     },
     total_price:{
@@ -24,4 +24,4 @@ const UserSchema = new mongoose.Schema({
     }
 });
 
-module.exports = mongoose.model('User', UserSchema);
+module.exports = mongoose.model('Order', OrderSchema);

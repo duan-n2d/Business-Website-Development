@@ -23,8 +23,8 @@ function App() {
   return (
     <>
       <NavBar logoUrl={reactLogo} logo = {logo} pages={pages} />
+      <Banner/>
       <ErrorPage></ErrorPage>
-      <img src="https://vn.yamaha.com/vi/files/Brand_Image_Drums_pc_vn_f502df3148e42fb97023a31588e1d127.jpg?impolicy=resize&imwid=2000&imhei=800" alt="Background Test"/>
       <Card/>
       {/* <ProductDetail/> */}
       <Cart/>

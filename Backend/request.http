@@ -1,9 +1,16 @@
+
 POST http://localhost:5000/api/auth/register
 Content-Type: application/json
 
 {
-  "username": "jim",
-  "password": "jim"
+  "customer_id": 3,
+  "username": "ddddd",
+  "password": "ddddd",
+  "first_name": "John",
+  "last_name": "Doe",
+  "email": "john.doe@example.com",
+  "phone_number": 1234567890,
+  "address": "123 Main Street, City, Country"
 }
 
 ###
@@ -12,6 +19,22 @@ POST http://localhost:5000/api/auth/login
 Content-Type: application/json
 
 {
-  "username": "ddd",
-  "password": "duan"
+  "username": "dd",
+  "password": "dd"
 }
+
+
+###
+POST http://localhost:5000/api/auth/create-product
+Content-Type: application/json
+
+{
+    "product_id": "5",
+    "product_name": "Acoustic Guitar - Model A3",
+    "description": "High-quality acoustic guitar with a spruce top and mahogany back and sides.",
+    "quantity_in_stock": 50,
+    "purchase_price": 300,
+    "selling_price": 500,
+    "brand_id": "guitar_brand_1",
+    "category_id": "guitar_category_1"
+  }

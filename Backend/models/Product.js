@@ -1,10 +1,9 @@
 const mongoose = require('mongoose');
 
-const UserSchema = new mongoose.Schema({
+const ProductSchema = new mongoose.Schema({
     product_id: {
         type: String,
         required: true
-        // Cái này là primary key
     },
     product_name: {
         type: String,
@@ -33,7 +32,11 @@ const UserSchema = new mongoose.Schema({
     category_id:{
         type: String,
         required: true
-    }
+    },
+    createdAt: {
+        type: Date,
+        default: Date.now
+    },
 });
 
-module.exports = mongoose.model('User', UserSchema);
+module.exports = mongoose.model('Product', ProductSchema);

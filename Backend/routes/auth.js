@@ -5,6 +5,8 @@ const jwt = require('jsonwebtoken')
 const verifyToken = require('../middleware/auth')
 
 const User = require('../models/User')
+const Product = require('../models/Product')
+const Order = require('../models/Order')
 
 //try-catch when work with database
 
@@ -27,7 +29,16 @@ router.get('/', verifyToken, async (req, res) => {
 // @desc Register user
 // @access Public
 router.post('/register', async (req, res) => {
-	const { username, password } = req.body
+	const {
+		customer_id,
+		username,
+		password,
+		first_name,
+		last_name,
+		email,
+		phone_number,
+		address,
+	  } = req.body;
 
 	// Simple validation
 	if (!username || !password)
@@ -44,9 +55,18 @@ router.post('/register', async (req, res) => {
 				.status(400)
 				.json({ success: false, message: 'Username already taken' })
 
-		// All good
+		// Hash password
 		const hashedPassword = await argon2.hash(password)
-		const newUser = new User({ username, password: hashedPassword })
+		const newUser = new User({
+			customer_id,
+			username,
+			password: hashedPassword ,
+			first_name,
+			last_name,
+			email,
+			phone_number,
+			address,
+		  });
 		await newUser.save()
 
 		// Return token
@@ -108,6 +128,120 @@ router.post('/login', async (req, res) => {
 	} catch (error) {
 		console.log(error)
 		res.status(500).json({ success: false, message: 'Internal server error' })
+	}
+})
+
+// Create Product
+// @route POST api/auth/create-product
+// @desc Create Product
+// @access Public
+router.post('/create-product', async (req, res) => {
+	const {
+		product_id,
+		product_name,
+		description,
+		quantity_in_stock,
+		purchase_price,
+		selling_price,
+		brand_id,
+		category_id
+	  } = req.body;
+
+	// Simple validation
+	if (!product_id || !product_name)
+		return res
+			.status(400)
+			.json({ success: false, message: 'Missing product_id and/or product_name' })
+
+	try {
+		// Check for existing product
+		const product = await Product.findOne({ product_id })
+
+		if (product)
+			return res
+				.status(400)
+				.json({ success: false, message: 'Product already taken' })
+
+		const newProduct = new Product({
+			product_id,
+			product_name,
+			description,
+			quantity_in_stock,
+			purchase_price,
+			selling_price,
+			brand_id,
+			category_id
+		  });
+		await newProduct.save()
+
+		// Return token
+		const accessToken = jwt.sign(
+			{ productId: newProduct._id },
+			process.env.ACCESS_TOKEN_SECRET
+		)
+
+		res.json({
+			success: true,
+			message: 'Product created successfully',
+			accessToken
+		})
+	} catch (error) {
+		console.log(error)
+		res.status(500).json({ success: false, message: 'Internal server error '+ error})
+	}
+})
+
+// Create Order
+// @route POST api/auth/create-order
+// @desc Create Order
+// @access Public
+router.post('/create-order', async (req, res) => {
+	const {
+		order_id,
+		customer_id,
+		order_date,
+		order_status,
+		order_total
+	  } = req.body;
+
+	// Simple validation
+	if (!order_id || !customer_id)
+		return res
+			.status(400)
+			.json({ success: false, message: 'Missing order_id and/or customer_id' })
+
+	try {
+		// Check for existing order
+		const order = await Order.findOne({ order_id })
+
+		if (order)
+			return res
+				.status(400)
+				.json({ success: false, message: 'Order already taken' })
+
+		const newOrder = new Order({
+			order_id,
+			customer_id,
+			order_date,
+			order_status,
+			order_total
+		  });
+		await newOrder.save()
+
+		// Return token
+		const accessToken = jwt.sign(
+			{ orderId: newOrder._id },
+			process.env.ACCESS_TOKEN_SECRET
+		)
+
+		res.json({
+			success: true,
+			message: 'Order created successfully',
+			accessToken
+		})
+	} catch (error) {
+		console.log(error)
+		res.status(500).json({ success: false, message: 'Internal server error '+ error})
 	}
 })
 
