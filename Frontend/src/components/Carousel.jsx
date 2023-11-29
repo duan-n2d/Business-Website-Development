@@ -1,127 +1,45 @@
 import React, { useState, useEffect } from 'react';
+import { FiChevronLeft, FiChevronRight } from "react-icons/fi";
 
-function Carousel() {
-  const [cont, setCont] = useState(0);
+function Carousel({ slides, autoSlide=false, autoSlideInterval=3000 }) {
+  const [curr, setCurr] = useState(0)
 
-  useEffect(() => {
-    const xx = setInterval(() => {
-      switch (cont) {
-        case 0:
-          {
-            document.getElementById('slider-1').style.display = 'none';
-            document.getElementById('slider-2').style.display = 'block';
-            document.getElementById('sButton1').classList.remove('bg-purple-800');
-            document.getElementById('sButton2').classList.add('bg-purple-800');
-            setCont(1);
-            break;
-          }
-        case 1:
-          {
-            document.getElementById('slider-2').style.display = 'none';
-            document.getElementById('slider-1').style.display = 'block';
-            document.getElementById('sButton2').classList.remove('bg-purple-800');
-            document.getElementById('sButton1').classList.add('bg-purple-800');
-            setCont(0);
-            break;
-          }
-        default:
-          break;
-      }
-    }, 8000);
-    return () => clearInterval(xx);
-  }, [cont]);
+  const prev = () => setCurr(curr => curr == 0 ? slides.length - 1: curr - 1)
 
-  const reinitLoop = (time) => {
-    clearInterval(cont);
-    setTimeout(loopSlider, time);
-  };
-
-  const sliderButton1 = () => {
-    document.getElementById('slider-2').style.display = 'none';
-    document.getElementById('slider-1').style.display = 'block';
-    document.getElementById('sButton2').classList.remove('bg-purple-800');
-    document.getElementById('sButton1').classList.add('bg-purple-800');
-    reinitLoop(4000);
-    setCont(0);
-  };
-
-  const sliderButton2 = () => {
-    document.getElementById('slider-1').style.display = 'none';
-    document.getElementById('slider-2').style.display = 'block';
-    document.getElementById('sButton1').classList.remove('bg-purple-800');
-    document.getElementById('sButton2').classList.add('bg-purple-800');
-    reinitLoop(4000);
-    setCont(1);
-  };
+  const next = () => setCurr(curr => curr == slides.length - 1 ? 0 : curr + 1)
 
   useEffect(() => {
-    document.getElementById('slider-2').style.display = 'none';
-    document.getElementById('sButton1').classList.add('bg-purple-800');
-  }, []);
-
+    if (!autoSlide) return
+    const autoSlideInterval = setInterval(next, autoSlideInterval)
+    return () => clearInterval(slideInterval)
+  }, [])
   return (
-    <div>
-      <div className="sliderAx h-auto">
-        <div id="slider-1" className="container mx-auto">
-          <div
-            className="bg-cover bg-center h-auto text-white py-24 px-10 object-fill"
-            style={{
-              backgroundImage: "url('https://via.placeholder.com/150')", // Replace with your image URL
-            }}
-          >
-            <div className="md:w-1/2">
-              <p className="font-bold text-sm uppercase">Services</p>
-              <p className="text-3xl font-bold">Hello world</p>
-              <p className="text-2xl mb-10 leading-none">
-                Carousel with TailwindCSS and jQuery
-              </p>
-              <a
-                href="#"
-                className="bg-purple-800 py-4 px-8 text-white font-bold uppercase text-xs rounded hover:bg-gray-200 hover:text-gray-800"
-              >
-                Contact us
-              </a>
-            </div>
-          </div>
-          <br />
+    <div className='overflow-hidden relative'>
+      <div className='flex transition-transform ease-out duration-500' style={{transform: `translateX(-${curr*100}%)`}}>
+        {slides.map((s) => <img src={s} />)}
         </div>
 
-        <div id="slider-2" className="container mx-auto">
-          <div
-            className="bg-cover bg-top h-auto text-white py-24 px-10 object-fill"
-            style={{
-              backgroundImage: "url('https://via.placeholder.com/150')", // Replace with your image URL
-            }}
-          >
-            <p className="font-bold text-sm uppercase">Services</p>
-            <p className="text-3xl font-bold">Hello world</p>
-            <p className="text-2xl mb-10 leading-none">
-              Carousel with TailwindCSS and jQuery
-            </p>
-            <a
-              href="#"
-              className="bg-purple-800 py-4 px-8 text-white font-bold uppercase text-xs rounded hover:bg-gray-200 hover:text-gray-800"
-            >
-              Contact us
-            </a>
-          </div>
-          <br />
+        <div className='absolute inset-0 flex items-center justify-between p-4'>
+          <button onClick={prev} className='p-1 rounded-full shadow bg-white/80 text-gray-800 hover:bg-white'>
+            <FiChevronLeft size={20}/>
+          </button>
+          <button onClick={next} className='p-1 rounded-full shadow bg-white/80 text-gray-800 hover:bg-white'>
+            <FiChevronRight size={20}/>
+          </button>
         </div>
-      </div>
-      <div className="flex justify-between w-12 mx-auto pb-2">
-        <button
-          id="sButton1"
-          onClick={sliderButton1}
-          className="bg-purple-400 rounded-full w-4 pb-2"
-        ></button>
-        <button
-          id="sButton2"
-          onClick={sliderButton2}
-          className="bg-purple-400 rounded-full w-4 p-2"
-        ></button>
-      </div>
+
+        <div className='absolute bottom-4 right-0 left-0'>
+          <div className='flex items-center justify-center gap-2'>
+            {slides.map((_, i) => (
+              <div className={`
+                transition-all w-3 h-3 bg-white rounded-full ${curr == i ? "p-2" : "bg-opacity-50"}
+              `} />
+            ))}
+          </div>
+
+        </div>
     </div>
-  );
+  )
 };
 
 export default Carousel;
