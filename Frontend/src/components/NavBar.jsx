@@ -24,14 +24,15 @@ function NavBar({ logoUrl, logo, pages }) {
     setSubMenu([]);
   };
   return (
-    <nav className='bg-green-400'>
+    <nav style={{
+      backgroundColor: '#B7EDAB',
+    }}>
       <div className='container flex'>
         <div className='flex items-center justify-between flex-row pl-12 px-8 py-4 my-auto'>
-          <div className='flex items-center capitalize font-medium md:flex-row md:space-x-8 md:mt-0 al'>
+          <div className='flex items-center capitalize font-medium md:flex-row md:space-x-8 md:mt-0 al text-[#1B3735]'>
             <a
               href="#"
-              className='text-green-950 hover:text-white transition'
-              
+              className='hover:text-white transition'
             >
               TRANG CHỦ
             </a>
@@ -39,7 +40,7 @@ function NavBar({ logoUrl, logo, pages }) {
 
             <a
               href="#"
-              className='text-green-950 hover:text-white transition'
+              className='hover:text-white transition'
               
             >
               CÓ GÌ MỚI
@@ -48,7 +49,7 @@ function NavBar({ logoUrl, logo, pages }) {
 
             <a
               href="#"
-              className='text-green-950 hover:text-white transition'
+              className='hover:text-white transition'
               onMouseEnter={() => handleHover('brand')}
               onMouseLeave={handleLeave}
             >
@@ -58,7 +59,7 @@ function NavBar({ logoUrl, logo, pages }) {
 
             <a
               href="#"
-              className='text-green-950 hover:text-white transition'
+              className='hover:text-white transition'
               onMouseEnter={() => handleHover('product')}
               onMouseLeave={handleLeave}
             >
@@ -68,7 +69,7 @@ function NavBar({ logoUrl, logo, pages }) {
 
             <a
               href="#"
-              className='text-green-950 hover:text-white transition'
+              className='hover:text-white transition'
               
             >
               SALE OFF
@@ -77,7 +78,7 @@ function NavBar({ logoUrl, logo, pages }) {
 
             <a
               href="#"
-              className='text-green-950 hover:text-white transition'
+              className='hover:text-white transition'
              
             >
               BLOG
@@ -86,7 +87,7 @@ function NavBar({ logoUrl, logo, pages }) {
 
             <a
               href="#"
-              className='text-green-950 hover:text-white transition'
+              className='hover:text-white transition'
            
             >
               VỀ GAKKI
