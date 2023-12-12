@@ -19,13 +19,6 @@ const pages = [
   { name: 'Blog', url: '/blog'},
   { name: 'Contact Us', url: '/contact-us'},
 ];
-
-let slides = [
-  "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTtnvAOajH9gS4C30cRF7rD_voaTAKly2Ntaw&usqp=CAU",
-  "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSOhoFjnK4ie9GVjFy5MNnoOM68dpi9TGa2_Q&usqp=CAU",
-  "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRW82xb7A6ac2dWp9zThqdrfz1KxO6iucdPDg&usqp=CAU",
-  "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTZyatMSOXQTHvFwaP65UOpR7oTGxPBgWgkkA&usqp=CAU"
-]
 function App() {
   return (
     <>
@@ -35,9 +28,7 @@ function App() {
       <Card/>
       {/* <ProductDetail/> */}
       <Cart/>
-      <div className='w-[20%] m-auto pt-11' autoSlide={true} autoSlideInterval={3000}>
-        <Carousel slides={slides}/>
-      </div>
+      <Carousel/>
       <Banner/>
       <Footer/>
     </>

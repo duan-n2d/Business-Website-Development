@@ -24,7 +24,7 @@ function NavBar({ logoUrl, logo, pages }) {
     setSubMenu([]);
   };
   return (
-    <nav style={{
+    <nav className="fixed top-0 w-full" style={{
       backgroundColor: '#B7EDAB',
     }}>
       <div className='container flex'>

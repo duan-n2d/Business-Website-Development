@@ -11,7 +11,7 @@ function Footer() {
     <footer>
       {/* Phần Trust */}
       <div className='bg-green-100 p-5'>
-        <table align='center' className='lg:w-[100%] text-2xl'>
+        <table align='center' className='lg:w-[100%] text-[18px]'>
           <tr>
             <td align='center'>
               <div className='p-5'><GiHouse size={80} /></div>
@@ -34,7 +34,7 @@ function Footer() {
       </div>
 
       {/* Phần Contact */}
-      <div className=' bg-yellow-50 pl-[5%] pr-[5%] text-xl'>
+      <div className='bg-yellow-50 pl-[5%] pr-[5%] text-[18px]'>
         <br />
         <br />
         <br />
