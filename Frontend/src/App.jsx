@@ -11,6 +11,7 @@ import Cart from './components/Cart'
 import Banner from './components/Banner'
 import ErrorPage from './components/ErrorPage'
 import Footer from './components/Footer'
+import ProductsGrid from './components/ProductsGrid.jsx'
 
 const logo = 'TEAM 3';
 const pages = [
@@ -23,8 +24,9 @@ const pages = [
 function App() {
   return (
     <>
-      {/* <NavBar logoUrl={reactLogo} logo = {logo} pages={pages} /> */}
-      <Login/>
+      <NavBar logoUrl={reactLogo} logo = {logo} pages={pages} />
+      <ProductsGrid/>
+      {/* <Login/> */}
       {/* <ErrorPage></ErrorPage> */}
       {/* <img src="https://vn.yamaha.com/vi/files/Brand_Image_Drums_pc_vn_f502df3148e42fb97023a31588e1d127.jpg?impolicy=resize&imwid=2000&imhei=800" alt="Background Test"/> */}
       {/* <Card/> */}
