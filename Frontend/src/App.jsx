@@ -3,6 +3,7 @@ import './App.css'
 import './index.css'
 
 import NavBar from './components/NavBar.jsx'
+import Login from './components/Login.jsx'
 import Carousel from './components/Carousel.jsx'
 import Card from './components/Card'
 import ProductDetail from './components/ProductDetail'
@@ -22,15 +23,16 @@ const pages = [
 function App() {
   return (
     <>
-      <NavBar logoUrl={reactLogo} logo = {logo} pages={pages} />
-      <ErrorPage></ErrorPage>
-      <img src="https://vn.yamaha.com/vi/files/Brand_Image_Drums_pc_vn_f502df3148e42fb97023a31588e1d127.jpg?impolicy=resize&imwid=2000&imhei=800" alt="Background Test"/>
-      <Card/>
+      {/* <NavBar logoUrl={reactLogo} logo = {logo} pages={pages} /> */}
+      <Login/>
+      {/* <ErrorPage></ErrorPage> */}
+      {/* <img src="https://vn.yamaha.com/vi/files/Brand_Image_Drums_pc_vn_f502df3148e42fb97023a31588e1d127.jpg?impolicy=resize&imwid=2000&imhei=800" alt="Background Test"/> */}
+      {/* <Card/> */}
       {/* <ProductDetail/> */}
-      <Cart/>
-      <Carousel/>
-      <Banner/>
-      <Footer/>
+      {/* <Cart/> */}
+      {/* <Carousel/> */}
+      {/* <Banner/> */}
+      {/* <Footer/> */}
     </>
   )
 }
