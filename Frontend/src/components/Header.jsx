@@ -12,7 +12,7 @@ function Header() {
   return (
     <>
         <div className="justify-center items-center">
-            <div className="flex items-center justify-center bg-gray-800">
+            <div className="flex items-center justify-center bg-[#1B3735]">
                 <div className="text-white uppercase py-0.5">Miễn phí vận chuyển cho đơn hàng trên 500k</div>
             </div>
         
