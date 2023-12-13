@@ -27,7 +27,7 @@ function NavBar({ logoUrl, logo, pages }) {
     <nav className="sticky top-0 w-full z-10" style={{
       backgroundColor: '#B7EDAB',
     }}>
-      <div className='container flex'>
+      <div className='container flex w-11/12 mx-auto'>
         <div className='flex items-center justify-between flex-row pl-12 px-8 py-4 my-auto'>
           <div className='flex items-center capitalize font-medium md:flex-row md:space-x-8 md:mt-0 al text-[#1B3735]'>
             <a

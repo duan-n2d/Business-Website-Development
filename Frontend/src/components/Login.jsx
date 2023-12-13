@@ -1,5 +1,5 @@
 import React from 'react';
-import Logo from '../assets/logoweb__.png';
+import Logo from '../assets/Gakki.png';
 import LoginBanner from '../assets/banner_login.png';
 import LoginBackground from '../assets/bg_login_page.png';
 
@@ -19,7 +19,7 @@ const Login = () => {
             <img src={Logo} alt="Logo" className="w-1/2 mx-auto object-cover object-center h-[50px] w-[100px] transform scale-150" />
           </div>
 
-          <h2 className="text-2xl font-extrabold text-gray-800 text-center uppercase">Đăng nhập</h2>
+          <h2 className="mt-2 text-2xl font-extrabold text-gray-800 text-center uppercase">Đăng nhập</h2>
           <div className="mt-4">
             <label className="block text-gray-700 text-sm font-bold mb-2">Địa chỉ email/Số điện thoại</label>
             <input

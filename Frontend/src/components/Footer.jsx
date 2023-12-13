@@ -1,8 +1,12 @@
 import React from 'react';
-import { MdLocalPhone } from "react-icons/md";
-import { CiMail } from "react-icons/ci";
-import { FaMapLocationDot, FaInstagram } from "react-icons/fa6";
-import { FaFacebook, FaShoppingCart } from "react-icons/fa";
+import { PiPhoneFill } from "react-icons/pi";
+import { PiMapPinFill } from "react-icons/pi";
+import { PiEnvelopeFill } from "react-icons/pi";
+import { PiShoppingCartFill } from 'react-icons/pi';
+import { PiHouseLineFill } from 'react-icons/pi';
+import { PiTagFill } from 'react-icons/pi';
+import { PiTruckFill } from 'react-icons/pi';
+import { FaShoppingCart } from "react-icons/fa";
 import { GiHouse, GiPriceTag } from "react-icons/gi";
 import { FaTruckFast } from "react-icons/fa6";
 
@@ -14,19 +18,19 @@ function Footer() {
         <table align='center' className='lg:w-[100%] text-[18px]'>
           <tr>
             <td align='center'>
-              <div className='p-5'><GiHouse size={80} /></div>
+              <div className='p-5'><PiHouseLineFill size={80} /></div>
               <h3><strong>Ngôi Nhà Âm Nhạc <br /> &amp; Cá Tính Âm Nhạc</strong></h3>
             </td>
             <td align='center'>
-              <div className='p-5'><FaTruckFast size={80} /></div>
+              <div className='p-5'><PiTruckFill size={80} /></div>
               <h3><strong>Giao Hàng Miễn Phí <br />&amp; Đảm Bảo Vận Chuyển</strong></h3>
             </td>
             <td align='center'>
-              <div className='p-5'><FaShoppingCart size={80} /></div>
+              <div className='p-5'><PiShoppingCartFill size={80} /></div>
               <h3><strong>Mua Sắm Trực Tuyến <br />Đảm Bảo An Toàn</strong></h3>
             </td>
             <td align='center'>
-              <div className='p-5'><GiPriceTag size={80} /></div>
+              <div className='p-5'><PiTagFill size={80} /></div>
               <h3><strong>Đơn Giá Đã Bao Gồm <br />Các Khoản Thuế</strong></h3>
             </td>
           </tr>
@@ -52,15 +56,15 @@ function Footer() {
             <div className='text-center font-bold text-red-500 text-2xl pt-3'>THÔNG TIN LIÊN HỆ</div> <br />
             <table >
               <tr>
-                <td valign='center'><div className='p-1 mr-5 m-2 rounded-full shadow bg-gray-800 text-white'><a href="#"><FaMapLocationDot size="30" /></a></div></td>
+                <td valign='center'><div className='p-1 mr-5 m-2 rounded-full shadow bg-gray-800 text-white'><a href="#"><PiMapPinFill size="30" /></a></div></td>
                 <td><div className='font-semibold text-justify'>Số 669 Quốc lộ 1A, Khu phố 3, phường Linh Xuân, TP Thủ Đức, TP Hồ Chí Minh</div></td>
               </tr>
               <tr>
-                <td><div className='p-1 mr-5 m-2 rounded-full shadow bg-gray-800 text-white'><a href="#"><MdLocalPhone size="30" /></a></div></td>
+                <td><div className='p-1 mr-5 m-2 rounded-full shadow bg-gray-800 text-white'><a href="#"><PiPhoneFill size="30" /></a></div></td>
                 <td><div className='font-semibold text-justify'>090909090</div></td>
               </tr>
               <tr>
-                <td><div className='p-1 mr-5 m-2 rounded-full shadow bg-gray-800 text-white'><a href="#"><CiMail size="30" /></a></div></td>
+                <td><div className='p-1 mr-5 m-2 rounded-full shadow bg-gray-800 text-white'><a href="#"><PiEnvelopeFill size="30" /></a></div></td>
                 <td><div className='font-semibold text-justify'>gakki.support@gmail.com</div></td>
               </tr>
             </table>

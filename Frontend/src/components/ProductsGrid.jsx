@@ -24,21 +24,21 @@ function ProductsGrid() {
                   <p className='text-l'>Giá</p>
                   <PiPlusBold className='w-6 h6'/>
                 </div>
-                <div className="mb-3 w-[280px] h-0.5 bg-neutral-200" />
+                <hr/>
 
-                <div className='mb-3 flex justify-between'>
+                <div className='my-3 flex justify-between'>
                   <p className='text-l'>Loại sản phẩm</p>
                   <PiPlusBold className='w-6 h6'/>
                 </div>
-                <div className="mb-3 w-[280px] h-0.5 bg-neutral-200" />
+                <hr/>
 
-                <div className='mb-3 flex justify-between'>
+                <div className='my-3 flex justify-between'>
                   <p className='text-l'>Thương hiệu</p>
                   <PiPlusBold className='w-6 h6'/>
                 </div>
-                <div className="mb-3 w-[280px] h-0.5 bg-neutral-200" />
+                <hr/>
 
-                <div className='flex justify-between'>
+                <div className='my-3 flex justify-between'>
                   <p className='text-l'>Mức giá</p>
                   <PiPlusBold className='w-6 h6'/>
                 </div>
@@ -64,8 +64,9 @@ function ProductsGrid() {
               </div>
 
               <div className='flex'>
-                <PiGridFourFill className="h-6 w-6" color='#DA3E1A'/>
-                <PiListBold className="h-6 w-6"/>
+                <PiGridFourFill className="h-8 w-8" color='#DA3E1A'/>
+                &nbsp;&nbsp;
+                <PiListBold className="h-8 w-8"/>
               </div>
             </div>
             
