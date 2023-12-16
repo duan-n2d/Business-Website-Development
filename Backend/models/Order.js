@@ -10,18 +10,31 @@ const OrderSchema = new mongoose.Schema({
         ref: 'User',
         required: true
     },
-    total_price:{
-        type: Number,
-        required: true
-    },
-    shipment_id: {
+    status: {
         type: String,
-        required: true
+        enum: ['Pending', 'Processing', 'Shipped', 'Delivered', 'Cancelled'],
+        default: 'Pending'
     },
-    payment_method: {
+    discount_id: {
         type: String,
-        required: true
-    }
+        required: false
+    },
+    created_at: {
+        type: Date,
+        default: Date.now
+    },
+    // total_price:{
+    //     type: Number,
+    //     required: true
+    // },
+    // shipment_id: {
+    //     type: String,
+    //     required: true
+    // },
+    // payment_method: {
+    //     type: String,
+    //     required: true
+    // }
 });
 
 module.exports = mongoose.model('Order', OrderSchema);
