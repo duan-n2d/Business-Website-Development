@@ -4,8 +4,9 @@ const argon2 = require('argon2')
 const jwt = require('jsonwebtoken')
 const verifyToken = require('../middleware/auth')
 
-const User = require('../models/User')
-const { registerController, loginController, logoutController, getUserController, forgotPasswordController } = require('../controllers/userController')
+const { loginController, registerController, forgotPasswordController } = require('../controllers/AccountController')
+const { getAllUserController, updateUserController } = require('../controllers/UserController')
+const { getAllProducts } = require('../controllers/ProductController')
 
 // @route GET api/auth
 // @desc secure routing auth
@@ -25,7 +26,7 @@ router.post('/login', loginController)
 // @route POST api/auth/logout
 // @desc Logout user
 // @access Public
-router.get('/logout', logoutController)
+// router.get('/logout', logoutController)
 
 // @route POST api/auth/forgot-password
 // @desc Forgot password
@@ -35,6 +36,12 @@ router.post('/forgot-password', forgotPasswordController)
 // @route GET api/auth/get-user-by-id
 // @desc Get user by ID
 // @access Public
-router.get('/get-user-by-id', getUserController)
+// router.get('/get-user-by-id', getUserController)
+
+// get all products
+router.get('/products', getAllProducts)
+
+// get all users
+router.get('/users', getAllUserController)
 
 module.exports = router

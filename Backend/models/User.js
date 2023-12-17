@@ -2,7 +2,7 @@ const mongoose = require('mongoose');
 
 const UserSchema = new mongoose.Schema({
     user_id: {
-        type: Number,
+        type: String,
         required: true,
     },
     first_name: {
@@ -32,6 +32,11 @@ const UserSchema = new mongoose.Schema({
     },
     city: {
         type: String,
+        required: true
+    },
+    country: {
+        type: String,
+        default: 'Vietnam',
         required: true
     },
     role: {
