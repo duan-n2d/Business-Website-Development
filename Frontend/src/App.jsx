@@ -12,7 +12,7 @@ function App() {
   // const user = useSelector(state => state.user)
   return (
     <>
-      <Routes>
+      <Routes className = 'root'>
         <Route path='/'element={<Home/>} />
         <Route path='/login' element={<Login/>} />
         <Route path='/register' element={<Register/>} />

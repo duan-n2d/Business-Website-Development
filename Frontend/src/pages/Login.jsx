@@ -90,7 +90,7 @@ const Login = () =>{
           </div>
           <div className="mt-4">
             <button className="bg-orange-300 text-gray-800 font-bold py-2 px-4 w-full rounded-[80px]">
-              Tạo tài khoản
+              <a href="/register">Tạo tài khoản</a>
             </button>
           </div>
 
