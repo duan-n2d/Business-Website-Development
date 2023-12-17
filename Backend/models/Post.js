@@ -18,9 +18,9 @@ const PostSchema = new mongoose.Schema({
         default: Date.now
     },
     is_active: {
-        type: String,
-        enum: ['yes', 'no'],
-        default: 'yes' // Giá trị mặc định nếu không có giá trị được cung cấp
+        type: Boolean,
+        default: true,
+        required: true
     }
 });
 

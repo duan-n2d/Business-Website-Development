@@ -40,9 +40,10 @@ const ProductSchema = new mongoose.Schema({
     },
     rating: {
         type: Number,
-        min: 1, // Đánh giá tối thiểu
-        max: 5, // Đánh giá tối đa
-        default: 0 // Giá trị mặc định
+        required: true,
+        min: 1,
+        max: 5,
+        default: 5
     },
     discount_id: {
         type: String,

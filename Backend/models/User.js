@@ -4,7 +4,6 @@ const UserSchema = new mongoose.Schema({
     user_id: {
         type: Number,
         required: true,
-        // Cái này là primary key
     },
     first_name: {
         type: String,
@@ -23,9 +22,9 @@ const UserSchema = new mongoose.Schema({
         required: true
     },
     email_verified: {
-        type: String,
-        enum: ['yes', 'no'],
-        default: 'no' // Giá trị mặc định chưa được verified
+        type: Boolean,
+        default: false,
+        required: true
     },
     address: {
         type: String,

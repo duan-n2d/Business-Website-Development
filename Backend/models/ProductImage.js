@@ -7,14 +7,6 @@ const ProductImageSchema = new mongoose.Schema({
     },
     image_url: {
         type: String,
-        validate: {
-            validator: function(value) {
-                // Sử dụng biểu thức chính quy để kiểm tra tính hợp lệ của URL
-                const urlPattern = /^(https?|ftp):\/\/[^\s/$.?#].[^\s]*$/;
-                return urlPattern.test(value);
-            },
-            message: 'Invalid URL format'
-        },
         required: true
     },
     numerical_order: {
@@ -24,9 +16,9 @@ const ProductImageSchema = new mongoose.Schema({
         index: true
     },
     is_created: {
-        type: String,
-        enum: ['yes', 'no'],
-        default: 'yes' // Giá trị mặc định nếu không có giá trị được cung cấp
+        type: Boolean,
+        default: true,
+        required: true
     },
     created_at: {
         type: Date,

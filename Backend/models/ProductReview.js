@@ -22,9 +22,9 @@ const ProductReviewSchema = new mongoose.Schema({
         required: true
     },
     is_active: {
-        type: String,
-        enum: ['yes', 'no'],
-        default: 'yes' // Giá trị mặc định nếu không có giá trị được cung cấp
+        type: Boolean,
+        default: true,
+        required: true
     },
     created_at: {
         type: Date,

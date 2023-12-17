@@ -11,10 +11,10 @@ const PaymentMethodSchema = new mongoose.Schema({
         default: 'Credit Card'
     },
     is_active: {
-        type: String,
-        enum: ['yes', 'no'],
-        default: 'yes' // Giá trị mặc định nếu không có giá trị được cung cấp
-    }
+        type: Boolean,
+        default: true,
+        required: true
+    },
 });
 
 module.exports = mongoose.model('PaymentMethod', PaymentMethodSchema);
