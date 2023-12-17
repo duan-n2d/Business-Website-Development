@@ -1,9 +1,38 @@
 import React from 'react';
+import { useState } from 'react';
+import axios from 'axios';
+
 import Logo from '../assets/Gakki.png';
 import LoginBanner from '../assets/banner_login.png';
 import LoginBackground from '../assets/bg_login_page.png';
 
-const Login = () => {
+const Login = () =>{
+  // username -> email/phone
+  const [username, setUsername] = useState('');
+  const [password, setPassword] = useState('');
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    try {
+      //Login
+      const res = await axios.post('http://localhost:5000/api/auth/login', {
+        username,
+        password,
+      });
+
+      //Save token to local storage
+      localStorage.setItem('tokenStore', res.data.token);
+
+      //Check role
+      if(res.data.role === 1) window.location.href = '/admin';
+
+      //Redirect to homepage
+      window.location.href = '/';
+    } catch (err){
+      alert(err.response.data.msg);
+    }
+  }
+
   return (
     <div className="py-6 bg-cover bg-repeat bg-center h-screen"
     style={{backgroundImage: `url(${LoginBackground})`}}>
@@ -20,32 +49,42 @@ const Login = () => {
           </div>
 
           <h2 className="mt-2 text-2xl font-extrabold text-gray-800 text-center uppercase">Đăng nhập</h2>
-          <div className="mt-4">
-            <label className="block text-gray-700 text-sm font-bold mb-2">Địa chỉ email/Số điện thoại</label>
-            <input
-              className="bg-gray-200 text-gray-700 focus:outline-none focus:shadow-outline border border-gray-300 rounded-[80px] py-2 px-4 block w-full appearance-none"
-              type="email"
-            />
-          </div>
 
-          <div className="mt-4">
-            <div className="flex justify-between">
-              <label className="block text-gray-700 text-sm font-bold mb-2">Mật khẩu</label>
-              <a href="#" className="text-xs text-gray-500">
-                Quên mật khẩu?
-              </a>
+          <form onSubmit = {handleSubmit}>
+            <div className="mt-4">
+              <label className="block text-gray-700 text-sm font-bold mb-2">Địa chỉ email/Số điện thoại</label>
+              <input
+                className="bg-gray-200 text-gray-700 focus:outline-none focus:shadow-outline border border-gray-300 rounded-[80px] py-2 px-4 block w-full appearance-none"
+                type="text"
+                value={username}
+                onChange={(e) => setUsername(e.target.value)}
+                required
+              />
             </div>
-            <input
-              className="bg-gray-200 text-gray-700 focus:outline-none focus:shadow-outline border border-gray-300 rounded-[80px] py-2 px-4 block w-full appearance-none"
-              type="password"
-            />
-          </div>
 
-          <div className="mt-8">
-            <button className="bg-green-200 text-gray-800 font-bold py-2 px-4 w-full rounded-[80px]">
-              Đăng nhập
-            </button>
-          </div>
+            <div className="mt-4">
+              <div className="flex justify-between">
+                <label className="block text-gray-700 text-sm font-bold mb-2">Mật khẩu</label>
+                <a href="#" className="text-xs text-gray-500">
+                  Quên mật khẩu?
+                </a>
+              </div>
+              <input
+                className="bg-gray-200 text-gray-700 focus:outline-none focus:shadow-outline border border-gray-300 rounded-[80px] py-2 px-4 block w-full appearance-none"
+                type="password"
+                value={password}
+                onChange={(e) => setPassword(e.target.value)}
+                required
+              />
+            </div>
+
+            <div className="mt-8">
+              <button className="bg-green-200 text-gray-800 font-bold py-2 px-4 w-full rounded-[80px]" type='submit'>
+                Đăng nhập
+              </button>
+            </div>
+          </form>
+
           <div className="mt-4">
             <p className='text-xs text-center text-gray-500'>Bạn chưa có tài khoản?</p>
           </div>

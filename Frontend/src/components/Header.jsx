@@ -1,4 +1,3 @@
-import React from "react";
 import logo from "../assets/Gakki.png";
 import { PiPackageFill } from "react-icons/pi";
 import { PiMapPinFill } from "react-icons/pi";
@@ -81,8 +80,6 @@ function Header() {
                     </div>
                 </div>
             </div>
-
-            <NavBar/>
         </div>
     </>
   );
