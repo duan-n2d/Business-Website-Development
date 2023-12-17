@@ -1,27 +1,40 @@
 const mongoose = require('mongoose');
 
-const UserSchema = new mongoose.Schema({
+const OrderSchema = new mongoose.Schema({
     order_id: {
         type: String,
         required: true
-        // Cái này là primary key
     },
-    customer_id:{
+    customer:{
+        type: Schema.Types.ObjectId,
+        ref: 'User',
+        required: true
+    },
+    status: {
         type: String,
-        required: true
+        enum: ['Pending', 'Processing', 'Shipped', 'Delivered', 'Cancelled'],
+        default: 'Pending'
     },
-    total_price:{
-        type: Number,
-        required: true
-    },
-    shipment_id: {
+    discount_id: {
         type: String,
-        required: true
+        required: false
     },
-    payment_method: {
-        type: String,
-        required: true
-    }
+    created_at: {
+        type: Date,
+        default: Date.now
+    },
+    // total_price:{
+    //     type: Number,
+    //     required: true
+    // },
+    // shipment_id: {
+    //     type: String,
+    //     required: true
+    // },
+    // payment_method: {
+    //     type: String,
+    //     required: true
+    // }
 });
 
-module.exports = mongoose.model('User', UserSchema);
+module.exports = mongoose.model('Order', OrderSchema);
