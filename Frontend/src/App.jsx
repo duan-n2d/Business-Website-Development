@@ -6,6 +6,7 @@ import Login from './pages/Login'
 import Register from './pages/Register'
 import ErrorPage from './pages/ErrorPage'
 import Home from './pages/Home'
+import Admin from './pages/Admin'
 
 
 function App() {
@@ -13,10 +14,11 @@ function App() {
   return (
     <>
       <Routes className = 'root'>
-        <Route path='/'element={<Home/>} />
+        <Route path='/' element={<Home/>} />
         <Route path='/login' element={<Login/>} />
         <Route path='/register' element={<Register/>} />
         <Route path='*' element={<ErrorPage/>} />
+        <Route path='/admin' element={<Admin/>} />
       </Routes>
     </>
   )

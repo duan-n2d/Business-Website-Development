@@ -5,8 +5,6 @@ import { PiEnvelopeFill } from "react-icons/pi";
 import { PiMagnifyingGlassBold  } from "react-icons/pi";
 import { PiShoppingCartFill } from 'react-icons/pi';
 
-import NavBar from "./NavBar";
-
 function Header() {
   return (
     <>
