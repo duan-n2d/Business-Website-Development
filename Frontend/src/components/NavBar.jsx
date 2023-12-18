@@ -9,9 +9,10 @@ import {
   SquaresPlusIcon,
   XMarkIcon,
 } from "@heroicons/react/24/outline";
+import AboutUs from "./AboutUs";
 import { ChevronDownIcon } from "@heroicons/react/20/solid";
 import { TERipple } from "tw-elements-react";
-import img1 from '../assets/logoweb__.png'
+//import img1 from '../assets/logoweb__.png'
 const products = [
   {
     name: "ĐÀN PIANO",
@@ -60,7 +61,7 @@ export default function NavBar() {
           <a href="#" className="-m-1.5 p-1.5">
             <img
               className="w-64 "
-              src={img1}
+              //src={img1}
               alt=""
             />
           </a>
@@ -99,21 +100,21 @@ export default function NavBar() {
           </div>
         </div>
         <div dir="rtl">
-          <div className="px-8 border-s-2 ">
+          <div className="px-8 text-center border-s-2 ">
             <a
               href="/#"
-              className="text-sm font-semibold leading-6 text-gray-900"
+              className="text-sm  font-semibold leading-6 text-gray-900"
             >
-              ĐĂNG NHẬP/ ĐĂNG KÝ
+              ĐĂNG NHẬP/ĐĂNG KÝ
             </a>
           </div>
         </div>
 
         <div dir="rtl">
-          <div className="px-8 border-s-2 ">
+          <div className="px-8 container text-center border-s-2 ">
             <a
               href="/#"
-              className="text-sm font-semibold leading-6 text-gray-900"
+              className="text-sm font-semibold leading-6  text-gray-900"
             >
               LIÊN HỆ
             </a>
