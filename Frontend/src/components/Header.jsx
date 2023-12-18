@@ -53,10 +53,14 @@ function Header() {
                     <div className="w-1/3 flex justify-between items-center text-cyan-900">
                         <div className="">
                             <div className="login">
-                                <div className="font-bold uppercase">Đăng nhập</div>
+                                <div className="font-bold uppercase">
+                                    <a href="/login">Đăng nhập</a>
+                                </div>
                             </div>
                             <div className="register">
-                                <div className="font-bold uppercase">Đăng ký</div>
+                                <div className="font-bold uppercase">
+                                    <a href="/register">Đăng ký</a>
+                                </div>
                             </div>
                         </div>
 
