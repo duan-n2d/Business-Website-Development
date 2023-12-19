@@ -10,7 +10,11 @@ const MongoDB_URL = `mongodb+srv://admin-gakki:admin-gakki-web@gakki-web.st5ovit
 
 const connectDB = async () => {
 	try {
-		await mongoose.connect(MongoDB_URL)
+		await mongoose.connect(MongoDB_URL,
+			{
+				useNewUrlParser: true,
+				useUnifiedTopology: true,
+			})
 
 		console.log('MongoDB connected')
 	} catch (error) {
