@@ -95,13 +95,14 @@ function AboutUs() {
         </div>
 
         {/*video*/}
-        <div className="my-5 px-[100px]">
-          <iframe
-            className="w-full h-[600px] aspect-auto"
-            src="https://www.youtube.com/embed/dQw4w9WgXcQ?si=5vAlOhguVgqbfmGL"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-            allowFullScreen
-          ></iframe>
+        <div className="my-5 md:mx-24">
+          <div className="container relative overflow-hidden w-full" style={{ paddingTop: '56.25%' }}>
+            <iframe
+              className="responsive-iframe absolute top-0 left-0 bottom-0 right-0 w-full h-full"
+              src="https://www.youtube.com/embed/dQw4w9WgXcQ?si=5vAlOhguVgqbfmGL"
+              allowFullScreen
+            ></iframe>
+          </div>
         </div>
 
         <div className="flex flex-row px-[100px] max-[1000px]:flex-col max-[1000px]:w-auto max-[900px]:px-[0px]">
