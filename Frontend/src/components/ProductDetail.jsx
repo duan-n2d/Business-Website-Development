@@ -179,3 +179,7 @@ function ProductDetails() {
 }
 export default ProductDetails;
 
+<<<<<<< HEAD
+=======
+export default ProductDetail;
+>>>>>>> origin/main
