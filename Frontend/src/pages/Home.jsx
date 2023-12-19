@@ -6,6 +6,7 @@ import Header from "../components/Header";
 import NavBar from "../components/NavBar";
 import Banner from "../components/Banner";
 import CarouselWithContent from "../components/Carousel";
+import AboutUs from "../components/AboutUs";
 
 export default function Home() {
     return (
@@ -14,6 +15,7 @@ export default function Home() {
             <NavBar />
             <Banner />
             <CarouselWithContent/>
+            <AboutUs/>
         </div>
     );
 }

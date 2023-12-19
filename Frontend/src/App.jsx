@@ -13,7 +13,7 @@ function App() {
   // const user = useSelector(state => state.user)
   return (
     <>
-      <Routes className = 'root'>
+      <Routes className = 'root font-nunito '>
         <Route path='/' element={<Home/>} />
         <Route path='/login' element={<Login/>} />
         <Route path='/register' element={<Register/>} />

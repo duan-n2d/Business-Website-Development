@@ -1,6 +1,4 @@
 import React from "react";
-import NavBar from "./NavBar";
-import Banner from "./Banner";
 import logo from "../assets/aboutus/logoweb_gakki.png";
 import hinh2 from "../assets/aboutus/hinh2.png";
 import hinh_3 from "../assets/aboutus/hinh_3.png";
@@ -18,8 +16,6 @@ import luan from "../assets/aboutus/luan.jpg";
 function AboutUs() {
   return (
     <div className="text-[#1B3735]">
-      <NavBar />
-      <Banner />
       <div className=" container mx-auto px-[50px] font-nunito mt-8">
         <h1 className="text-30 text-center font-bold mb-4 mx-10">About Us</h1>
         <div className="flex flex-row px-[100px] max-[900px]:flex-col max-[900px]:px-[0px]">
@@ -99,10 +95,12 @@ function AboutUs() {
         </div>
 
         {/*video*/}
-        <div className="my-5 px-[100px] max-[900px]:px-[0px]">
+        <div className="my-5 px-[100px]">
           <iframe
-            className="w-full h-[400px] aspect-auto"
-            src="https://www.youtube.com/watch?v=dQw4w9WgXcQ"
+            className="w-full h-[600px] aspect-auto"
+            src="https://www.youtube.com/embed/dQw4w9WgXcQ?si=5vAlOhguVgqbfmGL"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowFullScreen
           ></iframe>
         </div>
 
