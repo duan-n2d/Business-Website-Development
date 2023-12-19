@@ -55,7 +55,7 @@ function Header() {
                                     <a href="/login">Đăng nhập</a>
                                 </div>
                             </div>
-                            <div className="register">
+                            <div className="register mt-2">
                                 <div className="font-bold uppercase">
                                     <a href="/register">Đăng ký</a>
                                 </div>
