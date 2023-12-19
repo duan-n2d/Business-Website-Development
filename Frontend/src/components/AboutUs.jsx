@@ -1,5 +1,5 @@
 import React from "react";
-import logo from "../assets/aboutus/logoweb_gakki.png";
+import logo from "../assets/Gakki.png";
 import hinh2 from "../assets/aboutus/hinh2.png";
 import hinh_3 from "../assets/aboutus/hinh_3.png";
 import hinh4 from "../assets/aboutus/hinh4.png";
