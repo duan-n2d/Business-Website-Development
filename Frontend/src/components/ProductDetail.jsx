@@ -1,181 +1,285 @@
-import React from "react";
-import img1 from '../assets/Gakki.png'
+import React, { useState } from "react";
+import img1 from '../assets/logoweb__.png';
+import img2 from '../assets/other-image-1.jpg';
+import img3 from '../assets/other-image-2.jpg';
+import img4 from '../assets/other-image-3.jpg';
+import { Star } from "@phosphor-icons/react";
+import { Cube } from "@phosphor-icons/react";
+import { Truck } from "@phosphor-icons/react";
+import { ArrowRight } from "@phosphor-icons/react";
 
-function ProductDetails() {
+const ProductDetails = () => {
+  const [isZoomed, setZoomed] = useState(false);
+  const [position, setPosition] = useState({ x: 0, y: 0 });
+  const [selectedImage, setSelectedImage] = useState(img1);
+
+  const handleMouseMove = (e) => {
+    const { left, top, width, height } = e.target.getBoundingClientRect();
+    const x = (e.clientX - left) / width;
+    const y = (e.clientY - top) / height;
+
+    setPosition({ x, y });
+  };
+
+  const handleThumbnailClick = (image) => {
+    setZoomed(false); // Reset zoom when switching images
+    setSelectedImage(image);
+  };
+
+  const zoomedStyle = {
+    backgroundImage: `url(${selectedImage})`,
+    backgroundPosition: `${position.x * 100}% ${position.y * 100}%`,
+    backgroundSize: '150% 150%', // Scale to 125%
+    width: '100%', // Keep the width 100%
+    height: '100%', // Keep the height 100%
+  };
+
   return (
+    <div className="font-nunito">
+      <div className="py-5 pl-4">
+        <h1 className="font-bold ">
+          Fender CB-60SCE Acoustic Bass Guitar, Natural
+        </h1>
+        <div className="flex w-[30%]">
+          <span className="flex gap-2 w-[50%]">
+            <Star className="" size={36}></Star>
+            <Star className="" size={36}></Star>
+            <Star className="" size={36}></Star>
+            <Star className="" size={36}></Star>
+            <Star className="" size={36}></Star>
+          </span>
+          <span>
 
-    <div className="bg-white  ">
+            <button className="align-middle mt-2 mx-3 w-32">
+              <a href="" className="font-medium text-center text-[#1B3735]">Thêm đánh giá</a>
+            </button>
+          </span>
+        </div>
+      </div>
 
-      <div className="flex">
-        <div className="relative">
-          <p className=" ml-16 mt-3 font-bold text-black text-[24px] leading-[normal]">
-            FENDER CB-60SCE ACOUSTIC BASS GUITAR, NATURAL
-          </p>
 
-          <div className="items-center absolute  [font-family:'Inter-MediumItalic',Helvetica] font-medium italic text-[#1b3735] text-[18px] text-center tracking-[0.36px] leading-[34px] whitespace-nowrap ml-20 flex ">
-            <div className="flex items-center">
-              <svg className="w-10 h-10 hover:text-yellow-300 text-gray-400 ms-1 " aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 22 20">
-                <path d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z" />
-              </svg>
-              <svg className="w-10 h-10 hover:text-yellow-300 text-gray-400 ms-1" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 22 20">
-                <path d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z" />
-              </svg>
-              <svg className="w-10 h-10 hover:text-yellow-300 text-gray-400 ms-1" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 22 20">
-                <path d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z" />
-              </svg>
-              <svg className="w-10 h-10 hover:text-yellow-300 text-gray-400 ms-1" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 22 20">
-                <path d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z" />
-              </svg>
-              <svg className="w-10 h-10 hover:text-yellow-300 text-gray-400" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 22 20">
-                <path d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z" />
-              </svg>
-            </div>
-            <p className="mx-7 text-[30px] ">|</p>
-            <p className="text-[30px] mt-3">Thêm Đánh Giá</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      <div className=" flex sm:flex-wrap ">
+
+        <div className=" flex w-[70%] sm:w-[100%]  md:w-[70%] " >
+
+
+
+
+
+
+          <div className="ml-4 grid grid-cols-1 gap-6 ">
+            <img className="border border-gray-400"
+              src={img1}
+              alt="Thumbnail 1"
+              style={{ width: '100px', height: '100px', marginRight: '10px', cursor: 'pointer' }}
+              onClick={() => handleThumbnailClick(img1)}
+            />
+            <img className="border border-gray-400"
+              src={img2}
+              alt="Thumbnail 2"
+              style={{ width: '100px', height: '100px', marginRight: '10px', cursor: 'pointer' }}
+              onClick={() => handleThumbnailClick(img2)}
+            />
+            <img className="border border-gray-400"
+              src={img3}
+              alt="Thumbnail 3"
+              style={{ width: '100px', height: '100px', marginRight: '10px', cursor: 'pointer' }}
+              onClick={() => handleThumbnailClick(img3)}
+            />
+            <img className="focus:bg-[#D9D9D9] border border-gray-400"
+              src={img4}
+              alt="Thumbnail 4"
+              style={{ width: '100px', height: '100px', cursor: 'pointer' }}
+              onClick={() => handleThumbnailClick(img4)}
+            />
           </div>
 
 
-
-
-          <div className="flex flex-col my-28 ml-20 ">
-            <button>
-              <img className="w-40 bg-slate-500 my-10" src={img1} alt="" />
-            </button>
-
-            <button>
-              <img className="w-40 bg-slate-500 my-10" src={img1} alt="" />
-            </button>
-
-            <button>
-              <img className="w-40 bg-slate-500 my-10" src={img1} alt="" />
-            </button>
+          <div
+            className="relative overflow-hidden mx-4"
+            onMouseMove={handleMouseMove}
+            onMouseEnter={() => setZoomed(true)}
+            onMouseLeave={() => setZoomed(false)}
+            style={{ width: '800px', height: '800px', marginRight: '40px' }}
+          >
+            <img
+              className="w-[100%] h-[100%] focus:bg-[#D9D9D9]"
+              src={selectedImage}
+              alt="Hình ảnh"
+              style={{ display: isZoomed ? 'none' : 'block' }}
+            />
+            {isZoomed && (
+              <div
+                className="absolute bg-no-repeat bg-cover"
+                style={zoomedStyle}
+              ></div>
+            )}
           </div>
+
+
         </div>
-        <div className="flex items-center ">
-          <img src={img1} alt="" className="flex  -ml-52 mt-52 w-[842px] h-[811px]   bg-gray-500" />
-        </div>
-        <div className="flex items-start mt-52  bg-green-300">
-          <table className="mt-28 border-spacing-6">
+
+
+
+
+
+
+
+
+        <div className="w-[30%] sm:w-[100%] md:w-[30%] pl-6 ">
+          <table className="bg-[#F3FFF1] w-[95%] ml-6 py-10">
+            <tr>
+              <td className="font-bold">
+                <p className="">1.000.000Đ</p>
+              </td>
+              <td rowSpan={2}>
+                <img src={img1} alt="" className="w-[90px] h-[90px]" />
+              </td>
+            </tr>
+            <tr>
+              <td className="font-medium">
+                Số lượng
+              </td>
+            </tr>
+            <tr>
+              <td colSpan={2} className="text-center " >
+                <button className="  text-white font-bold rounded bg-[#2D4B49] w-[80%] h-[56.24px] border border-[#96FEAE] flex justify-center align-middle items-center gap-3">
+                  <a href="">Thêm Vào Giỏ Hàng</a>
+                  <ArrowRight color="#96FEAE"></ArrowRight>
+                </button></td>
+            </tr>
+          </table>
+          <table className="bg-[#F3FFF1] w-[100%] ml-6 ">
+            <tr c>
+              <td >
+                <Cube size={34}></Cube>
+              </td>
+              <td className="text-[#2D4B49]">
+                Sản phẩm còn hàng
+              </td>
+            </tr>
             <tr>
               <td >
-                <p className="text-8xl mx-20 "><b>1.000.000Đ</b></p>
-              </td>
-              <td rowSpan={2} >
-                <img className="w-44 bg-white mx-9" src={img1} alt="" />
-              </td>
-            </tr>
-            <tr>
-              <td><span className="text-5xl ml-24 mt-10">Số lượng</span>
-                <button className="text-5xl ml-10 w-14 bg-white border">-</button>
-                <span className="text-4xl mx-3  bg-white border" >1</span>
-                <button className="text-5xl  w-14 bg-white border">-</button>
-              </td>
-            </tr>
-            <tr>
-              <td colSpan={2}>
-                <button className="ml-20 h-40 w-auto mt-10  bg-green-800 rounded-3xl">
-                  <p className="text-7xl mx-6  text-white bg-clip-border  my-5 font-bold">Thêm Vào Giỏ Hàng</p>
-                </button>
-              </td>
-            </tr>
+                <Truck size={34}></Truck>
 
-            <tr >
-              <td className="h-32">
-                Logo
-                <span className="text-5xl ml-20 font-bold  ">SẢN PHẨM CÒN HÀNG</span>
               </td>
-
-            </tr>
-            <tr >
-              <td className="h-16">
-                Logo
-                <span className="text-5xl ml-20 font-bold  ">GIAO HÀNG TẬN NƠI</span>
-              </td>
-            </tr>
-            <tr>
-              <td>
-                <p className="text-center text-3xl mb-40 tracking-wider italic " >Cách thức giao hàng có thể khác nhau <br />khi bạn thanh toán tùy thuộc vào <br />
-                  sản phẩm trong giỏ hàng của bạn</p>
+              <td className="text-[#2D4B49]">
+                Sản phẩm còn hàng
               </td>
             </tr>
           </table>
+          <p className="font-medium text-[#1B3735] ml-6 bg-[#F3FFF1]">
+            Cách thức giao hàng có thể khác nhau  khi bạn thanh toán tùy thuộc vào  sản phẩm trong giỏ hàng của bạn
+          </p>
+        </div>
+      </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      <div className="grid grid-cols-1 mx-5 my-9 sm:grid-cols-1 gap-4 lg:grid-cols-2 md:grid-cols-2" >
+
+
+
+
+        <div className="w-[100%]">
+
+
+          <p className="text-center text-[#1B3735] font-bold">Thông Số Kỹ Thuật</p>
+
+
+
+          <table className=" border border-black text-[#1B3735] font-bold w-[100%] ">
+            <tr className="bg-[#CAFFD6]">
+              <td className="border border-black">
+                Thông tin
+              </td>
+              <td>
+                Thông Số
+              </td>
+            </tr>
+            <tr className="border border-black">
+              <td className="border border-black">
+                Kiểu thân
+              </td>
+              <td className="border border-black">
+                Concert-sized
+              </td>
+            </tr>
+            <tr className="border border-black">
+              <td className="border border-black">
+                Gỗ Thân
+              </td>
+              <td className="border border-black" >
+                olid Spruce Top, Laminated Mahogany Back & Sides
+              </td>
+            </tr>
+            <tr className="border border-black">
+              <td className="border border-black">
+                Màu Thân
+              </td>
+              <td>
+                Natural
+              </td>
+            </tr >
+            <tr className="border border-black">
+              <td className="border border-black" >
+                Mặt cần
+              </td>
+              <td>
+                Laurel
+              </td>
+            </tr>
+
+          </table>
+
+
+        </div>
+
+
+
+
+
+        <div>
+          <p className="text-center text-[#1B3735] font-bold">Thông Tin Sản Phẩm </p>
+          <p className="w-[90%] mx-auto bg-[#FFF5E3]  p-9 text-justify">
+            Series Classic Design hoàn thiện cùng CB-60SCE, bass acoustic vượt xa tầm khúc của mình. Model này sử dụng taper mảnh, dáng cần dễ thao tác như trên tất cả guitar Classic Design. Mặt đàn gỗ solid spruce và lưng & mặt bên gỗ mahogany góp phần vào thân đàn kích thước concert, tạo nên âm bass dịu và articulate. Người bạn đồng hành hoàn hảo khi hoạt động độc lập, CB-60SCE được trang bị electronics Fishman® linh hoạt, thích hợp cả trên sân khấu và trong studio.
+          </p>
         </div>
 
       </div>
-      <div className="flex">
-        <table className="ml-40 text-3xl my-40">
-          <tr className="bg-green-300">
-            <th className="">Thông tin</th>
-            <th>Thông số</th>
-          </tr>
-          <tr>
-            <td>
-              Kiểu thân
-            </td>
-            <td>
-              Concert-Size
-            </td>
-          </tr>
-          <tr>
-            <td>
-              Gỗ Thân
-            </td>
-            <td>
-              Solid Spruce Top,Larrinated Mathhograity Back & Sides
-            </td>
-          </tr>
-          <tr>
-            <td>
-              Màu thân
-            </td>
-            <td>
-              Natural
-            </td>
-          </tr>
-          <tr>
-            <td>
-              Măt Cân          </td>
-            <td>
-              Lauriel
-            </td>
-          </tr>
-          <tr>
-            <td>
-              Độ Cong cần
-            </td>
-            <td>
-              12" 305mm
-            </td>
-          </tr>
-          <tr>
-            <td>
-              Scale Lenght
-            </td>
-            <td>
-              32''' 813mm
-            </td>
-          </tr>
-          <tr>
-            <td>
-              Phím đàn
-            </td>
-            <td>
-              22
-            </td>
-          </tr>
-        </table>
-        <div className=" w-full text-center ml-56">
-          <h1 className="text-7xl my-10">Thông Tin Sản Phẩm</h1>
-          <h1 className="bg text-center text-3xl">
-            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Explicabo eos consectetur, ducimus doloremque iusto facilis. Harum officiis, totam porro vel tenetur, sed omnis suscipit quos deserunt quae veritatis? Sequi, iure?
-          </h1>
-        </div>
 
-      </div>
+
+
 
     </div>
-
   );
-}
-export default ProductDetails;
+};
 
+export default ProductDetails;
