@@ -3,7 +3,6 @@ const jwt = require("jsonwebtoken");
 const Account = require("../models/Account");
 const User = require("../models/User");
 
-//API
 const loginController = async (req, res) => {
     const { username, password } = req.body;
 
@@ -68,7 +67,6 @@ const registerController = async (req, res) => {
             .status(400)
             .json({ success: false, message: "Phone number already taken" });
 
-        //check role is admin or user
         if (role !== "admin" && role !== "user")
             return res
             .status(400)
@@ -86,7 +84,7 @@ const registerController = async (req, res) => {
     }
     catch (error) {
         console.log(error);
-        res.status(500).json({ success: false, message: "Internal server error" });
+        res.status(500).json({ success: false, message: "Internal server error:" +  error.message});
     }
 }    
 
