@@ -1,6 +1,7 @@
 const argon2 = require("argon2");
 const jwt = require("jsonwebtoken");
 const Account = require("../models/Account");
+const User = require("../models/User");
 
 //API
 const getAllUserController = async (req, res) => {
@@ -12,6 +13,24 @@ const getAllUserController = async (req, res) => {
     res.status(500)
     .json({ success: false, message: "Internal server error" });
   }
+}
+
+const getUserByIdController = async (req, res) => {
+  const user_id = req.params.id;
+  const user = await User.findOne({ user_id: user_id });
+  try {
+    if (!user)
+      return res
+      .status(400)
+      .json({ success: false, message: "User not found"});
+  }
+  catch (error) {
+    console.log(error);
+    res.status(500)
+    .json({ success: false, message: "Internal server error" });
+  }
+  
+  res.json({ success: true, user_id: user_id, role: user.role });
 }
 
 const updateUserController = async (req, res) => {
@@ -42,5 +61,6 @@ const updateUserController = async (req, res) => {
 
 module.exports = {
   getAllUserController,
-  updateUserController
+  updateUserController,
+  getUserByIdController
 }

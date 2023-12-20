@@ -5,7 +5,7 @@ const jwt = require('jsonwebtoken')
 const verifyToken = require('../middleware/auth')
 
 const { loginController, registerController, forgotPasswordController } = require('../controllers/AccountController')
-const { getAllUserController, updateUserController } = require('../controllers/UserController')
+const { getAllUserController, updateUserController, getUserByIdController } = require('../controllers/UserController')
 const { getAllProducts } = require('../controllers/ProductController')
 const { getAllDiscountController, createDiscountController, updateDiscountController, deleteDiscountController } = require('../controllers/DiscountController')
 
@@ -21,6 +21,7 @@ router.post('/forgot-password', forgotPasswordController)
 router.get('/products', getAllProducts)
 
 router.get('/users', getAllUserController)
+router.get('/user/:id', getUserByIdController)
 router.put('/update-users', updateUserController)
 
 router.get('/discounts', getAllDiscountController)

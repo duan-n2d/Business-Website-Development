@@ -7,34 +7,29 @@ import LoginBanner from '../assets/banners/banner_login.png';
 import LoginBackground from '../assets/banners/bg_login_page.png';
 
 const Login = () =>{
-  // username -> email/phone
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      //Login
       const res = await axios.post('http://localhost:5000/api/auth/login', {
         username,
         password,
       });
 
-      //Save token to local storage
       localStorage.setItem('tokenStore', res.data.token);
 
-      //Check role
-      if(res.data.role === 1) window.location.href = '/admin';
+      const role = res.data.role;
 
-      //Redirect to homepage
-      window.location.href = '/';
+      if (role === 'admin') {
+        window.location.href = '/admin';
+      } else {
+        window.location.href = '/';
+      }
     } catch (err){
       alert(err.response.data.msg);
     }
-
-    // Alert login successfull
-
-
   }
 
   return (
