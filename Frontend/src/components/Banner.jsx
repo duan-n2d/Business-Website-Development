@@ -1,10 +1,10 @@
 import React from 'react';
-// import image from assets
-import url from '../assets/banners/banner01.png';
 
-function Banner() {
+function Banner(ImgBanner) {
   return (
-    <img src={url} alt='Banner' className="object-cover w-full h-full"/>
+    <div className="w-full">
+      <img className="w-full" src={ImgBanner} alt="" />
+    </div>
   );
 }
 

@@ -1,40 +1,41 @@
 
 POST http://localhost:5000/api/auth/register
 Content-Type: application/json
+// Account in models/Account.js
 
 {
-  "customer_id": 3,
-  "username": "ddddd",
-  "password": "ddddd",
-  "first_name": "John",
-  "last_name": "Doe",
-  "email": "john.doe@example.com",
-  "phone_number": 1234567890,
-  "address": "123 Main Street, City, Country"
+  "first_name": "Gustavo",
+  "last_name": "Urrutia",
+  "email": "admin2@gmail.com",
+  "phone_number": "030000002",
+  "password": "123456",
+  "role": "admin"
 }
 
-###
-
+### Login
 POST http://localhost:5000/api/auth/login
 Content-Type: application/json
 
 {
-  "username": "dd",
-  "password": "dd"
+  "username": "gu0006",
+  "password": "123456"
 }
 
-
-###
-POST http://localhost:5000/api/auth/create-product
+### Get all products
+GET http://localhost:5000/api/products
 Content-Type: application/json
 
 {
-    "product_id": "5",
-    "product_name": "Acoustic Guitar - Model A3",
-    "description": "High-quality acoustic guitar with a spruce top and mahogany back and sides.",
-    "quantity_in_stock": 50,
-    "purchase_price": 300,
-    "selling_price": 500,
-    "brand_id": "guitar_brand_1",
-    "category_id": "guitar_category_1"
-  }
+  "product_id": "1"
+}
+
+### Forgot password
+POST http://localhost:5000/api/auth/forgot-password
+Content-Type: application/json
+
+{
+  "email": "gustavo.U@gmail.com"
+}
+
+### Get all users
+GET http://localhost:5000/api/users
