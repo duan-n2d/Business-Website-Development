@@ -34,7 +34,7 @@ function App() {
       <Banner/> */}
       {/* <Blogs></Blogs> */}
       <BlogDetail></BlogDetail>
-      <BlogRec></BlogRec>
+      {/* <BlogRec></BlogRec> */}
     </>
   )
 }
