@@ -6,13 +6,10 @@ Content-Type: application/json
 {
   "first_name": "Gustavo",
   "last_name": "Urrutia",
-  "email": "gustavo.U@gmail.com",
-  "phone_number": "1234567890",
-  "address": "1234 Main St",
-  "city": "San Diego",
-  "country": "USA",
-  "username": "gu1232",
-  "password": "123456"
+  "email": "admin2@gmail.com",
+  "phone_number": "030000002",
+  "password": "123456",
+  "role": "admin"
 }
 
 ### Login
