@@ -3,8 +3,8 @@ import { useState } from 'react';
 import axios from 'axios';
 
 import Logo from '../assets/Gakki.png';
-import LoginBanner from '../assets/banner_login.png';
-import LoginBackground from '../assets/bg_login_page.png';
+import LoginBanner from '../assets/banners/banner_login.png';
+import LoginBackground from '../assets/banners/bg_login_page.png';
 
 const Login = () =>{
   // username -> email/phone
@@ -31,6 +31,10 @@ const Login = () =>{
     } catch (err){
       alert(err.response.data.msg);
     }
+
+    // Alert login successfull
+
+
   }
 
   return (
@@ -48,7 +52,7 @@ const Login = () =>{
             <img src={Logo} alt="Logo" className="w-1/2 mx-auto object-cover object-center h-[50px] w-[100px] transform scale-150" />
           </div>
 
-          <h2 className="mt-2 text-2xl font-extrabold text-gray-800 text-center uppercase">Đăng nhập</h2>
+          <h2 className="mt-4 text-2xl font-extrabold text-gray-800 text-center uppercase">Đăng nhập</h2>
 
           <form onSubmit = {handleSubmit}>
             <div className="mt-4">

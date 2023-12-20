@@ -1,5 +1,5 @@
 import React from "react";
-import img1 from '../assets/logoweb__.png'
+import img1 from '../assets/Gakki.png'
 
 function ProductDetails() {
   return (

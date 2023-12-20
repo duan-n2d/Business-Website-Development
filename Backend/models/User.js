@@ -28,16 +28,12 @@ const UserSchema = new mongoose.Schema({
     },
     address: {
         type: String,
-        required: true
     },
     city: {
         type: String,
-        required: true
     },
     country: {
         type: String,
-        default: 'Vietnam',
-        required: true
     },
     role: {
         type: String,
@@ -47,15 +43,6 @@ const UserSchema = new mongoose.Schema({
         type: Date,
         default: Date.now
     }
-    // username: {
-    //     type: String,
-    //     required: true
-    // },
-    // password: {
-    //     type: String,
-    //     required: true
-    // },
-
 });
 
 module.exports = mongoose.model('User', UserSchema);

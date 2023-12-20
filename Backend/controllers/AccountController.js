@@ -44,13 +44,13 @@ const loginController = async (req, res) => {
 };
 
 const registerController = async (req, res) => {
-    const { first_name, last_name, email, phone_number, address, city, country, username, password} = req.body;
+    const { first_name, last_name, email, phone_number, password, role} = req.body;
 
-    const numberInUserId = await Account.countDocuments() + 1;
+    const numberInUserId = await User.countDocuments() + 1;
 
     const user_id = "GU" + numberInUserId.toString().padStart(4, "0");
 
-    if (!first_name || !last_name || !email || !phone_number || !address || !city || !country || !username || !password)
+    if (!first_name || !last_name || !email || !phone_number || !password)
         return res
         .status(400)
         .json({ success: false, message: "Missing information" });
@@ -68,17 +68,20 @@ const registerController = async (req, res) => {
             .status(400)
             .json({ success: false, message: "Phone number already taken" });
 
-        const account = await Account.findOne({ username });
-        if (account)
+        //check role is admin or user
+        if (role !== "admin" && role !== "user")
             return res
             .status(400)
-            .json({ success: false, message: "Username already taken" });
+            .json({ success: false, message: "Role must be admin or user" });
 
         const hashedPassword = await argon2.hash(password);
-        const newAccount = new Account({ user_id, username, password: hashedPassword});
-        await newAccount.save();
+        const newAccountWithEmail = new Account({ user_id, username: email, password: hashedPassword});
+        await newAccountWithEmail.save();
 
-        const newUser = new User({ user_id: user_id, first_name: first_name, last_name: last_name, email: email, phone_number: phone_number, address: address, city: city, country: country, role: "user"});
+        const newAccountWithPhone = new Account({ user_id, username: phone_number, password: hashedPassword});
+        await newAccountWithPhone.save();
+
+        const newUser = new User({ user_id: user_id, first_name: first_name, last_name: last_name, email: email, phone_number: phone_number, role: role});
         await newUser.save();
     }
     catch (error) {

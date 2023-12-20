@@ -3,10 +3,10 @@ import logo from "../assets/Gakki.png";
 import hinh2 from "../assets/aboutus/hinh2.png";
 import hinh_3 from "../assets/aboutus/hinh_3.png";
 import hinh4 from "../assets/aboutus/hinh4.png";
-import uudai from "../assets/aboutus/ưu_đãi_giá.png";
-import hotro from "../assets/aboutus/hỗ_trợ.png";
-import chatluong from "../assets/aboutus/chất_lượng.png";
-import giaohang from "../assets/aboutus/giao_hàng.png";
+import uudai from "../assets/icons/ưu_đãi_giá.png";
+import hotro from "../assets/icons/hỗ_trợ.png";
+import chatluong from "../assets/icons/chất_lượng.png";
+import giaohang from "../assets/icons/giao_hàng.png";
 import instrument from "../assets/aboutus/instrument.png";
 import nguyen from "../assets/aboutus/nguyen.jpg";
 import duan from "../assets/aboutus/duan.jpg";
@@ -96,9 +96,9 @@ function AboutUs() {
 
         {/*video*/}
         <div className="my-5 md:mx-24">
-          <div className="container relative overflow-hidden w-full" style={{ paddingTop: '56.25%' }}>
+          <div className="relative overflow-hidden w-full pt-[56.25%]">
             <iframe
-              className="responsive-iframe absolute top-0 left-0 bottom-0 right-0 w-full h-full"
+              className="absolute top-0 left-0 bottom-0 right-0 w-full h-full z-10"
               src="https://www.youtube.com/embed/dQw4w9WgXcQ?si=5vAlOhguVgqbfmGL"
               allowFullScreen
             ></iframe>

@@ -1,7 +1,6 @@
-import img1 from "../assets/logoweb__.png";
 import { useState } from 'react';
 
-function NavBar({ logoUrl, logo, pages }) {
+function NavBar() {
  const [showDetails, setShowDetails] = useState(false);
   const [subMenu, setSubMenu] = useState([]);
 
@@ -24,9 +23,7 @@ function NavBar({ logoUrl, logo, pages }) {
     setSubMenu([]);
   };
   return (
-    <nav className="sticky top-0 w-full z-10" style={{
-      backgroundColor: '#B7EDAB',
-    }}>
+    <nav className="sticky top-0 w-full z-1000 bg-[#B7EDAD]">
       <div className='container flex w-11/12 mx-auto'>
         <div className='flex items-center justify-between flex-row pl-12 px-8 py-4 my-auto'>
           <div className='flex items-center capitalize font-medium md:flex-row md:space-x-8 md:mt-0 al text-[#1B3735]'>
