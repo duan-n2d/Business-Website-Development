@@ -2,11 +2,16 @@ import React from 'react';
 import img1 from '../assets/logoweb__.png'
 function ContactUs() {
   return (
-    <div className='w-full h-full'>
+    <div className='w-full h-full font-nunito'>
       <p className='h-1/12 w-1/2 ml-4 text-4xl my-7'>Chúng tôi rất vui và mong chờ tin nhắn của bạn </p>
-      <div className=' h-1/5  flex justify-center'>
-          <div className='bg-slate-200 h-3/5 w-1/5 mx-2 my-10 text-center'>
-            <img src={img1} alt="" className='h-5/6 w-5/6' />
+
+
+
+
+
+      <div className=' h-1/5  grid grid-cols-4 gap-4 sm:grid-cols-1 w-[70%] mx-auto lg:grid-cols-2 lg:gap-9 xl:grid-cols-4'>
+      <div className='bg-slate-200 text-center py-8'>
+            <img src={img1} alt="" className='' />
 
 
 
@@ -15,51 +20,96 @@ function ContactUs() {
             <p className='text-center font-bold'>Chat</p>
             <p className='text-center'>
             Trò chuyện cùng chuyên gia
-10:00 sáng - 10:00 tố
+
             </p>
-            <button className='border-collapse bg-red-500 rounded-sm px-4 mx-auto my-8 h-1/6 w-3/5'>
-              Mở Khung Chat 
-            </button>
-          </div>
-          <div className='bg-slate-200 h-3/5 w-1/5 mx-2 my-10 text-center'>
-            <img src={img1} alt="" className='h-5/6 w-5/6' />
-            <p className='text-center font-bold'>Chat</p>
+            
             <p className='text-center'>
-            Trò chuyện cùng chuyên gia
-10:00 sáng - 10:00 tố
+10:00 sáng - 10:00 tối
             </p>
-            <button className='border-collapse bg-red-500 rounded-sm px-4 mx-auto my-8 h-1/6 w-3/5'>
+            <button className='border-collapse bg-[#598E75] text-white font-medium rounded-sm px-9 mx-auto w-[80%]  '>
               Mở Khung Chat 
             </button>
-          </div>
-          <div className='bg-slate-200 h-3/5 w-1/5 mx-2 my-10 text-center'>
-            <img src={img1} alt="" className='h-5/6 w-5/6' />
-            <p className='text-center font-bold'>Chat</p>
-            <p className='text-center'>
-            Trò chuyện cùng chuyên gia
-10:00 sáng - 10:00 tố
-            </p>
-            <button className='border-collapse bg-red-500 rounded-sm px-4 mx-auto my-8 h-1/6 w-3/5'>
-              Mở Khung Chat 
-            </button>
-          </div>
-          <div className='bg-slate-200 h-3/5 w-1/5 mx-2 my-10 text-center'>
-            <img src={img1} alt="" className='h-5/6 w-5/6' />
-            <p className='text-center font-bold'>Chat</p>
-            <p className='text-center'>
-            Trò chuyện cùng chuyên gia
-10:00 sáng - 10:00 tố
-            </p>
-            <button className='border-collapse bg-red-500 rounded-sm px-4 mx-auto my-8 h-1/6 w-3/5'>
-              Mở Khung Chat 
-            </button>
-          </div>
-          
-          
-          
+         
+         
+         
+          </div> <div className='bg-slate-200 text-center py-8'>
+            <img src={img1} alt="" className='' />
 
 
 
+
+            
+            <p className='text-center font-bold'>Chat</p>
+            <p className='text-center'>
+            Trò chuyện cùng chuyên gia
+
+            </p>
+            
+            <p className='text-center'>
+10:00 sáng - 10:00 tối
+            </p>
+            <button className='border-collapse bg-[#598E75] text-white font-medium rounded-sm px-9 mx-auto w-[80%]  '>
+              Mở Khung Chat 
+            </button>
+         
+         
+         
+          </div> <div className='bg-slate-200 text-center py-8'>
+            <img src={img1} alt="" className='' />
+
+
+
+
+            
+            <p className='text-center font-bold'>Chat</p>
+            <p className='text-center'>
+            Trò chuyện cùng chuyên gia
+
+            </p>
+            
+            <p className='text-center'>
+10:00 sáng - 10:00 tối
+            </p>
+            <button className='border-collapse bg-[#598E75] text-white font-medium rounded-sm px-9 mx-auto w-[80%]  '>
+              Mở Khung Chat 
+            </button>
+         
+         
+         
+          </div> <div className='bg-slate-200 text-center py-8'>
+            <img src={img1} alt="" className='' />
+
+
+
+
+            
+            <p className='text-center font-bold'>Chat</p>
+            <p className='text-center'>
+            Trò chuyện cùng chuyên gia
+
+            </p>
+            
+            <p className='text-center'>
+10:00 sáng - 10:00 tối
+            </p>
+            <button className='border-collapse bg-[#598E75] text-white font-medium rounded-sm px-9 mx-auto w-[80%]  '>
+              Mở Khung Chat 
+            </button>
+         
+         
+         
+          </div> 
+
+        
+
+
+
+
+
+
+        
+     
+         
       </div>
       <p className='text-center text-4xl '>Điền Mẫu Phía Dưới Để Liên Hệ</p>
       <div className='bg-blue-400 justify-center w-[75%] h-3/4 mx-auto p-14'>
