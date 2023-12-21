@@ -7,7 +7,7 @@ const Category = require('../models/Category');
 const getAllProducts = async (req, res) => {
     try {
         const products = await Product.find();
-        res.json(success: true, products);
+        res.json(products);
     }
     catch (error) {
         console.log(error);
