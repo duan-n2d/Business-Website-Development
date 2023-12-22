@@ -9,6 +9,8 @@ import { PiGuitarFill } from "react-icons/pi";
 import { PiNotePencilBold } from "react-icons/pi";
 import { PiSignInBold } from "react-icons/pi";
 
+import Sales from "../components/Sales";
+
 const Sidebar = () => {
   return (
     <div className='mt-10'>        
@@ -79,10 +81,10 @@ const Sidebar = () => {
         </div>
         </aside>
 
-        <div className="p-4 sm:ml-64">
-            {/* Dashboard */}
-            <div className="grid grid-cols-1 gap-4 md:grid-cols-2">
-                div Dashboard nè
+        <div className="px-4 sm:ml-64">
+            {/* Dashboard <div className="grid grid-cols-1 gap-4 md:grid-cols-2">*/}
+            <div className="grid px-7">
+                <Sales />
             </div>
         </div>
 
