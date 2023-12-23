@@ -29,11 +29,13 @@ const loginController = async (req, res) => {
             process.env.ACCESS_TOKEN_SECRET
         );
 
+        const user = await User.findOne({ user_id: account.user_id });
+
         res.json({
             success: true,
             message: "Login successfully",
             accessToken,
-            role: account.role,
+            role: user.role,
         });
     }
     catch (error) {
@@ -81,10 +83,12 @@ const registerController = async (req, res) => {
 
         const newUser = new User({ user_id: user_id, first_name: first_name, last_name: last_name, email: email, phone_number: phone_number, role: role});
         await newUser.save();
+
+        res.json({ success: true, message: "Register successfully" });
     }
     catch (error) {
         console.log(error);
-        res.status(500).json({ success: false, message: "Internal server error:" +  error.message});
+        res.status(500).json({ success: false, message: "Internal server error" });
     }
 }    
 

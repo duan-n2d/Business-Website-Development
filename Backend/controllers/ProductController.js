@@ -5,9 +5,8 @@ const Category = require('../models/Category');
 // @desc Get all products
 // @access Public
 const getAllProducts = async (req, res) => {
-    // return all products
     try {
-        const products = await Product.find({});
+        const products = await Product.find();
         res.json(products);
     }
     catch (error) {
@@ -73,5 +72,7 @@ const addProduct = async (req, res) => {
 };
 
 module.exports = {
-    getAllProducts
+    getAllProducts,
+    getProductById,
+    addProduct
 }

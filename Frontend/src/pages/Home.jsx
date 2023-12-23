@@ -4,19 +4,19 @@
 
 import Header from "../components/Header";
 import NavBar from "../components/NavBar";
+import Footer from "../components/Footer";
 import Banner from "../components/Banner";
 import CarouselWithContent from "../components/Carousel";
-import AboutUs from "../components/AboutUs";
 import Card from "../components/Card2";
 import ProductDetail from "../components/ProductDetail";
+import Sales from "../components/Sales";
 
 export default function Home() {
     return (
         <div>
             <Header />
             <NavBar />
-            <CarouselWithContent />
-            <AboutUs />
+            <Footer/>
         </div>
     );
 }

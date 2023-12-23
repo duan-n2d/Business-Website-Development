@@ -16,15 +16,12 @@ const Register = () =>{
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-        // u_name to first_name and last_name
         const first_name = u_name.split(' ').slice(0, -1).join(' ');
         const last_name = u_name.split(' ').slice(-1).join(' ');
 
-        //Check password
         if(password !== confirm_password)
             return alert("Không khớp mật khẩu");
 
-        //register
         const res = await axios.post('http://localhost:5000/api/auth/register', {
             first_name,
             last_name,
@@ -33,13 +30,8 @@ const Register = () =>{
             password,
             role: "user",
         });
-
-        //Save token to local storage
-        localStorage.setItem('tokenStore', res.data.token);
-
-        //Check role
-        if(res.data.role === 1) window.location.href = '/admin';
-
+        
+        alert("Đăng ký thành công, xin vui lòng đăng nhập lại");
         //Redirect to homepage
         window.location.href = '/login';
     } catch (err){
@@ -130,7 +122,6 @@ const Register = () =>{
                 </button>
             </div>
           </form>
-
           
         </div>
       </div>
