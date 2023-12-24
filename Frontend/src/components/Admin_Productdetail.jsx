@@ -96,7 +96,7 @@ function Admin_Productdetail() {
 <textarea id="product_des" rows="8" class="block p-2.5 w-full text-[#1B3735] text-16 font-medium  rounded-lg border  focus:ring-blue-500 focus:border-blue-500 " ></textarea>
 </div>
 <div className='justify-center items-center flex'>
-  <button className='text-20 font-bold border-[#96FEAE] text-white bg-[#2D4B49] my-10 px-8 py-4 rounded-lg border-2 focus:bg-white focus:text-[#2D4B49] focus:border-[#2D4B49] hover:bg-white hover:text-[#2D4B49] hover:border-[#2D4B49]' htmlFor="">
+  <button className='text-20 font-bold border-[#96FEAE] text-white bg-[#2D4B49] my-10 px-8 py-4 rounded-lg border-2 focus:bg-white focus:text-[#2D4B49] focus:border-[#2D4B49] hover:bg-white hover:text-[#2D4B49] hover:border-[#2D4B49] duration-300' htmlFor="">
 LƯU VÀ CẬP NHẬT
   </button>
 </div>
