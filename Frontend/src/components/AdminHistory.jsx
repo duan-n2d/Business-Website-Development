@@ -12,6 +12,14 @@ function AdminHistory() {
             status: 4,
         },
         {
+            OrderID: '#11222',
+            img: './src/assets/AnyConv.png',
+            productName: 'Đàn guitar gỗ tự nhiên 111xxzx',
+            qty: 1,
+            subTotal: 1000000,
+            status: 4,
+        },
+        {
             OrderID: '#11223',
             img: './src/assets/AnyConv.png',
             productName: 'Đàn guitar gỗ tự nhiên 111xxzx',
@@ -58,6 +66,14 @@ function AdminHistory() {
             qty: 3,
             subTotal: 5000000,
             status: 2,
+        },
+        {
+            OrderID: '#11226',
+            img: './src/assets/AnyConv.png',
+            productName: 'Đàn guitar gỗ tự nhiên 111xxzx',
+            qty: 3,
+            subTotal: 5000000,
+            status: 1,
         },
         {
             OrderID: '#11226',
@@ -160,7 +176,6 @@ function AdminHistory() {
                     <div className='font-bold text-[#DD2B0C] text-20 flex justify-between py-5 px-[5%] w-full'>
                         <div>{order.OrderID}</div>
                         <div>
-                            {/* Display the status dynamically based on the order status */}
                             {order.items[0].status === 1 && 'Chờ xác nhận'}
                             {order.items[0].status === 2 && 'Đang giao'}
                             {order.items[0].status === 3 && 'Đã giao thành công'}
@@ -202,19 +217,38 @@ function AdminHistory() {
                             <div>{order.total.toLocaleString('en-US')}</div>
                         </div>
 
-                        <div className='flex justify-between xl:w-[45%] w-[60%] ml-auto pb-10'>
-                            <a
-                                href='#'
-                                className='border-2 border-[#0F4A1D] rounded-[7px] py-2 px-10 bg-[#DCFFD3] hover:bg-[#4a9936]'
-                            >
-                                Mua lại
-                            </a>
-                            <a
-                                href='#'
-                                className='border-2 border-[#0F4A1D] rounded-[7px] py-2 px-10'
-                            >
-                                Đánh giá
-                            </a>
+                        <div>
+                            {order.items[0].status === 1 && (
+                                <div className='flex justify-end xl:w-[45%] w-[60%] ml-auto pb-10'>
+                                    <button className='border-2 border-[#0F4A1D] rounded-[7px] py-2 px-10 bg-[#DCFFD3] hover:bg-[#4a9936]'>
+                                        Hủy đơn hàng
+                                    </button>
+                                </div>
+                            )}
+                            {order.items[0].status === 2 && (
+                                <div className='flex justify-end xl:w-[45%] w-[60%] ml-auto pb-10'>
+                                    <button className='border-2 border-[#0F4A1D] rounded-[7px] py-2 px-10 bg-[#DCFFD3] hover:bg-[#4a9936]'>
+                                        Liên hệ
+                                    </button>
+                                </div>
+                            )}
+                            {order.items[0].status === 3 && (
+                                <div className='flex justify-between xl:w-[45%] w-[60%] ml-auto pb-10'>
+                                    <button className='border-2 border-[#0F4A1D] rounded-[7px] py-2 px-10 bg-[#DCFFD3] hover:bg-[#4a9936]'>
+                                        Mua lại
+                                    </button>
+                                    <button className='border-2 border-[#0F4A1D] rounded-[7px] py-2 px-10'>
+                                        Đánh giá
+                                    </button>
+                                </div>
+                            )}
+                            {order.items[0].status === 4 && (
+                                <div className='flex justify-end xl:w-[45%] w-[60%] ml-auto pb-10'>
+                                    <button className='border-2 border-[#0F4A1D] rounded-[7px] py-2 px-10 bg-[#DCFFD3] hover:bg-[#4a9936]'>
+                                        Mua lại
+                                    </button>
+                                </div>
+                            )}
                         </div>
                     </div>
                 </div>
