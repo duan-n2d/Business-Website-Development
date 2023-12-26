@@ -9,13 +9,12 @@ import ProductDetail from "./components/ProductDetail.jsx";
 import Cart from "./components/Cart";
 import Banner from "./components/Banner";
 import ErrorPage from "./components/ErrorPage";
-import AboutUs from "./components/AboutUs.jsx";
+import AdminCustomer from "./components/AdminCustomer.jsx";
 
 function App() {
   return (
     <>
-      <NavBar></NavBar>
-      <Cart></Cart>
+      <AdminCustomer></AdminCustomer>
     </>
   );
 }
