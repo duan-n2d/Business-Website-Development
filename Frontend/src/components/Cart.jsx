@@ -1,127 +1,263 @@
-import React from 'react';
-
+import React from "react";
+import { Checkbox } from "@material-tailwind/react";
+import { Trash, Plus, Minus } from "phosphor-react";
+import hinh2 from "../assets/aboutus/hinh2.png";
+import guitar from "../assets/carrt/guitar.png";
+import momo from "../assets/carrt/momo.png";
+import mastercard from "../assets/carrt/mastercard.png";
+import napas from "../assets/carrt/napas.png";
 function Cart() {
   return (
-    <div className="container mx-auto mt-10">
-      <div className="flex shadow-md my-10">
-        <div className="w-3/4 bg-white px-10 py-10">
-          <div className="flex justify-between border-b pb-8">
-            <h1 className="font-semibold text-2xl">Shopping Cart</h1>
-            <h2 className="font-semibold text-2xl">3 Items</h2>
+    <div className=" container mx-auto px-[50px] font-nunito mt-8">
+      <h1 className="text-30 font-bold text-center leading-8 ">
+        Giỏ hàng của bạn
+      </h1>
+      <h1 className="text-16 lg:mx-[60px] lg:text-left sm:text-center sm:mx-auto font-semi-bold leading-8 text-[#1B3735] ">
+        Bạn đang có 2 sản phẩm trong giỏ hàng
+      </h1>
+      <div className="flex lg:flex-row sm:flex-col">
+        <div className="lg:flex flex-row ml-[60px] lg:w-[915px] sm:hidden h-[57px] bg-[#F3FFF1] rounded-xl">
+          <div className="flex flex-row basis-1/2">
+            <Checkbox className="border-[#1B3735] ml-[10px]" />
+            <h1 className="text-16 ml-[22px] my-auto font-bold leading-8 text-[#1B3735] max-[800px]:ml-auto">
+              Sản phẩm
+            </h1>
           </div>
-          <div className="flex mt-10 mb-5">
-            <h3 className="font-semibold text-gray-600 text-xs uppercase w-2/5">Product Details</h3>
-            <h3 className="font-semibold text-center text-gray-600 text-xs uppercase w-1/5 text-center">Quantity</h3>
-            <h3 className="font-semibold text-center text-gray-600 text-xs uppercase w-1/5 text-center">Price</h3>
-            <h3 className="font-semibold text-center text-gray-600 text-xs uppercase w-1/5 text-center">Total</h3>
-          </div>
-          <div className="flex items-center hover:bg-gray-100 -mx-8 px-6 py-5">
-            <div className="flex w-2/5">
-              <div className="w-20">
-                <img className="h-24" src="https://drive.google.com/uc?id=18KkAVkGFvaGNqPy2DIvTqmUH_nk39o3z" alt=""/>
-              </div>
-              <div className="flex flex-col justify-between ml-4 flex-grow">
-                <span className="font-bold text-sm">Iphone 6S</span>
-                <span className="text-red-500 text-xs">Apple</span>
-                <a href="#" className="font-semibold hover:text-red-500 text-gray-500 text-xs">Remove</a>
-              </div>
+          <div className="flex flex-row basis-1/2 mml-[30px]">
+            <div className="grid grid-cols-3 gap-4">
+              <h1 className="text-16 ml-[22px] my-auto font-bold leading-8 text-[#1B3735] ">
+                Đơn giá
+              </h1>
+              <h1 className="text-16 ml-[22px] my-auto font-bold leading-8 text-[#1B3735] ">
+                Số lượng
+              </h1>
+              <h1 className="text-16 ml-[22px] my-auto font-bold leading-8 text-[#1B3735] ">
+                Thành tiền
+              </h1>
             </div>
-            <div className="flex justify-center w-1/5">
-              <svg className="fill-current text-gray-600 w-3" viewBox="0 0 448 512"><path d="M416 208H32c-17.67 0-32 14.33-32 32v32c0 17.67 14.33 32 32 32h384c17.67 0 32-14.33 32-32v-32c0-17.67-14.33-32-32-32z"/>
-              </svg>
-
-              <input className="mx-2 border text-center w-8" type="text" value="1"/>
-
-              <svg className="fill-current text-gray-600 w-3" viewBox="0 0 448 512">
-                <path d="M416 208H272V64c0-17.67-14.33-32-32-32h-32c-17.67 0-32 14.33-32 32v144H32c-17.67 0-32 14.33-32 32v32c0 17.67 14.33 32 32 32h144v144c0 17.67 14.33 32 32 32h32c17.67 0 32-14.33 32-32V304h144c17.67 0 32-14.33 32-32v-32c0-17.67-14.33-32-32-32z"/>
-              </svg>
-            </div>
-            <span className="text-center w-1/5 font-semibold text-sm">$400.00</span>
-            <span className="text-center w-1/5 font-semibold text-sm">$400.00</span>
-          </div>
-
-          <div className="flex items-center hover:bg-gray-100 -mx-8 px-6 py-5">
-            <div className="flex w-2/5">
-              <div className="w-20">
-                <img className="h-24" src="https://drive.google.com/uc?id=10ht6a9IR3K2i1j0rHofp9-Oubl1Chraw" alt=""/>
-              </div>
-              <div className="flex flex-col justify-between ml-4 flex-grow">
-                <span className="font-bold text-sm">Xiaomi Mi 20000mAh</span>
-                <span className="text-red-500 text-xs">Xiaomi</span>
-                <a href="#" className="font-semibold hover:text-red-500 text-gray-500 text-xs">Remove</a>
-              </div>
-            </div>
-            <div className="flex justify-center w-1/5">
-              <svg className="fill-current text-gray-600 w-3" viewBox="0 0 448 512"><path d="M416 208H32c-17.67 0-32 14.33-32 32v32c0 17.67 14.33 32 32 32h384c17.67 0 32-14.33 32-32v-32c0-17.67-14.33-32-32-32z"/>
-              </svg>
-
-              <input className="mx-2 border text-center w-8" type="text" value="1"/>
-
-              <svg className="fill-current text-gray-600 w-3" viewBox="0 0 448 512">
-                <path d="M416 208H272V64c0-17.67-14.33-32-32-32h-32c-17.67 0-32 14.33-32 32v144H32c-17.67 0-32 14.33-32 32v32c0 17.67 14.33 32 32 32h144v144c0 17.67 14.33 32 32 32h32c17.67 0 32-14.33 32-32V304h144c17.67 0 32-14.33 32-32v-32c0-17.67-14.33-32-32-32z"/>
-              </svg>
-            </div>
-            <span className="text-center w-1/5 font-semibold text-sm">$40.00</span>
-            <span className="text-center w-1/5 font-semibold text-sm">$40.00</span>
-          </div>
-
-          <div className="flex items-center hover:bg-gray-100 -mx-8 px-6 py-5">
-            <div className="flex w-2/5">
-              <div className="w-20">
-                <img className="h-24" src="https://drive.google.com/uc?id=1vXhvO9HoljNolvAXLwtw_qX3WNZ0m75v" alt=""/>
-              </div>
-              <div className="flex flex-col justify-between ml-4 flex-grow">
-                <span className="font-bold text-sm">Airpods</span>
-                <span className="text-red-500 text-xs">Apple</span>
-                <a href="#" className="font-semibold hover:text-red-500 text-gray-500 text-xs">Remove</a>
-              </div>
-            </div>
-            <div className="flex justify-center w-1/5">
-              <svg className="fill-current text-gray-600 w-3" viewBox="0 0 448 512"><path d="M416 208H32c-17.67 0-32 14.33-32 32v32c0 17.67 14.33 32 32 32h384c17.67 0 32-14.33 32-32v-32c0-17.67-14.33-32-32-32z"/>
-              </svg>
-              <input className="mx-2 border text-center w-8" type="text" value="1"/>
-
-              <svg className="fill-current text-gray-600 w-3" viewBox="0 0 448 512">
-                <path d="M416 208H272V64c0-17.67-14.33-32-32-32h-32c-17.67 0-32 14.33-32 32v144H32c-17.67 0-32 14.33-32 32v32c0 17.67 14.33 32 32 32h144v144c0 17.67 14.33 32 32 32h32c17.67 0 32-14.33 32-32V304h144c17.67 0 32-14.33 32-32v-32c0-17.67-14.33-32-32-32z"/>
-              </svg>
-            </div>
-            <span className="text-center w-1/5 font-semibold text-sm">$150.00</span>
-            <span className="text-center w-1/5 font-semibold text-sm">$150.00</span>
-          </div>
-
-          <a href="#" className="flex font-semibold text-indigo-600 text-sm mt-10">
-        
-            <svg className="fill-current mr-2 text-indigo-600 w-4" viewBox="0 0 448 512"><path d="M134.059 296H436c6.627 0 12-5.373 12-12v-56c0-6.627-5.373-12-12-12H134.059v-46.059c0-21.382-25.851-32.09-40.971-16.971L7.029 239.029c-9.373 9.373-9.373 24.569 0 33.941l86.059 86.059c15.119 15.119 40.971 4.411 40.971-16.971V296z"/></svg>
-            Continue Shopping
-          </a>
-        </div>
-
-        <div id="summary" className="w-1/4 px-8 py-10">
-          <h1 className="font-semibold text-2xl border-b pb-8">Order Summary</h1>
-          <div className="flex justify-between mt-10 mb-5">
-            <span className="font-semibold text-sm uppercase">Items 3</span>
-            <span className="font-semibold text-sm">590$</span>
-          </div>
-          <div>
-            <label className="font-medium inline-block mb-3 text-sm uppercase">Shipping</label>
-            <select className="block p-2 text-gray-600 w-full text-sm">
-              <option>Standard shipping - $10.00</option>
-            </select>
-          </div>
-          <div className="py-10">
-          <label htmlFor="promo" className="font-semibold inline-block mb-3 text-sm uppercase">Promo Code</label>
-            <input type="text" id="promo" placeholder="Enter your code" className="p-2 text-sm w-full"/>
-          </div>
-          <button className="bg-red-500 hover:bg-red-600 px-5 py-2 text-sm text-white uppercase">Apply</button>
-          <div className="border-t mt-8">
-            <div className="flex font-semibold justify-between py-6 text-sm uppercase">
-              <span>Total cost</span>
-              <span>$600</span>
-            </div>
-            <button className="bg-indigo-500 font-semibold hover:bg-indigo-600 py-3 text-sm text-white uppercase w-full">Checkout</button>
+            <button
+              type="button"
+              className="text-black ml-[60px] basic-1/3 sm:mr-[5px]"
+            >
+              <Trash className="w-[25px] h-[27.5px]" />
+            </button>
           </div>
         </div>
+        <img
+          src={hinh2}
+          className="w-[333px] h-auto mx-[30px] mt-[-85px] sm:hidden lg:flex"
+        />
+      </div>
 
+      <div className="flex lg:flex-row sm:flex-col">
+        <div className="lg:mt-[51px] lg:ml-[60px] lg:w-[915px] sm:w-[666px] sm:mx-[30px] sm:mt-[20px] bg-[#ECFAFF] rounded-xl max-[800px]:mx-[5px]">
+          <div className="flex flex-row">
+            <div className="flex flex-grow max-w-[915px] h-auto max-[800px]:mx-[5px]">
+              <div className="flex flex-row basis-1/2">
+                <Checkbox
+                  defaultChecked
+                  className="border-[#1B3735] ml-[10px]"
+                />
+                <img
+                  src={guitar}
+                  className="w-[119px] h-[124px] mt-[29px] ml-[10px]"
+                />
+                <h1 className="text-16 ml-[22px] mt-[39px] mb-auto font-bold leading-8 text-[#1B3735] max-[800px]:ml-auto">
+                  Sản phẩm
+                </h1>
+              </div>
+              <div className="flex flex-row mt-[108px] basis-1/2">
+                <div className="flex flex-row">
+                  <h1 className="text-16 ml-[22px] my-auto font-bold leading-8 text-[#1B3735] ">
+                    1.000.000đ
+                  </h1>
+                  <div className="flex flex-row items-center ml-[30px] mt-[10px] h-[24px] w-[92px]">
+                    <button
+                      type="button"
+                      className="text-black ml-[10px] w-[24px] bg-white"
+                    >
+                      <Plus className="w-[24px] h-[24px]" />
+                    </button>
+                    <div className="text-center w-[42px] h-[24px] bg-white">
+                      1
+                    </div>
+                    <button
+                      type="button"
+                      className="text-black w-[24px] bg-white"
+                    >
+                      <Minus className="w-[24px] h-[24px]" />
+                    </button>
+                  </div>
+                  <div className=" text-16 ml-[30px] my-auto font-bold leading-8 text-orange-700 ">
+                    1.000.000đ
+                  </div>
+                </div>
+                <button
+                  type="button"
+                  className="text-black ml-[55px] sm:mr-[5px]"
+                >
+                  <Trash className="w-[25px] h-[27.5px]" />
+                </button>
+              </div>
+            </div>
+          </div>
+          <div className="max-w-[864px] mx-[25.5px] h-[3px] bg-gray-400 border-0 rounded md:my-10 max-[900px]:my-[10px]"></div>
+          <div className="flex flex-row">
+            <div className="flex flex-grow max-w-[915px] h-auto max-[800px]:mx-[5px]">
+              <div className="flex flex-row basis-1/2">
+                <Checkbox
+                  defaultChecked
+                  className="border-[#1B3735] ml-[10px]"
+                />
+                <img src={guitar} className="w-[119px] h-[124px] ml-[10px]" />
+                <h1 className="text-16 ml-[22px] mb-auto font-bold leading-8 text-[#1B3735] max-[800px]:ml-auto">
+                  Sản phẩm
+                </h1>
+              </div>
+              <div className="flex flex-row mt-[88px] basis-1/2">
+                <div className="flex flex-row">
+                  <h1 className="text-16 ml-[22px] my-auto font-bold leading-8 text-[#1B3735] ">
+                    1.000.000đ
+                  </h1>
+                  <div className="flex flex-row items-center ml-[30px] mt-[10px] h-[24px] w-[92px]">
+                    <button
+                      type="button"
+                      className="text-black ml-[10px] w-[24px] bg-white"
+                    >
+                      <Plus className="w-[24px] h-[24px]" />
+                    </button>
+                    <div className="text-center w-[42px] h-[24px] bg-white">
+                      1
+                    </div>
+                    <button
+                      type="button"
+                      className="text-black w-[24px] bg-white"
+                    >
+                      <Minus className="w-[24px] h-[24px]" />
+                    </button>
+                  </div>
+                  <div className=" text-16 ml-[30px] my-auto font-bold leading-8 text-orange-700 ">
+                    1.000.000đ
+                  </div>
+                </div>
+                <button
+                  type="button"
+                  className="text-black ml-[55px] sm:mr-[5px]"
+                >
+                  <Trash className="w-[25px] h-[27.5px]" />
+                </button>
+              </div>
+            </div>
+          </div>
+          <div className="max-w-[864px] mx-[25.5px] h-[3px] bg-gray-400 border-0 rounded md:my-10 max-[900px]:my-[10px]"></div>
+          <div className="flex flex-row pb-[30px]">
+            <div className="flex flex-grow max-w-[915px] h-auto max-[800px]:mx-[5px]">
+              <div className="flex flex-row basis-1/2">
+                <Checkbox
+                  defaultChecked
+                  className="border-[#1B3735] ml-[10px]"
+                />
+                <img src={guitar} className="w-[119px] h-[124px] ml-[10px]" />
+                <h1 className="text-16 ml-[22px] mb-auto font-bold leading-8 text-[#1B3735] max-[800px]:ml-auto">
+                  Sản phẩm
+                </h1>
+              </div>
+              <div className="flex flex-row mt-[88px] basis-1/2">
+                <div className="flex flex-row">
+                  <h1 className="text-16 ml-[22px] my-auto font-bold leading-8 text-[#1B3735] ">
+                    1.000.000đ
+                  </h1>
+                  <div className="flex flex-row items-center ml-[30px] mt-[10px] h-[24px] w-[92px]">
+                    <button
+                      type="button"
+                      data-input-counter-increment="counter-inpu"
+                      className="text-black ml-[10px] w-[24px] bg-white"
+                    >
+                      <Plus className="w-[24px] h-[24px]" />
+                    </button>
+                    <input
+                      type="text"
+                      id="counter-inpu"
+                      data-input-counter
+                      placeholder=""
+                      value="1"
+                      required
+                      className="text-center w-[42px] h-[24px] bg-white"
+                    />
+                    <button
+                      type="button"
+                      data-input-counter-decrement="counter-input"
+                      className="text-black w-[24px] bg-white"
+                    >
+                      <Minus className="w-[24px] h-[24px]" />
+                    </button>
+                  </div>
+                  <div className=" text-16 ml-[30px] my-auto font-bold leading-8 text-orange-700">
+                    1.000.000đ
+                  </div>
+                </div>
+                <button
+                  type="button"
+                  className="text-black ml-[55px] sm:mr-[5px]"
+                >
+                  <Trash className="w-[25px] h-[27.5px]" />
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div className="flex flex-col sm:mx-[30px] mt-[51px] lg:mb-[30px] lg:mx-[30px] lg:w-[333px] h-[527px] sm:w-[666px] bg-[#F3FFF1] rounded-xl">
+          <h1 className="text-20 text-center my-[20px] font-bold leading-8 text-[#1B3735] ">
+            Thông tin đơn hàng
+          </h1>
+          <div className="w-auto h-2 mx-[14px] mb-[20px]">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 308 2"
+              fill="none"
+            >
+              <path
+                d="M1.00001 1L307 1"
+                stroke="#D8D8D8"
+                stroke-width="4"
+                stroke-miterlimit="4.62023"
+                stroke-linecap="round"
+                stroke-dasharray="7 7"
+              />
+            </svg>
+          </div>
+
+          <div className="flex flex-row mx-[14px]">
+            <h1 className="text-20 my-auto font-bold leading-8 text-orange-700 basis-1/2">
+              Tổng tiền:
+            </h1>
+            <h1 className="text-20 lg:ml-[80px] sm:ml-[400px] my-auto font-bold leading-8 text-[#1B3735] basis-1/2">
+              7.000.000đ
+            </h1>
+          </div>
+          <div className="max-w-[864px] border-2 mx-[14px] mt-[15px] mb-[5px] h-[3px] bg-gray-900 rounded-xl"></div>
+          <div className="flex flex-col">
+            <h1 className="text-14 ml-[22px] lg:text-left sm:text-center my-auto font-bold leading-8 text-[#1B3735] ">
+              Chúng tôi đồng ý
+            </h1>
+            <div className="flex flex-row justify-between mx-[10px] w-[306px] self-center">
+              <img src={momo} className="w-[49px] h-[49px] mx-auto" />
+              <img src={napas} className="w-auto h-[24px] mx-auto my-auto" />
+              <img src={mastercard} className="w-auto h-[49px] mx-auto" />
+            </div>
+          </div>
+          <button className="w-64 mx-auto my-5 bg-[#FFEDCA] text-20 font-semibold text-[#0F4A1D] py-2 px-4 border border-[#0F4A1D] rounded hover:bg-[#0F4A1D] hover:text-white">
+            Tiến hành đặt hàng
+          </button>
+          <h1 className="text-14 mx-[14px] font-bold self-center text-justify leading-8 text-[#1B3735] ">
+            Phí vận chuyển được tính tại trang thanh toán, bạn có thể nhập mã
+            giảm giá ở đó
+          </h1>
+          <button className="w-64 mb-[40px] mx-auto my-5 bg-white text-20 font-semibold text-[#0F4A1D] py-2 px-4 border border-[#0F4A1D] rounded hover:bg-[#0F4A1D] hover:text-white">
+            Tiếp tục mua hàng
+          </button>
+        </div>
       </div>
     </div>
   );
