@@ -6,9 +6,9 @@ const ProductSchema = new mongoose.Schema({
         required: true
     },
     is_active: {
-        type: String,
-        enum: ['yes', 'no'],
-        default: 'yes' // Giá trị mặc định nếu không có giá trị được cung cấp
+        type: Boolean,
+        required: true,
+        default: true
     },
     product_name: {
         type: String,
@@ -19,7 +19,7 @@ const ProductSchema = new mongoose.Schema({
         required: true
     },
     specifications: {
-        type: String,
+        type: Object,
         required: true
     },
     brand_id:{
@@ -46,8 +46,18 @@ const ProductSchema = new mongoose.Schema({
         default: 5
     },
     discount_id: {
-        type: String,
+        type: Array,
         required: false
+    },
+    total_sold: {
+        type: Number,
+        required: true,
+        default: 0
+    },
+    total_rating: {
+        type: Number,
+        required: true,
+        default: 0
     },
     created_at: {
         type: Date,
