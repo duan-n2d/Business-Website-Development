@@ -19,9 +19,11 @@ import Footer from "../components/Footer";
 function AboutUs() {
   return (
     <>
-      <Header />
-      <Navbar />
-      <div className="text-[#1B3735]">
+      <div className="fixed right-0 z-50 top-0 w-full  bg-green-50 shadow-md">
+        <Header/>
+        <Navbar/>
+      </div>
+      <div className="relative mt-60 text-[#1B3735]">
         <div className=" container mx-auto px-[50px] font-nunito mt-8">
           <h1 className="text-30 text-center font-bold mb-4 mx-10">About Us</h1>
           <div className="flex flex-row px-[100px] max-[900px]:flex-col max-[900px]:px-[0px]">
