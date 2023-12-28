@@ -2,15 +2,8 @@ import React from "react";
 import {
   PiArrowCircleLeftFill,
   PiArrowCircleRightFill,
-  PiArrowRight,
   PiTrashBold,
-  PiGuitarBold,
-  PiTruckLight,
 } from "react-icons/pi";
-import { HiOutlineShoppingBag } from "react-icons/hi2";
-import { GoPeople } from "react-icons/go";
-import { FaRegEdit } from "react-icons/fa";
-import { BsTag } from "react-icons/bs";
 import { CiCalendar } from "react-icons/ci";
 import { IoIosArrowDown } from "react-icons/io";
 
