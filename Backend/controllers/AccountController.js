@@ -90,7 +90,7 @@ const registerController = async (req, res) => {
         console.log(error);
         res.status(500).json({ success: false, message: "Internal server error" });
     }
-}    
+}
 
 const logoutController = async (req, res) => {
     res.json({ success: true, message: "Logout successfully" });

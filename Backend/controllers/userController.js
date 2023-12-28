@@ -6,8 +6,9 @@ const User = require("../models/User");
 //API
 const getAllUserController = async (req, res) => {
   try {
-    const users = await User.find();
-    res.json({ success: true, users });
+    const users = await User.find({is_active:true, role: "user"});
+
+    res.json({ users });
   } catch (error) {
     console.log(error);
     res.status(500)
@@ -59,8 +60,50 @@ const updateUserController = async (req, res) => {
     }
 }
 
+const deleteUserController = async (req, res) => {
+  // only change is_active to false
+  const { user_id } = req.body;
+
+  if (!user_id)
+      return res
+      .status(400)
+      .json({ success: false, message: "Missing user_id" });
+  
+  try {
+      const user = await User.findOne({ user_id: user_id });
+      if (!user)
+          return res
+          .status(400)
+          .json({ success: false, message: "User not found" });
+      
+      user.is_active = false;
+
+      const accounts = await Account.find({ user_id: user_id });
+
+      if (!accounts)
+          return res
+          .status(400)
+          .json({ success: false, message: "Account not found" });
+      
+      for (let i = 0; i < accounts.length; i++) {
+        accounts[i].is_active = false;
+        await accounts[i].save();
+      }
+    
+      await user.save();
+
+      res.json({ success: true, message: "Delete user successfully" });
+  }
+  catch (error) {
+      console.log(error);
+      res.status(500).json({ success: false, message: "Internal server error" });
+  }
+}
+
+
 module.exports = {
   getAllUserController,
   updateUserController,
-  getUserByIdController
+  getUserByIdController,
+  deleteUserController
 }
