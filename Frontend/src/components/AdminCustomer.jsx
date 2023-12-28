@@ -83,10 +83,10 @@ function AdminCustomer() {
   ];
 
   return (
-    <div className="font-nunito flex bg-gradient-to-r from-[#FEFEFE] to-[#EBFFE4]">
+    <div className="font-nunito flex">
       {/* Menu */}
       {/* Order */}
-      <div className="w-[70%] h-[1100px] mx-auto">
+      <div className="w-full h-[1100px] mx-auto">
         <div className="bg-white shadow w-[300px] h-[80px] rounded-[12px] float-right flex font-bold">
           <div className="bg-[#2D9CDB26] rounded-[15px] w-[48px] h-[48px] mt-[16px] ml-[16px]">
             <button className="mt-[7px] ml-[7px]">

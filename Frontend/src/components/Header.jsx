@@ -6,7 +6,7 @@ function Header() {
     const is_admin = url.includes("/admin");
     if (is_admin) return (
         // fix header top when scroll
-        <div className="fixed right-0 top-0 w-full  bg-green-50 shadow-md">
+        <div className="fixed right-0 top-0 w-full  bg-green-50"> 
             <div className="mx-auto flex justify-between items-center">
                 <div className="logo w-[307px] justify-center items-center bg-white">
                     <img className='w-2/3 mx-auto py-2' src={logo} alt="" />

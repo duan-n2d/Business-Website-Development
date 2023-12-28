@@ -9,7 +9,7 @@ const productdetails =[
   {brand_name:"Fender", brand_id:"FDR",category_id:"ACO", category_name:"Acoustic" },
   {brand_name:"Fender", brand_id:"FDR",category_id:"ACO", category_name:"Acoustic" },
 ]
-function Admin_Productdetail() {
+function AdminProductDetail() {
   return (
     <div className='font-nunito  w-[95%] mx-auto text-[#1B3735]'>
       <form action="">
@@ -107,4 +107,4 @@ LƯU VÀ CẬP NHẬT
   );
 }
 
-export default Admin_Productdetail;
+export default AdminProductDetail;
