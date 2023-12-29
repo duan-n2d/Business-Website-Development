@@ -9,7 +9,9 @@ function Header() {
         <div className="fixed right-0 top-0 w-full  bg-green-50"> 
             <div className="mx-auto flex justify-between items-center">
                 <div className="logo w-[307px] justify-center items-center bg-white">
-                    <img className='w-2/3 mx-auto py-2' src={logo} alt="" />
+                    <a href="/">
+                        <img className='w-2/3 mx-auto py-2' src={logo} alt="" />
+                    </a>
                 </div>
                 <div className="w-full flex justify-between items-center">
                     <div className="w-3/4 mx-5 flex justify-center items-center bg-white text-gray-700 border border-gray-300 rounded-full py-2 px-1 block">
@@ -70,7 +72,9 @@ function Header() {
             <div className="my-1 w-11/12 mx-auto">
                 <div className="flex justify-center items-center">
                     <div className="logo w-1/6">
-                        <img className='w-9/12' src={logo} alt="" />
+                        <a href="/">
+                            <img className='w-9/12' src={logo} alt="" />
+                        </a>
                     </div>
                     
                     <div className="search w-5/12 mr-20 flex justify-center items-center bg-gray-200 text-gray-700 border border-gray-300 rounded-full py-2 px-1 block">

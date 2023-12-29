@@ -10,7 +10,7 @@ import Banner04 from "../assets/banners/Banner_04.png";
 
 import Banner from "./Banner";
 
-function CarouselWithContent() {
+function Carousel() {
     const images = [
         Banner01,
         Banner02,
@@ -33,14 +33,12 @@ function CarouselWithContent() {
         <div className="w-full">
             <div className="panels flex">
                 {images.map((image, index) => (
-                    <img
-                    key={index}
-                    src={image}
-                    alt={`slide-${index}`}
+                    <div key={index}
                     className={`w-full h-auto transition-transform duration-300 transform ${
                         index === activeIndex ? 'translate-x-0' : 'hidden'
-                    }`}
-                    />
+                    }`}>
+                    <Banner url={image} />
+                    </div>
                 ))}
             </div>
 
@@ -72,4 +70,4 @@ function CarouselWithContent() {
   );
 }
 
-export default CarouselWithContent;
+export default Carousel;

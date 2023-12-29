@@ -4,7 +4,7 @@ import { FaLongArrowAltLeft } from "react-icons/fa";
 
 function BlogRec() {
     return (
-        <div class="related read">
+        <div className="related read">
         <br />
         <hr className='border-black ml-[10%] mr-[10%]' />
           <h3 className='font-bold font-sans text-center text-3xl p-10'>TRÍCH TỪ BLOG</h3>
