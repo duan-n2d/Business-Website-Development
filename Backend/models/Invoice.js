@@ -26,13 +26,13 @@ const InvoiceSchema = new mongoose.Schema({
         default: Date.now
     },
     payment_at: {
-        type: Date,
-        required: true
+        type: Date
     },
     status: {
         type: String,
         enum: ['Draft', 'Sent', 'Paid', 'Cancelled'],
         default: 'Draft',
+        required: true
     }
 });
 

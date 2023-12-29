@@ -9,7 +9,12 @@ Content-Type: application/json
 }
 
 ### all active brands
-GET http://localhost:5000/api/auth/brands-active
+GET http://localhost:5000/api/auth/brand
+Content-Type: application/json
+
+{
+    "brand_id": "ROL"
+}
 
 ###
 POST http://localhost:5000/api/auth/register

@@ -1,11 +1,8 @@
 const Order = require('../models/Order');
 const OrderLine = require('../models/OrderLine');
-// const User = require('../models/User');
-// const Product = require('../models/Product');
-// const Discount = require('../models/Discount');
 const Shipment = require('../models/Shipment');
 // const PaymentMethod = require('../models/PaymentMethod');
-// const Invoice = require('../models/Invoice');
+const Invoice = require('../models/Invoice');
 const { v4: uuidv4 } = require('uuid');
 
 function generateOrderId() {
@@ -128,11 +125,11 @@ const getOrderLineById = async (req, res) => {
 }
 
 const createOrder = async (req, res) => {
-    const { user_id, discount_id, shipment_id, payment_method, list_product_objects } = req.body;
+    const { user_id, discount_id, payment_method, list_product_objects, address, district, city, country } = req.body;
 
     const order_id = generateOrderId();
 
-    if (!user_id || !shipment_id || !payment_method)
+    if (!user_id || !address || !city || !district || !country || !payment_method)
         return res
             .status(400)
             .json({ success: false, message: "Missing information" });
@@ -150,16 +147,49 @@ const createOrder = async (req, res) => {
             await order_line.save();
             total_price += product_object.price * product_object.quantity;
         }
+        
+        const order_id = uuidv4();
 
-        const order = await Order.create({
-            order_id: uuidv4(),
-            user_id,
-            discount_id,
-            total_price,
-            shipment_id,
-            payment_method
+        const shipment_id = uuidv4();
+        const shipment_address = {
+            address: address,
+            district: district,
+            city: city,
+            country: country
+        }
+
+        total_price += 50000;
+
+        const shipment = await Shipment.create({
+            shipment_id: shipment_id,
+            status: "Pending",
+            address: shipment_address,
+            shipment_cost: 50000,
+            ship_date: new Date()
         });
 
+        const order = await Order.create({
+            order_id: order_id,
+            user_id: user_id,
+            status: "Pending",
+            shipment_id: shipment_id,
+            discount_id: discount_id,
+            total_price: total_price,
+            discount_id: discount_id,
+        });
+
+        const invoice_id = uuidv4();
+        const invoice = await Invoice.create({
+            invoice_id: invoice_id,
+            order_id: order_id,
+            payment_method_id: payment_method,
+            shipment_id: shipment_id,
+            amount: total_price,
+            status: "Draft"
+        });
+
+        await invoice.save();
+        await shipment.save();
         await order.save();
 
         res.json({ success: true, message: "Create successfully", order });
@@ -186,10 +216,207 @@ const updateOrder = async (req, res) => {
             .json({ success: false, message: "Internal server error" });
     }
 
-    order.status = status;
-    await order.save();
+    if (status == "In Transit") {
+        order.status = status;
+        await order.save();
+
+        const shipment = await Shipment.findOne({ shipment_id: order.shipment_id });
+
+        if (!shipment)
+            return res
+                .status(400)
+                .json({ success: false, message: "Shipment not found" });
+
+        shipment.status = status;
+
+        await shipment.save();
+
+        const invoice = await Invoice.findOne({ order_id: order_id });
+        if (!invoice)
+            return res
+                .status(400)
+                .json({ success: false, message: "Invoice not found" });
+        
+        invoice.status = "Sent";
+        await invoice.save();
+    }
+
+    if (status == "Cancelled") {
+        order.status = status;
+        await order.save();
+
+        const shipment = await Shipment.findOne({ shipment_id: order.shipment_id });
+
+        if (!shipment)
+            return res
+                .status(400)
+                .json({ success: false, message: "Shipment not found" });
+
+        shipment.status = status;
+        await shipment.save();
+
+        const invoice = await Invoice.findOne({ order_id: order_id });
+
+        if (!invoice)
+            return res
+                .status(400)
+                .json({ success: false, message: "Invoice not found" });
+
+        invoice.status = status;
+        await invoice.save();
+    }
 
     res.json({ success: true, message: "Update successfully", order });
+}
+
+const getInvoices = async (req, res) => {
+    try {
+        const invoices = await Invoice.find();
+        res.json({ invoices });
+    } catch (error) {
+        console.log(error);
+        res.status(500)
+            .json({ success: false, message: "Internal server error" });
+    }
+}
+
+const getInvoiceById = async (req, res) => {
+    const invoice_id = req.params.id;
+    
+    try {
+        const invoice = await Invoice.findOne({ invoice_id: invoice_id });
+        if (!invoice)
+            return res
+                .status(400)
+                .json({ success: false, message: "Invoice not found" });
+        res.json({ success: true, invoice: invoice });
+    }
+    catch (error) {
+        console.log(error);
+        res.status(500)
+            .json({ success: false, message: "Internal server error" });
+    }
+}
+
+const getInvoicesByOrderId = async (req, res) => {
+    const order_id = req.params.id;
+    
+    try {
+        const order = await Order.findOne({ order_id: order_id });
+        if (!order)
+            return res
+                .status(400)
+                .json({ success: false, message: "Order not found" });
+    }
+    catch (error) {
+        console.log(error);
+        res.status(500)
+            .json({ success: false, message: "Internal server error" });
+    }
+
+    try {
+        const invoices = await Invoice.find({ order_id: order_id });
+        if (!invoices)
+            return res
+                .status(400)
+                .json({ success: false, message: "Invoice not found" });
+        res.json({ success: true, invoices: invoices });
+    }
+    catch (error) {
+        console.log(error);
+        res.status(500)
+            .json({ success: false, message: "Internal server error" });
+    }
+}
+
+const getShipmentByOrderId = async (req, res) => {
+    const order_id = req.params.id;
+    
+    try {
+        const order = await Order.findOne({ order_id: order_id });
+        if (!order)
+            return res
+                .status(400)
+                .json({ success: false, message: "Order not found" });
+    }
+    catch (error) {
+        console.log(error);
+        res.status(500)
+            .json({ success: false, message: "Internal server error"});
+    }
+
+    try {
+        const shipment = await Shipment.findOne({ shipment_id: order.shipment_id });
+        if (!shipment)
+            return res
+                .status(400)
+                .json({ success: false, message: "Shipment not found" });
+        res.json({ success: true, shipment: shipment });
+    }
+    catch (error) {
+        console.log(error);
+        res.status(500)
+            .json({ success: false, message: "Internal server error"});
+    }
+}
+
+const getShipmentById = async (req, res) => {
+    const shipment_id = req.params.id;
+    const shipment = Shipment.findOne({ shipment_id: shipment_id });
+
+    try {
+        if (!shipment)
+            return res
+                .status(400)
+                .json({ success: false, message: "Shipment not found" });
+        res.json({ success: true, shipment: shipment });
+    }
+    catch (error) {
+        console.log(error);
+        res.status(500)
+            .json({ success: false, message: "Internal server error"});
+    }
+}
+
+const updateShipment = async (req, res) => {
+    const { status, shipment_id } = req.body;
+    const shipment = Shipment.findOne({ shipment_id: shipment_id });
+
+    try {
+        if (!shipment)
+            return res
+                .status(400)
+                .json({ success: false, message: "Shipment not found" });
+        
+        if (status == "Delivered") {
+            shipment.status = status;
+            await shipment.save();
+
+            const order = Order.findOne({ shipment_id: shipment_id });
+            if (!order)
+                return res
+                    .status(400)
+                    .json({ success: false, message: "Order not found" });
+            
+            order.status = status;
+            await order.save();
+
+            const invoice = Invoice.findOne({ order_id: order.order_id });
+            if (!invoice)
+                return res
+                    .status(400)
+                    .json({ success: false, message: "Invoice not found" });
+
+            invoice.status = "Paid";
+            await invoice.save();
+        }
+        res.json({ success: true, message: "Update successfully", shipment: shipment });
+    }
+    catch (error) {
+        console.log(error);
+        res.status(500)
+            .json({ success: false, message: "Internal server error"});
+    }
 }
 
 module.exports = {
@@ -200,5 +427,11 @@ module.exports = {
     getOrderLinesByOrderId,
     getOrderLineById,
     createOrder,
-    updateOrder
+    updateOrder,
+    getInvoices,
+    getInvoiceById,
+    getInvoicesByOrderId,
+    getShipmentByOrderId,
+    getShipmentById,
+    updateShipment
 }
