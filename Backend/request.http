@@ -1,16 +1,29 @@
 
+### add Brand
+POST http://localhost:5000/api/auth/add-brand
+Content-Type: application/json
+
+{
+    "brand_id": "TEST",
+    "brand_name": "Test brand"
+}
+
+### all active brands
+GET http://localhost:5000/api/auth/brands-active
+
+###
 POST http://localhost:5000/api/auth/register
 Content-Type: application/json
 // Account in models/Account.js
 
-{
-  "first_name": "Gustavo",
-  "last_name": "Urrutia",
-  "email": "admin5@gmail.com",
-  "phone_number": "0340000043",
-  "password": "123456",
-  "role": "admin"
-}
+  {
+    "first_name": "Hoàng",
+    "last_name": "Phan",
+    "email": "hoang.phan@example.com",
+    "phone_number": "555-234-5178",
+    "password": "hoangpass234",
+    "role": "user"
+  }
 
 ### Login
 POST http://localhost:5000/api/auth/login
@@ -19,6 +32,14 @@ Content-Type: application/json
 {
   "username": "admin4@gmail.com",
   "password": "123456"
+}
+
+### Delete user
+PATCH http://localhost:5000/api/auth/delete-user
+Content-Type: application/json
+
+{
+  "user_id": "GU0001"
 }
 
 ### Get all products
@@ -45,10 +66,25 @@ GET http://localhost:5000/api/auth/user/GU0001
 
 
 ### Get all products
-GET http://localhost:5000/api/products
+GET http://localhost:5000/api/auth/products
 
 ### Get product by id
-GET http://localhost:5000/api/products/:1
+GET http://localhost:5000/api/auth/products/:1
 
 ### Get city from https://provinces.open-api.vn/api/
 GET http://provinces.open-api.vn/api/p/
+
+###
+POST http://localhost:5000/api/auth/add-product
+Content-Type: application/json
+
+{
+    "product_id": "J150",
+    "product_name": "Đàn Guitar Acoustic",
+    "product_description": "Đàn Guitar Acoustic Ba Đờn J150 là mẫu đàn thuộc phân khúc dành cho người mới bắt đầu của Ba Đờn. Đây là một model bán khá chạy của Ba đờn , với giá thành hợp lý đây là một trong những sự lựa chọn tốt dành cho người mới chơi.\nKiểu Dáng A Jumbo Khuyết :\nBa đờn J150 được thiết kế với dáng A khuyết thon gọn, giúp người chơi dễ ôm và cầm nắm khi tập luyện. Đây là dáng đàn phù hợp với những bạn có vóc dáng nhỏ, hoặc các bạn nữ có thể lựa chọn\n\nCấu Hình Full Gỗ Thịt:\nVới thông số mặt Top gỗ thông , lưng và hông đàn được làm bằng gỗ Hồng đào , toàn bộ đàn đều là gỗ nguyên tấm giúp tiếng đàn chắc chắn, có độ vang tốt. Ngoài ra action đàn cũng được căn chỉnh hợp lý dành cho người mới chơi, đây cũng là ưu điểm nổi bật của mẫu đàn này.",
+    "specifications": {},
+    "brand_id": "3BD",
+    "purchase_price": 1900000,
+    "current_price": 1900000,
+    "quantity_in_stock": 94
+}

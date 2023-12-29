@@ -5,9 +5,8 @@ const CartSchema = new mongoose.Schema({
         type: String,
         required: true
     },
-    customer_id: {
-        type: Schema.Types.ObjectId,
-        ref: 'User',
+    user_id: {
+        type: String,
         required: true
     }
 });

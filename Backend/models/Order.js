@@ -5,9 +5,8 @@ const OrderSchema = new mongoose.Schema({
         type: String,
         required: true
     },
-    customer:{
-        type: Schema.Types.ObjectId,
-        ref: 'User',
+    user_id:{
+        type: String,
         required: true
     },
     status: {
@@ -23,10 +22,10 @@ const OrderSchema = new mongoose.Schema({
         type: Date,
         default: Date.now
     },
-    // total_price:{
-    //     type: Number,
-    //     required: true
-    // },
+    total_price:{
+        type: Number,
+        required: true
+    },
     // shipment_id: {
     //     type: String,
     //     required: true

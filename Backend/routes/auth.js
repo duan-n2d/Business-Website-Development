@@ -6,6 +6,7 @@ const { getAllUserController, updateUserController, getUserByIdController, delet
 const { getAllProducts, getProductById, addProduct } = require('../controllers/ProductController')
 const { getAllDiscountController, createDiscountController, updateDiscountController, deleteDiscountController } = require('../controllers/DiscountController')
 const { getAllBrands, getBrandActive, addBrand, updateBrand, deleteBrand } = require('../controllers/BrandController')
+const { getAllPaymentMethods, createPaymentMethod } = require('../controllers/PaymentMethodController')
 
 // Account
 router.post('/register', registerController)
@@ -36,6 +37,9 @@ router.post('/add-brand', addBrand)
 router.put('/update-brand', updateBrand)
 router.patch('/delete-brand', deleteBrand)
 
+// Payment Method
+router.get('/payment-methods', getAllPaymentMethods)
+router.post('/create-payment-method', createPaymentMethod)
 
 
 module.exports = router

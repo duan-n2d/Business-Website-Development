@@ -24,6 +24,17 @@ const getAllDiscountActive = async (req, res) => {
     }
 }
 
+const getDiscountById = async (req, res) => {
+    try {
+        const discount = await Discount.findById(req.params.id);
+        res.json({ success: true, discount });
+    } catch (error) {
+        console.log(error);
+        res.status(500)
+        .json({ success: false, message: "Internal server error" });
+    }
+}
+
 const createDiscountController = async (req, res) => {
     const { discount_id, discount_name, type_discount, discount_value, start_date, end_date, quantity } = req.body;
     if (!discount_id || !discount_name || !type_discount || !discount_value || !start_date || !end_date) {
@@ -107,6 +118,7 @@ const deleteDiscountController = async (req, res) => {
 module.exports = {
     getAllDiscountController,
     getAllDiscountActive,
+    getDiscountById,
     createDiscountController,
     updateDiscountController,
     deleteDiscountController
