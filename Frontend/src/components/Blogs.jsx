@@ -94,21 +94,7 @@ function Blogs() {
     );
 
     setSearchResults(results);
-
-    const suggestedTerms = blogPosts
-      .filter(
-        (post) =>
-          post.heading.toLowerCase().includes(searchTerm.toLowerCase()) ||
-          post.category.toLowerCase().includes(searchTerm.toLowerCase()) ||
-          post.excerpt.toLowerCase().includes(searchTerm.toLowerCase())
-      )
-      .map((post) => post.heading)
-      .slice(0, 5);
-
-    setSuggestions(suggestedTerms);
   };
-
-
 
   const handleKeyDown = (e) => {
     if (e.key === 'Enter') {
@@ -117,13 +103,16 @@ function Blogs() {
   };
 
   useEffect(() => {
-    setSearchResults(blogPosts);
-  }, []);
-
+    handleSearch(); // Call handleSearch initially to load all posts
+  }, [isCategorySelected, selectedCategory]);
   // css filter
   const Filter = {
     backgroundColor: "black"
   }
+  const FilterHover = {
+    cursor: 'pointer',
+    userSelect: 'none',
+  };
 
   return (
     <div className='font-nunito text-[#1B3735]'>
@@ -161,7 +150,7 @@ function Blogs() {
             {/* Filter */}
             <div className='leading-10'>
               {/* Filter Hướng dẫn chọn đàn */}
-              <div
+              <div style={FilterHover}
                 className={`flex rounded-[7px] ${selectedCategory === '#Hướng dẫn chọn đàn' ? 'bg-gray-200' : ''}`}
               >
                 <p
@@ -179,15 +168,15 @@ function Blogs() {
                   Hướng dẫn chọn đàn
                 </p>
                 {selectedCategory === '#Hướng dẫn chọn đàn' ? (
-                  <PiCheckBold size={25} className='mt-2' />
+                  <PiCheckBold size={25} className='mt-2 mr-2' />
                 ) : (
-                  <PiPlusBold size={25} className='mt-2' />
+                  <PiPlusBold size={25} className='mt-2 mr-2' />
                 )}
               </div>
               <hr className='border-black border-1 mt-5 mb-5' />
 
               {/* Filter Bí kíp Produce */}
-              <div
+              <div style={FilterHover}
                 className={`flex rounded-[7px] ${selectedCategory === '#Bí kíp Produce' ? 'bg-gray-200' : ''}`}
               >
                 <p
@@ -206,15 +195,15 @@ function Blogs() {
                   Bí kíp Produce
                 </p>
                 {selectedCategory === '#Bí kíp Produce' ? (
-                  <PiCheckBold size={25} className='mt-2' />
+                  <PiCheckBold size={25} className='mt-2 mr-2' />
                 ) : (
-                  <PiPlusBold size={25} className='mt-2' />
+                  <PiPlusBold size={25} className='mt-2 mr-2' />
                 )}
               </div>
               <hr className='border-black border-1 mt-5 mb-5' />
 
               {/* Filter Kiến thức âm nhạc */}
-              <div
+              <div style={FilterHover}
                 className={`flex rounded-[7px] ${selectedCategory === '#Kiến thức âm nhạc' ? 'bg-gray-200' : ''}`}
               >
                 <p
@@ -233,9 +222,9 @@ function Blogs() {
                   Kiến thức âm nhạc
                 </p>
                 {selectedCategory === '#Kiến thức âm nhạc' ? (
-                  <PiCheckBold size={25} className='mt-2' />
+                  <PiCheckBold size={25} className='mt-2 mr-2' />
                 ) : (
-                  <PiPlusBold size={25} className='mt-2' />
+                  <PiPlusBold size={25} className='mt-2 mr-2' />
                 )}
               </div>
               <hr className='border-black border-1 mt-5 mb-5' />
