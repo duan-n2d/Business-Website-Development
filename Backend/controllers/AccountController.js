@@ -2,6 +2,8 @@ const argon2 = require("argon2");
 const jwt = require("jsonwebtoken");
 const Account = require("../models/Account");
 const User = require("../models/User");
+const { v4: uuidv4 } = require("uuid");
+const Cart = require("../models/Cart");
 
 const loginController = async (req, res) => {
     const { username, password } = req.body;
@@ -84,13 +86,16 @@ const registerController = async (req, res) => {
         const newUser = new User({ user_id: user_id, first_name: first_name, last_name: last_name, email: email, phone_number: phone_number, role: role});
         await newUser.save();
 
+        const newCart = new Cart({ cart_id: uuidv4(), user_id: user_id, products: []});
+        await newCart.save();
+
         res.json({ success: true, message: "Register successfully" });
     }
     catch (error) {
         console.log(error);
         res.status(500).json({ success: false, message: "Internal server error" });
     }
-}    
+}
 
 const logoutController = async (req, res) => {
     res.json({ success: true, message: "Logout successfully" });

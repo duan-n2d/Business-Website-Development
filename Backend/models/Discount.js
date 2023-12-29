@@ -14,6 +14,10 @@ const DiscountSchema = new mongoose.Schema({
         enum: ['Percentage', 'Fixed Amount'],
         default: 'Percentage'
     },
+    quantity: {
+        type: Number,
+        required: true,
+    },
     discount_value: {
         type: Number,
         required: true

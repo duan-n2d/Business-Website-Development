@@ -11,6 +11,12 @@ const PostDetailSchema = new mongoose.Schema({
         unique: true,
         index: true
     },
+    type: {
+        enum: ['heading','text', 'image', 'video'],
+        type: String,
+        required: true,
+        default: 'text'
+    },
     value: {
         type: Number,
         required: true

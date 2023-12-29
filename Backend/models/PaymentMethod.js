@@ -7,8 +7,8 @@ const PaymentMethodSchema = new mongoose.Schema({
     },
     payment_method: {
         type: String,
-        enum: ['Credit Card', 'PayPal', 'Bank Transfer', 'Cash'],
-        default: 'Credit Card'
+        enum: ['Credit Card', 'Momo', 'Banking', 'COD'],
+        required: true
     },
     is_active: {
         type: Boolean,

@@ -5,30 +5,19 @@ const ShipmentSchema = new mongoose.Schema({
         type: String,
         required: true
     },
-    order_id: {
-        type: String,
-        required: true
-    },
     status: {
         type: String,
         enum: ['Pending', 'In Transit', 'Delivered', 'Cancelled'],
         default: 'Pending'
     },
     address: {
-        type: String,
-        required: true
-    },
-    city: {
-        type: String,
+        type: Object,
         required: true
     },
     shipment_cost: {
         type: Number,
-        required: true
-    },
-    discount_id: {
-        type: String,
-        required: true
+        required: true,
+        default: 50000
     },
     created_at: {
         type: Date,
@@ -37,6 +26,14 @@ const ShipmentSchema = new mongoose.Schema({
     ship_date: {
         type: Date,
         required: true
+    },
+    delivered_date: {
+        type: Date,
+        required: false
+    },
+    cancelled_date: {
+        type: Date,
+        required: false
     }
 });
 

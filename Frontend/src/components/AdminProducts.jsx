@@ -1,5 +1,9 @@
 import React, { useState } from 'react';
-import { Trash, ArrowLeft, ArrowRight } from '@phosphor-icons/react';
+import {
+  PiArrowCircleLeftFill,
+  PiArrowCircleRightFill,
+  PiTrashBold,
+} from "react-icons/pi";
 
 function Admin_Product() {
   const [allProducts, setAllProducts] = useState([
@@ -105,7 +109,7 @@ function Admin_Product() {
             <th className='px-20 py-2'> Loại</th>
             <th className='px-4 py-2'>Tình Trạng</th>
             <th className='px-16 py-2'>Giá</th>
-            <th className='pl-52 py-2'><Trash size={19}></Trash ></th>
+            <th className='pl-52 py-2'><PiTrashBold size={19}/></th>
           </tr>
         </table>
 </div>
@@ -128,7 +132,7 @@ function Admin_Product() {
                   className=" "
                   onClick={() => handleDeleteProduct(index)}
                 >
-                  <Trash size={20} />
+                  <PiTrashBold size={20} />
                 </button>
               </td>
             </tr>
@@ -147,7 +151,7 @@ function Admin_Product() {
           disabled={currentPage === 1}
           onClick={handlePreviousPage}
         >
-          <ArrowLeft color='#CAFFD6' />
+          <PiArrowCircleLeftFill color='#CAFFD6' />
         </button>
         {Array.from({ length: totalPages }, (_, index) => (
           <button
@@ -165,7 +169,7 @@ function Admin_Product() {
           disabled={currentPage === totalPages}
           onClick={handleNextPage}
         >
-          <ArrowRight color='#CAFFD6' />
+          <PiArrowCircleRightFill color='#CAFFD6' />
         </button>
       </div>
     </div>

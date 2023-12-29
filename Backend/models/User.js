@@ -18,7 +18,7 @@ const UserSchema = new mongoose.Schema({
         required: true
     },
     phone_number: {
-        type: Number,
+        type: String,
         required: true
     },
     email_verified: {
@@ -37,6 +37,11 @@ const UserSchema = new mongoose.Schema({
     },
     role: {
         type: String,
+        required: true
+    },
+    is_active: {
+        type: Boolean,
+        default: true,
         required: true
     },
     created_at: {

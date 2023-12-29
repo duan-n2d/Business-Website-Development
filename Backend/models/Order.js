@@ -5,15 +5,18 @@ const OrderSchema = new mongoose.Schema({
         type: String,
         required: true
     },
-    customer:{
-        type: Schema.Types.ObjectId,
-        ref: 'User',
+    user_id:{
+        type: String,
         required: true
     },
     status: {
         type: String,
-        enum: ['Pending', 'Processing', 'Shipped', 'Delivered', 'Cancelled'],
+        enum: ['Pending', 'In Transit', 'Delivered', 'Cancelled'],
         default: 'Pending'
+    },
+    shipment_id: {
+        type: String,
+        required: true
     },
     discount_id: {
         type: String,
@@ -23,18 +26,10 @@ const OrderSchema = new mongoose.Schema({
         type: Date,
         default: Date.now
     },
-    // total_price:{
-    //     type: Number,
-    //     required: true
-    // },
-    // shipment_id: {
-    //     type: String,
-    //     required: true
-    // },
-    // payment_method: {
-    //     type: String,
-    //     required: true
-    // }
+    total_price:{
+        type: Number,
+        required: true
+    }
 });
 
 module.exports = mongoose.model('Order', OrderSchema);
