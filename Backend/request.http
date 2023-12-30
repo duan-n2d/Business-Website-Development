@@ -9,7 +9,8 @@ Content-Type: application/json
 }
 
 ### all active brands
-GET http://localhost:5000/api/auth/brand
+GET http://localhost:5000/api/auth/brands
+###
 Content-Type: application/json
 
 {

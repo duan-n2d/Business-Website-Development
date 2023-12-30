@@ -3,7 +3,7 @@ import React from "react";
 import Header from "../components/Header";
 import NavBar from "../components/NavBar";
 import Footer from "../components/Footer";
-import ProductsGrid from "../components/ProductsGrid";
+import Blogs from "../components/Blogs"
 
 export default function AllProduct() {
     return (
@@ -12,8 +12,8 @@ export default function AllProduct() {
                 <Header/>
                 <NavBar/>
             </div>
-            <div className="mt-60">
-                <ProductsGrid/>
+            <div className="mt-60 w-full flex justify-center items-center">
+                <Blogs className="w-10/12 mx-auto"/>
             </div>
             <Footer/>
         </div>

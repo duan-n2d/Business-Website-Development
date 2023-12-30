@@ -9,7 +9,7 @@ function Header() {
         <div className="fixed right-0 top-0 w-full  bg-green-50"> 
             <div className="mx-auto flex justify-between items-center">
                 <div className="logo w-[307px] justify-center items-center bg-white">
-                    <a href="/">
+                    <a href="">
                         <img className='w-2/3 mx-auto py-2' src={logo} alt="" />
                     </a>
                 </div>
@@ -49,21 +49,21 @@ function Header() {
         
             <div className="flex">
                 <div className="w-2/3"></div>
-                <div className="w-1/3 pr-20 flex justify-between py-0.5">
+                <div className="w-1/3 pr-[10%] flex justify-between items-center pt-2">
                     <div className="flex">
-                        <PiPackageFill className="w-6 h-6"/>
+                        <PiPackageFill className="w-4 h-4"/>
                         &nbsp;
-                        <p>Tra cứu đơn hàng</p>
+                        <p className="text-[12px]">Tra cứu đơn hàng</p>
                     </div>
                     <div className="flex">
-                        <PiMapPinFill className="w-6 h-6"/>
+                        <PiMapPinFill className="w-4 h-4"/>
                         &nbsp;
-                        <p>Tìm cửa hàng</p>
+                        <p className="text-[12px]">Tìm cửa hàng</p>
                     </div>
                     <div className="flex">
-                        <PiEnvelopeFill className="w-6 h-6"/>
+                        <PiEnvelopeFill className="w-4 h-4"/>
                         &nbsp;
-                        <p>Liên hệ</p>
+                        <p className="text-[12px]">Liên hệ</p>
                     </div>
                 </div>
             </div>
@@ -84,7 +84,7 @@ function Header() {
                         </button>
                     </div>
 
-                    <div className="w-1/3 flex justify-between items-center text-cyan-900">
+                    <div className="w-1/3 flex justify-between items-center text-[#173F5F] text-[16px]">
                         <div className="">
                             <div className="login">
                                 <div className="font-bold uppercase">

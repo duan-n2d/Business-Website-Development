@@ -9,12 +9,14 @@ import BlogRec from "../components/BlogRec";
 export default function Home() {
     return (
         <div className="font-nunito">
-            <div className="head-nav w-full">
-                <Header />
-                <NavBar />
+            <div className="fixed right-0 z-50 top-0 w-full  bg-green-50 shadow-md">
+                <Header/>
+                <NavBar/>
             </div>
-            <Carousel/>
-            <BlogRec/>
+            <div className="mt-52">
+                <Carousel/>
+                <BlogRec/>
+            </div>
             <Footer/>
         </div>
     );

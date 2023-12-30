@@ -10,6 +10,8 @@ import AllProduct from './pages/AllProduct'
 import Admin from './pages/Admin'
 import AboutUs from './pages/AboutUs'
 import Checkout from './pages/Checkout'
+import Blog from './pages/Blog'
+import LandingPage from './pages/LandingPage'
 
 
 function App() {
@@ -18,8 +20,10 @@ function App() {
     <>
       <Routes className = 'root font-nunito '>
         <Route path='/' element={<Home/>} />
-        <Route path='/all-product' element={<AllProduct/>} />
+        <Route path='/all-products' element={<AllProduct/>} />
         <Route path='/check-out' element={<Checkout/>} />
+        <Route path='/landing' element={<LandingPage/>} />
+        <Route path='/blogs' element={<Blog/>} />
         <Route path='/about-us' element={<AboutUs/>} />
         <Route path='/login' element={<Login/>} />
         <Route path='/register' element={<Register/>} />
