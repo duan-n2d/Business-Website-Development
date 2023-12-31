@@ -12,8 +12,8 @@ export default function AllProduct() {
                 <Header/>
                 <NavBar/>
             </div>
-            <div className="mt-60 w-full flex justify-center items-center">
-                <Blogs className="w-10/12 mx-auto"/>
+            <div className="mt-60 justify-center items-center">
+                <Blogs className="w-full md:w-10/12 mx-auto"/>
             </div>
             <Footer/>
         </div>

@@ -12,6 +12,7 @@ import AboutUs from './pages/AboutUs'
 import Checkout from './pages/Checkout'
 import Blog from './pages/Blog'
 import LandingPage from './pages/LandingPage'
+import PolicyPage from './pages/PolicyPage'
 
 
 function App() {
@@ -25,6 +26,7 @@ function App() {
         <Route path='/landing' element={<LandingPage/>} />
         <Route path='/blogs' element={<Blog/>} />
         <Route path='/about-us' element={<AboutUs/>} />
+        <Route path='/policy/:id?' element={<PolicyPage/>} />
         <Route path='/login' element={<Login/>} />
         <Route path='/register' element={<Register/>} />
         <Route path='*' element={<ErrorPage/>} />
