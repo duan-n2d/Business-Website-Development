@@ -2,7 +2,7 @@ import React from 'react';
 
 function BlogDetail() {
   return (
-    <div className=''>
+    <div className=' font-nunito'>
       {/* header */}
       <br />
       <br />

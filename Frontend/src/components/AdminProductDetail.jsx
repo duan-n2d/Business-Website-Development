@@ -11,7 +11,7 @@ const productdetails =[
 
 function AdminProductDetail() {
   return (
-    <div className='font-nunito w-[95%] mx-auto text-[#1B3735]'>
+    <div className='font-nunito w-[95%] mx-auto text-[#1B3735] font-nunito'>
       <form action="">
         <p className='text-30 font-bold my-3'>
           Chi Tiết Sản Phẩm

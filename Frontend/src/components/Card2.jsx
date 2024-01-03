@@ -12,7 +12,7 @@ const products =[
 function Card2() {
  
   return (
-    <div className="w-[100%] px-12 justify-center items-center">
+    <div className="w-[100%] px-12 justify-center items-center font-nunito">
       <h1 className="text-center text-[#1B3735] sm:text-3xl lg:text-6xl font-bold py-8">Sản Phẩm Bán Chạy</h1>
     <div className="grid grid-cols-1 2xl:grid-cols-4 md:grid-cols-3 md:gap-12 sm:gap-20 lg:grid-cols-4 lg:gap-8 p-4 px-4  ">
       {products.map((product, index) => (

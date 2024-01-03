@@ -1,23 +1,25 @@
 import React from 'react';
 
 function ErrorPage() {
+  // after 15s, redirect to home page
+  React.useEffect(() => {
+    setTimeout(() => {
+      window.location.href = '/';
+    }, 5000);
+  }, []);
   return (
-<div className="h-screen w-screen bg-gray-50 flex items-center">
-    <div className="container flex flex-col md:flex-row items-center justify-between px-5 text-gray-700">
-            <div className="w-full lg:w-1/2 mx-8">
-                <div className="text-7xl text-green-500 font-dark font-extrabold mb-8"> 404</div>
-            <p className="text-2xl md:text-3xl font-light leading-normal mb-8">
-                Sorry we couldn't find the page you're looking for
-            </p>
-            
-            <a href="/" className="px-5 inline py-3 text-sm font-medium leading-5 shadow-2xl text-white transition-all duration-400 border border-transparent rounded-lg focus:outline-none bg-green-600 active:bg-red-600 hover:bg-red-700">back to homepage</a>
-    </div>
-        <div className="w-full lg:flex lg:justify-end lg:w-1/2 mx-5 my-12">
-        <img src="https://user-images.githubusercontent.com/43953425/166269493-acd08ccb-4df3-4474-95c7-ad1034d3c070.svg" className="" alt="Page not found"/>
+    <section className="flex items-center h-screen p-16 bg-green-100 text-[#1B3735]">
+      <div className="container flex flex-col items-center justify-center px-5 mx-auto my-8">
+        <div className="max-w-md text-center">
+          <h2 className="mb-8 font-bold md:text-[100px] text-[60px] text-[#1B3735]">
+            <span className="sr-only">Error</span>404
+          </h2>
+          <p className="text-[18px] font-semibold md:text-[28px]">Xin lỗi, không thể tìm thấy trang này.</p>
+          <p className="text-[18px] font-semibold md:text-[20px] pb-10">Chọn vào nút bên dưới hoặc chờ 5s để trở về trang chủ.</p>
+          <a rel="noopener noreferrer" href="/" className="px-8 py-3 font-semibold rounded bg-[#1B3735] text-white">Trở về trang chủ</a>
         </div>
-    
-    </div>
-</div>
+      </div>
+    </section>
   );
 }
 

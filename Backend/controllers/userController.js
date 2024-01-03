@@ -31,7 +31,7 @@ const getUserByIdController = async (req, res) => {
     .json({ success: false, message: "Internal server error" });
   }
   
-  res.json({ success: true, user_id: user_id, role: user.role });
+  res.json({ success: true, user: user });
 }
 
 const updateUserController = async (req, res) => {

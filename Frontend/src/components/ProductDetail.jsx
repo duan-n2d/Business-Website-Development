@@ -4,7 +4,7 @@ import img1 from '../assets/Gakki.png'
 function ProductDetails() {
   return (
 
-    <div className="bg-white  ">
+    <div className="bg-white font-nunito">
 
       <div className="flex">
         <div className="relative">

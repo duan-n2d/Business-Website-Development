@@ -9,7 +9,8 @@ Content-Type: application/json
 }
 
 ### all active brands
-GET http://localhost:5000/api/auth/brand
+GET http://localhost:5000/api/auth/brands
+###
 Content-Type: application/json
 
 {
@@ -24,8 +25,8 @@ Content-Type: application/json
   {
     "first_name": "Hoàng",
     "last_name": "Phan",
-    "email": "hoang.phan@example.com",
-    "phone_number": "555-234-5178",
+    "email": "hoang.phann@example.com",
+    "phone_number": "5552345178",
     "password": "hoangpass234",
     "role": "user"
   }
@@ -35,9 +36,12 @@ POST http://localhost:5000/api/auth/login
 Content-Type: application/json
 
 {
-  "username": "admin4@gmail.com",
-  "password": "123456"
+  "username": "hoang.phann@example.com",
+  "password": "hoangpass234"
 }
+
+### Get user by id
+GET http://localhost:5000/api/auth/user/GU0040
 
 ### Delete user
 PATCH http://localhost:5000/api/auth/delete-user

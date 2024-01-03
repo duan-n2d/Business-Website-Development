@@ -8,7 +8,7 @@ import mastercard from "../assets/carrt/mastercard.png";
 import napas from "../assets/carrt/napas.png";
 function Cart() {
   return (
-    <div className=" container mx-auto px-[50px] font-nunito mt-8">
+    <div className=" container mx-auto px-[50px] font-nunito mt-8 font-nunito">
       <h1 className="text-30 font-bold text-center leading-8 ">
         Giỏ hàng của bạn
       </h1>
