@@ -7,7 +7,7 @@ function Blogs() {
   return (
     <div>
       <br />
-      <h1 className='font-inter text-5xl text-center font-bold'>Tất cả bài viết</h1><br /><br />
+      <h1 className=' font-nunito text-5xl text-center font-bold'>Tất cả bài viết</h1><br /><br />
       <div className='flex'>
 
         <div className='w-[30%] ml-[3%] mr-[2%]'>

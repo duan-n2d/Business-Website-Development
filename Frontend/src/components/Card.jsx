@@ -4,7 +4,7 @@ import { PiArrowRightBold } from "react-icons/pi";
 
 function Card() {
   return (
-    <div className="max-w-2xl min-h-[328px]">
+    <div className="max-w-2xl min-h-[328px] font-nunito">
       <div className="relative">
         <div className="absolute top-2 left-2 bg-gray-800 h-[320px] w-[225px]"></div>
         <div className="absolute top-0 left-0 bg-white h-[320px] w-[225px] border border-gray-800">

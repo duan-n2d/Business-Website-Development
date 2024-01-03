@@ -162,8 +162,6 @@ const Policy = () =>{
             term = termsOfService;
     }
 
-    console.log(term);
-
     return (
     <main className='font-nunito w-full md:w-10/12 mx-auto'>
         <div className='py-10'>

@@ -3,7 +3,7 @@ import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, Legend, Responsive
 
 const PoEChart = ({ data }) => {
   return (
-    <div className="w-full h-screen">
+    <div className="w-full h-screen font-nunito">
       <ResponsiveContainer width="80%" height="80%">
         <BarChart data={data} margin={{ top: 20, right: 30, left: 20, bottom: 5 }}>
           <CartesianGrid strokeDasharray="3 3" />

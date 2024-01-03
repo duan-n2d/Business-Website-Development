@@ -1,15 +1,26 @@
 import React from 'react';
 import BlogCard from './BlogCard';
 
-const BlogRec = (listBlog) => {
+import BlogImg1 from "../assets/banners/Blog_01.png";
+import BlogImg2 from "../assets/banners/Blog_02.png";
+import BlogImg3 from "../assets/banners/Blog_03.png";
+
+const BlogRec = () => {
   // object to array
-  const objectBlog = Object.values(listBlog);
-  if (!Array.isArray(objectBlog)) {
-    return null;
-  }
-  const blogs = objectBlog[0];
+  // const objectBlog = Object.values(listBlog);
+  // if (!Array.isArray(objectBlog)) {
+  //   return null;
+  // }
+  // const blogs = objectBlog[0];
+
+  const blogs = [
+    { id: 1, title: 'Blog 1', imageUrl: BlogImg1, hashtag: '#Tag1', content: 'Content 1' },
+    { id: 2, title: 'Blog 2', imageUrl: BlogImg2, hashtag: '#Tag2', content: 'Content 2' },
+    { id: 3, title: 'Blog 3', imageUrl: BlogImg3, hashtag: '#Tag3', content: 'Content 3' },
+  ];
+
   return (
-    <div className="w-full md:w-10/12 mx-auto bg-white flex-col justify-center">
+    <div className="w-full md:w-10/12 mx-auto bg-white flex-col justify-center font-nunito">
       <hr className='border-black'/>
       <div className='font-bold text-center text-[32px] my-12'>
         <h3 className='font-bold text-center text-[32px] uppercase'>Trích từ Blog</h3>

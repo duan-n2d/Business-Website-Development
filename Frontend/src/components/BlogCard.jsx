@@ -5,9 +5,8 @@ const BlogCard = (blog ) => {
   if (!blog) {
     return null;
   }
-  console.log(blog);
   return (
-    <div className='card max-w-[400px] min-w-60 m-2'>
+    <div className='card max-w-[400px] min-w-60 m-2 font-nunito'>
       <a href={`/${blog.id}`}>
         <div className='image-blog-card'>
           <img className='' src={blog.imageUrl} alt={blog.title}/>

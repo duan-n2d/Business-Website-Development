@@ -18,7 +18,9 @@ const Login = () =>{
         password,
       });
 
-      localStorage.setItem('tokenStore', res.data.token);
+      localStorage.setItem('tokenStore', res.data.accessToken);
+
+      console.log(res.data.accessToken);
 
       const role = res.data.role;
 

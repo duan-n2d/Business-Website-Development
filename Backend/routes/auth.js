@@ -1,6 +1,8 @@
 const express = require('express')
 const router = express.Router()
 
+const { verifyToken, isAdmin } = require('../middleware/auth')
+
 const { loginController,
     registerController,
     logoutController,

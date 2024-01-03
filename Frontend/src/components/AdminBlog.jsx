@@ -4,7 +4,7 @@ import { IoIosArrowDown } from "react-icons/io";
 
 function AdminBlog() {
     return (
-        <div className='w-full mx-auto'>
+        <div className='w-full mx-auto font-nunito'>
             <div>
                 <div className="bg-white shadow w-[300px] h-[80px] rounded-[12px] float-right flex font-bold">
                     <div className="bg-[#2D9CDB26] rounded-[15px] w-[48px] h-[48px] mt-[16px] ml-[16px]">

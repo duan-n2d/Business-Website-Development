@@ -8,7 +8,7 @@ import Banner from './Banner';
 
 function ProductsGrid() {
   return (
-    <div className="container mt-10 flex justify-center">
+    <div className="container mt-10 flex justify-center font-nunito">
       <div className='mt-5 w-11/12 flex justify-center'>
 
         <div className='w-1/4 mt-20'>

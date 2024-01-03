@@ -36,7 +36,7 @@ const Footer = () => {
   ];
 
   return (
-    <footer className="bg-white">
+    <footer className="bg-white font-nunito">
       <div className="bg-green-100">
         <div className=' hidden md:w-10/12 md:mx-auto md:grid md:grid-cols-4 md:gap-4 items-center text-[18px] py-8'>
         {trustItems.map((item, index) => (

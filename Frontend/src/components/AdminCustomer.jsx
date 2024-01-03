@@ -78,7 +78,7 @@ function AdminCustomer() {
   }
 
   return (
-    <div className="font-nunito w-full">
+    <div className="font-nunito w-full  font-nunito">
       <p className="text-30 font-bold mb-5">Khách hàng</p>
       <div>
         <div className="pb-5">
