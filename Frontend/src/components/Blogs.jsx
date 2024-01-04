@@ -2,29 +2,35 @@ import React, { useState, useEffect } from 'react';
 import { IoIosSearch } from "react-icons/io";
 import { PiArrowCircleLeftFill, PiArrowCircleRightFill, PiPlusBold, PiCheckBold } from "react-icons/pi";
 import { MdKeyboardArrowDown } from "react-icons/md";
+import Blog1 from '../assets/blogs/Blog1.jpg'
+import Blog2 from '../assets/blogs/Blog2.jpg'
+import Blog3 from '../assets/blogs/Blog3.jpeg'
+import Blog4 from '../assets/blogs/Blog4.jpg'
+import Blog5 from '../assets/blogs/Blog5.jpg'
+import Blog6 from '../assets/blogs/Blog6.jpg'
 
 function Blogs() {
   const blogNews = [
     {
-      category: '#Hướng dẫn chọn đàn',
-      imageUrl: 'https://blog.sweelee.com/uploads/2023/03/Neural-DSP-Quad-ortex-Processor-Next-Generation-Amplifier-and-Effects-Modelling-banner@1200x630-480x252.jpg',
-      heading: 'Có Nhiều Cái Khó Nói ',
-      excerpt: 'Lorem ipsum dolor sit amet consectetur adipisicing elit…',
+      category: '#Bí kíp Produce',
+      imageUrl: Blog2,
+      heading: 'Chỉnh tạp âm khi thu',
+      excerpt: 'Để mang đến âm thanh chuyên nghiệp và tinh tế, việc biết cách sử dụng công cụ...',
       link: '#',
     },
     {
       category: '#Bí kíp Produce',
-      imageUrl: 'https://blog.sweelee.com/uploads/2023/11/Gift-Guide-for-Content-creators-2023-banner@1200x630-480x252.jpg',
-      heading: 'Take It Easy',
-      excerpt: 'Lorem ipsum dolor sit amet consectetur adipisicing elit…',
+      imageUrl: Blog4,
+      heading: 'Kỹ thuật thu âm cần phải nhớ',
+      excerpt: 'Hướng dẫn về cách nhận biết và giảm thiểu nhiễu trong quá trình thu âm...',
       link: '#',
     },
 
     {
       category: '#Kiến thức âm nhạc',
-      imageUrl: 'https://blog.sweelee.com/uploads/2023/11/Gift-Guide-for-Keyboardists-2023-banner@1200x630-480x252.jpg',
-      heading: 'Việt Nam Muôn Đời',
-      excerpt: 'Lorem ipsum dolor sit amet consectetur adipisicing elit…',
+      imageUrl: Blog6,
+      heading: 'Kỹ thuật Piano',
+      excerpt: 'Cung cấp một cái nhìn tổng quan về các kỹ thuật cơ bản cần thiết cho người mới...',
       link: '#',
     },
   ]
@@ -32,44 +38,44 @@ function Blogs() {
   const blogPosts = [
     {
       category: '#Hướng dẫn chọn đàn',
-      imageUrl: 'https://blog.sweelee.com/uploads/2023/10/Gift-Guide-for-Guitarists-2023-banner@1200x630-480x252.jpg',
-      heading: 'Có Nhiều Cái Khó Nói',
-      excerpt: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed sunt maxime earum neque eligendi consequatur rerum! Voluptatum dicta soluta fuga quo. Cumque pariatur doloremque impedit debitis ex laudantium iure eum?…',
+      imageUrl: Blog1,
+      heading: 'Mua đàn nào là tốt?',
+      excerpt: 'Bạn mới bắt đầu học đàn và đang đối diện với thách thức lựa chọn loại đàn phù hợp? Bài viết này sẽ dẫn bạn qua một hành trình chi tiết để giúp bạn tìm ra cây đàn hoàn hảo cho mình.',
       link: '#',
     },
     {
       category: '#Bí kíp Produce',
-      imageUrl: 'https://blog.sweelee.com/uploads/2023/03/Neural-DSP-Quad-ortex-Processor-Next-Generation-Amplifier-and-Effects-Modelling-banner@1200x630-480x252.jpg',
-      heading: 'Take It Easy',
-      excerpt: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed sunt maxime earum neque eligendi consequatur rerum! Voluptatum dicta soluta fuga quo. Cumque pariatur doloremque impedit debitis ex laudantium iure eum?…',
+      imageUrl: Blog2,
+      heading: 'Chỉnh tạp âm khi thu',
+      excerpt: 'Để mang đến âm thanh chuyên nghiệp và tinh tế, việc biết cách sử dụng công cụ chỉnh tạp âm là quan trọng. Bài viết này sẽ giới thiệu về các công cụ và kỹ thuật chỉnh tạp âm mà mọi người nên biết để nâng cao...',
       link: '#',
     },
     {
       category: '#Kiến thức âm nhạc',
-      imageUrl: 'https://blog.sweelee.com/uploads/2022/08/WhatsApp-Image-2022-08-01-at-6.51.29-PM-480x252.jpeg',
-      heading: 'Việt Nam Muôn Đời',
-      excerpt: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed sunt maxime earum neque eligendi consequatur rerum! Voluptatum dicta soluta fuga quo. Cumque pariatur doloremque impedit debitis ex laudantium iure eum?…',
+      imageUrl: Blog3,
+      heading: 'EQ là gì?',
+      excerpt: 'Mỗi loại nhạc cụ đều có những đặc điểm âm thanh riêng biệt. Bài viết này sẽ phân tích cách sử dụng EQ để điều chỉnh và tối ưu hóa đặc tính âm thanh của từng loại nhạc cụ.',
       link: '#',
     },
     {
       category: '#Bí kíp Produce',
-      imageUrl: 'https://blog.sweelee.com/uploads/2023/11/Gift-Guide-for-Content-creators-2023-banner@1200x630-480x252.jpg',
-      heading: 'Trong Sương',
-      excerpt: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed sunt maxime earum neque eligendi consequatur rerum! Voluptatum dicta soluta fuga quo. Cumque pariatur doloremque impedit debitis ex laudantium iure eum?…',
+      imageUrl: Blog4,
+      heading: 'Kỹ thuật thu âm cần phải nhớ',
+      excerpt: 'Hướng dẫn về cách nhận biết và giảm thiểu nhiễu trong quá trình thu âm. Bài viết sẽ tập trung vào chiến lược phòng ngừa và cách xử lý hiệu quả các loại nhiễu âm từ môi trường xung quanh.',
       link: '#',
     },
     {
       category: '#Hướng dẫn chọn đàn',
-      imageUrl: 'https://blog.sweelee.com/uploads/2023/11/Gift-Guide-for-recording-musicians-2023-banner@1200x630-480x252.jpg',
-      heading: 'Đầu Đường Xó Chợ',
-      excerpt: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed sunt maxime earum neque eligendi consequatur rerum! Voluptatum dicta soluta fuga quo. Cumque pariatur doloremque impedit debitis ex laudantium iure eum?…',
+      imageUrl: Blog5,
+      heading: 'Nhạc cụ thịnh hành nhất năm 2023',
+      excerpt: 'Liệt kê và phân tích những mẫu guitar nổi bật và được ưa chuộng nhất trong năm 2023, từ acoustic đến electric, để giúp người chơi và người yêu nhạc có cái nhìn tổng quan về xu hướng mới.',
       link: '#',
     },
     {
       category: '#Kiến thức âm nhạc',
-      imageUrl: 'https://blog.sweelee.com/uploads/2023/11/Gift-Guide-for-Keyboardists-2023-banner@1200x630-480x252.jpg',
-      heading: 'Biên Giới Long Bình',
-      excerpt: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed sunt maxime earum neque eligendi consequatur rerum! Voluptatum dicta soluta fuga quo. Cumque pariatur doloremque impedit debitis ex laudantium iure eum?…',
+      imageUrl: Blog6,
+      heading: 'Kỹ thuật Piano',
+      excerpt: 'Cung cấp một cái nhìn tổng quan về các kỹ thuật cơ bản cần thiết cho người mới bắt đầu học chơi piano. Bài viết sẽ bao gồm cách đặt tay, cách đọc nhạc, và những bước quan trọng trong việc xây dựng nền tảng cho sự phát triển về sau.',
       link: '#',
     },
   ];
@@ -272,7 +278,7 @@ function Blogs() {
                   <img className='w-[100%] h-[100%] object-cover' src={post.imageUrl} alt={post.heading} />
                 </a>
               </div>
-              <div className='article-card__copy p-5 text-justify xl:w-[63%] lg:w-[100%]'>
+              <div className='article-card__copy p-5 text-justify xl:w-[63%] w-[100%]'>
                 <h5 className='article-card__pre-heading'>
                   <a href={post.link} className='italic'>{post.category}</a>
                 </h5>
