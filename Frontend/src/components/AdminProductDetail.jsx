@@ -17,9 +17,9 @@ function AdminProductDetail() {
           Chi Tiết Sản Phẩm
         </p>
         <div>
-          <p className='text-[#1B3735] font-bold text-22'>
+          <label className='text-[#1B3735] font-bold text-22'>
             Tên sản phẩm
-          </p>
+          </label>
           <input
             type="text"
             name="product_name"

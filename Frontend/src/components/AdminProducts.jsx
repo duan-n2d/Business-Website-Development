@@ -90,7 +90,7 @@ function Admin_Product() {
   };
 
   return (
-    <div className='font-nunito'>
+    <div className='font-nunito bg-gradient-to-r from-[#FEFEFE] via-[#FFFFFF] to-[#EBFFE4]'>
       <h1 className="text-30 font-bold my-5 mx-5 text-[#1B3735]">Sản Phẩm </h1>
       <div className='flex justify-end mx-5'>
         <button className='bg-[#1B3735] px-3 py-3 rounded-md text-white text-20 font-bold f'>
@@ -99,7 +99,7 @@ function Admin_Product() {
       </div>
       
       <div className='w-[100%] mx-auto rounded-md shadow-md px-4 py-7 '>
-<div className='my-8 shadow-xl text-[#1B3735]'>
+<div className='my-8 shadow-lg text-[#1B3735]'>
 
   <table className=' text-22 font-bold my-8-'>
           <tr>
