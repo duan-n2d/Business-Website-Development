@@ -32,8 +32,8 @@ function App() {
       <Cart/>
       <Carousel/>
       <Banner/> */}
-      <Blogs></Blogs>
-      {/* <BlogDetail></BlogDetail> */}
+      {/* <Blogs></Blogs> */}
+      <BlogDetail></BlogDetail>
       {/* <BlogRec></BlogRec> */}
     </>
   )
