@@ -62,7 +62,7 @@ const { getAllReviewsByProductId,
 const { getAllUserController,
     updateUserController,
     getUserByIdController,
-    deleteUserController } = require('../controllers/UserController')
+    deleteUserController } = require('../controllers/userController')
 
 // Account
 router.post('/register', registerController)
