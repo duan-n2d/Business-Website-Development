@@ -1,4 +1,5 @@
 import React from 'react';
+<<<<<<< Updated upstream
 import { PiPhoneFill } from "react-icons/pi";
 import { PiMapPinFill } from "react-icons/pi";
 import { PiEnvelopeFill } from "react-icons/pi";
@@ -9,6 +10,43 @@ import { PiTruckFill } from 'react-icons/pi';
 import { FaShoppingCart } from "react-icons/fa";
 import { GiHouse, GiPriceTag } from "react-icons/gi";
 import { FaTruckFast } from "react-icons/fa6";
+=======
+import { PiPhoneFill, PiMapPinFill, PiEnvelopeFill, PiShoppingCartFill, PiHouseLineFill, PiTagFill, PiTruckFill } from 'react-icons/pi';
+import Instagram from '../assets/icons/instagram.svg';
+import Facebook from '../assets/icons/Facebook.svg';
+
+const Footer = () => {
+  const trustItems = [
+    { icon: <PiHouseLineFill className='w-20 h-20 mx-auto mb-2'/>, description: ['Ngôi Nhà Âm Nhạc'] },
+    { icon: <PiTruckFill className='w-20 h-20 mx-auto mb-2'/>, description: ['Giao Hàng Miễn Phí','Đảm Bảo Vận Chuyển'] },
+    { icon: <PiShoppingCartFill className='w-20 h-20 mx-auto mb-2'/>, description: ['Mua Sắm Trực Tuyến','Đảm Bảo An Toàn'] },
+    { icon: <PiTagFill className='w-20 h-20 mx-auto mb-2'/>, description: ['Đơn Giá Đã Bao Gồm Các Khoản Thuế'] },
+  ];
+  const contactInfo = [
+    {
+      icon: <PiMapPinFill size="25" />,
+      detail: 'Số 669 Quốc lộ 1A, Khu phố 3, phường Linh Xuân, TP Thủ Đức, TP Hồ Chí Minh',
+      url: null
+    },
+    {
+      icon: <PiPhoneFill size="25" />,
+      detail: '0847468525',
+      url: 'tel:0847468525'
+    },
+    {
+      icon: <PiEnvelopeFill size="25" />,
+      detail: 'gakki.support@gmail.com',
+      url: 'mailto:gakki.support@gmail.com'
+    },
+  ];
+
+  const policyLinks = [
+    { url: '/policy/', text: 'Điều khoản dịch vụ' },
+    { url: '/policy/1', text: 'Chính sách bảo mật' },
+    { url: '/policy/2', text: 'Chính sách đổi trả' },
+    { url: '/policy/3', text: 'Chế độ bảo hành' },
+  ];
+>>>>>>> Stashed changes
 
 function Footer() {
   return (
