@@ -48,7 +48,7 @@ const Card = (product) => {
             <div className="relative items-center w-9/12 text-gray-800 mx-auto">
               <div className="absolute h-full w-full flex items-center justify-center opacity-0 hover:opacity-100 transition-all duration-300">
                 <button className="bg-[#598E75] text-white py-3 mx-auto opacity-60 hover:opacity-100 font-semibold rounded w-full">
-                  Xem nhanh
+                  <a href={`/product/${data.product.product_id}`}>Xem chi tiết</a>
                 </button>
               </div>
               <img src={`${url}${image.image[0]}`} alt="Product Image" className="mx-auto pt-3" />
