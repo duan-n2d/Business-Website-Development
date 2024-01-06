@@ -12,8 +12,7 @@ const ProductImageSchema = new mongoose.Schema({
     numerical_order: {
         type: Number,
         required: true,
-        unique: true,
-        index: true
+        unique: true
     },
     is_created: {
         type: Boolean,

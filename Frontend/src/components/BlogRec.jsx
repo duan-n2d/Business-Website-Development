@@ -22,8 +22,8 @@ const BlogRec = () => {
   return (
     <div className="w-full md:w-10/12 mx-auto bg-white flex-col justify-center font-nunito">
       <hr className='border-black'/>
-      <div className='font-bold text-center text-[32px] my-12'>
-        <h3 className='font-bold text-center text-[32px] uppercase'>Trích từ Blog</h3>
+      <div className='font-bold text-center my-12'>
+        <h3 className='font-bold text-center text-[26px] uppercase'>Trích từ Blog</h3>
       </div>
 
       <div className='mx-auto grid grid-cols-1 md:grid-cols-3 md:gap-4 m-2'>

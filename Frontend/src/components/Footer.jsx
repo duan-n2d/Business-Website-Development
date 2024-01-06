@@ -1,5 +1,6 @@
 import React from 'react';
 import { PiPhoneFill, PiMapPinFill, PiEnvelopeFill, PiShoppingCartFill, PiHouseLineFill, PiTagFill, PiTruckFill } from 'react-icons/pi';
+import Gakki from '../assets/Gakki.png';
 import Instagram from '../assets/icons/instagram.svg';
 import Facebook from '../assets/icons/Facebook.svg';
 
@@ -65,7 +66,7 @@ const Footer = () => {
 
         <div className="w-full lg:w-10/12 mx-auto grid grid-cols-1 sm:grid-cols-2 sm:gap-2 md:grid-cols-4 md:gap-2">
           <div className="py-5 px-2 text-center">
-            <img src="../src/assets/Gakki.png" alt="Gakki" className="w-48 mx-auto" />
+            <img src={Gakki} alt="Gakki" className="w-48 mx-auto" />
             <div className="text-justify mt-1">
               Với mong muốn chữa lành những trái tim bằng âm vang giai điệu, chúng tôi hi vọng sẽ là người bạn đồng hành trên con đường âm nhạc của bạn.
             </div>

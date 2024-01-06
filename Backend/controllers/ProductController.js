@@ -25,7 +25,7 @@ const getProductActive = async (req, res) => {
 }
 
 const getProductById = async (req, res) => {
-    const { product_id } = req.body;
+    const product_id = req.params.id;
 
     if (!product_id)
         return res
@@ -33,7 +33,9 @@ const getProductById = async (req, res) => {
             .json({ success: false, message: "Missing product id" });
     try {
         const product = await Product.findOne({ product_id: product_id });
-        res.json(product);
+        res.json(
+            { product }
+        );
     }
     catch (error) {
         console.log(error);
@@ -43,7 +45,7 @@ const getProductById = async (req, res) => {
 };
 
 const getProductByCategoryId = async (req, res) => {
-    const { category_id } = req.body;
+    const category_id = req.params.id;
 
     if (!category_id)
         return res
@@ -128,6 +130,8 @@ const addProduct = async (req, res) => {
         
         const newProduct = new Product({ product_id: product_id, product_name: product_name, product_description: product_description, specifications: specifications, brand_id: brand_id, purchase_price: purchase_price, current_price: current_price, quantity_in_stock: quantity_in_stock, discount_id: null});
 
+        await newProduct.save();
+
         if (list_product_categories){
             // map list_product_categories to ProductCategory
             // product_id, category_id, is_active
@@ -155,9 +159,7 @@ const addProduct = async (req, res) => {
             console.log(error);
             res.status(500).json({ success: false, message: "Internal server error" });
         }
-
-        await newProduct.save();
-
+        
         res.json({ success: true, message: "Create product successfully" });
     }
     catch (error) {
@@ -289,6 +291,39 @@ const deleteProduct = async (req, res) => {
     }
 }
 
+const getImagesByProductId = async (req, res) => {
+    const product_id = req.params.id;
+
+    if (!product_id)
+        return res
+            .status(400)
+            .json({ success: false, message: "Missing product id" });
+
+    try {
+        const images = await ProductImage.find({ product_id: product_id });
+        // return list json images: numerical_order, img_url
+        // sort by numerical_order
+        for (let i = 0; i < images.length; i++){
+            for (let j = i + 1; j < images.length; j++){
+                if (images[i].numerical_order > images[j].numerical_order){
+                    const tmp = images[i];
+                    images[i] = images[j];
+                    images[j] = tmp;
+                }
+            }
+        }
+        let res_images = [];
+        for (let i = 0; i < images.length; i++){
+            res_images.push(images[i].image_url);
+        }
+        res.json(res_images);
+    }
+    catch (error) {
+        console.log(error);
+        res.status(500).json({ success: false, message: "Internal server error" })
+    }
+}
+
 module.exports = {
     getAllProducts,
     getProductActive,
@@ -297,5 +332,6 @@ module.exports = {
     getProductByBrandId,
     addProduct,
     updateProduct,
-    deleteProduct
+    deleteProduct,
+    getImagesByProductId
 }

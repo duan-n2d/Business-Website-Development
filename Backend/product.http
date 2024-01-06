@@ -6,12 +6,45 @@ POST http://localhost:5000/api/auth/add-product
 Content-Type: application/json
 
 {
-    "product_id": "J150",
-    "product_name": "Đàn Guitar Acoustic",
-    "product_description": "Đàn Guitar Acoustic Ba Đờn J150 là mẫu đàn thuộc phân khúc dành cho người mới bắt đầu của Ba Đờn. Đây là một model bán khá chạy của Ba đờn , với giá thành hợp lý đây là một trong những sự lựa chọn tốt dành cho người mới chơi.\nKiểu Dáng A Jumbo Khuyết :\nBa đờn J150 được thiết kế với dáng A khuyết thon gọn, giúp người chơi dễ ôm và cầm nắm khi tập luyện. Đây là dáng đàn phù hợp với những bạn có vóc dáng nhỏ, hoặc các bạn nữ có thể lựa chọn\n\nCấu Hình Full Gỗ Thịt:\nVới thông số mặt Top gỗ thông , lưng và hông đàn được làm bằng gỗ Hồng đào , toàn bộ đàn đều là gỗ nguyên tấm giúp tiếng đàn chắc chắn, có độ vang tốt. Ngoài ra action đàn cũng được căn chỉnh hợp lý dành cho người mới chơi, đây cũng là ưu điểm nổi bật của mẫu đàn này.",
-    "specifications": "",
-    "brand_id": "3BD",
-    "purchasing_price": 1900000,
-    "current_price": 1900000,
-    "quantity_in_stock": 94,
+    "product_id": "F03-097-1610-722",
+    "product_name": "Đàn Ukulele Soprano, Walnut FB, Natural",
+    "product_description": "Mang nguồn cảm hứng từ ngoại hình thú vị và tinh thần vô tư, độc đáo của Venice, California, Fender đã sản xuất ukulele soprano bắt trọn cảm giác đó—Venice Ukulele. Nhờ thân đàn có kích thước nhỏ gọn, Venice có thể đi khắp mọi nơi nhưng vẫn giữ được âm thanh sáng, classic, là cây đàn cần có đối với người chơi đàn hiện nay.",
+    "specifications": {
+        "Màu Thân": "Natural",
+        "Finish thân": "Satin",
+        "Dây đàn": "Standard Soprano Uke",
+        "Kiểu thân": "Soprano-sized",
+        "Độ cong cần":"Flat",
+        "Độ dài Scale": "13.6 inch (345 mm)",
+        "Số phím": "12",
+        "Inlays mặt cần": "Chấm tròn",
+        "Bộ khóa": "Open-Back Geared",
+        "Hardware Finish": "Chrome",
+        "Gỗ thân đàn": "Laminated Basswood",
+        "Bridge": "Laminated Hardwood",
+        "Mặt cần": "Walnut"
+    },
+    "brand_id": "F03",
+    "purchase_price": 2220000,
+    "current_price": 2420000,
+    "quantity_in_stock": 6,
+    "list_product_categories": [
+        "UKU",
+        "HOT"
+    ],
+    "list_images": [
+        "1MdiKw5eM-6AnfdPNcmVA-BAiGebHgt2Q",
+        "190SVuZ8kAbxez2TOvstTYSk7FHRLkqJ8",
+        "1t_tZ6HwOZa8uKi1JNU8P-JBHylXSQbr9",
+        "1MD1ibd9etHsSHyZD12YzOenKj7J8t7hS",
+        "1T3Mlecu-15qr26nFZHccFHN7Wzukqzne"
+    ]
 }
+
+### Get a product by id
+GET http://localhost:5000/api/auth/product/LC-28-NAT
+
+### get products by category
+GET http://localhost:5000/api/auth/products-by-category/NEW
+### GET IMAGE OF PRODUCT
+GET http://localhost:5000/api/auth/product/LC-28-NAT/img

@@ -53,7 +53,8 @@ const { getAllProducts,
     getProductByBrandId,
     addProduct,
     updateProduct,
-    deleteProduct } = require('../controllers/ProductController')
+    deleteProduct,
+    getImagesByProductId } = require('../controllers/ProductController')
 const { getAllReviewsByProductId,
     getAllReviewsByUserId,
     getReviewById,
@@ -62,7 +63,7 @@ const { getAllReviewsByProductId,
 const { getAllUserController,
     updateUserController,
     getUserByIdController,
-    deleteUserController } = require('../controllers/UserController')
+    deleteUserController } = require('../controllers/userController')
 
 // Account
 router.post('/register', registerController)
@@ -135,8 +136,9 @@ router.post('/add-product', addProduct)
 router.put('/update-product', updateProduct)
 router.patch('/delete-product', deleteProduct)
 router.get('/products-active', getProductActive)
-router.get('/products-by-category', getProductByCategoryId)
+router.get('/products-by-category/:id', getProductByCategoryId)
 router.get('/products-by-brand', getProductByBrandId)
+router.get('/product/:id/img', getImagesByProductId)
 
 // Review
 router.get('/reviews-by-product', getAllReviewsByProductId)

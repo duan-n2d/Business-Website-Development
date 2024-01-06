@@ -19,7 +19,7 @@ import Footer from "../components/Footer";
 function AboutUs() {
   return (
     <>
-      <div className="fixed right-0 z-50 top-0 w-full  bg-green-50 shadow-md">
+      <div className="fixed right-0 z-50 top-0 w-full  bg-green-50 shadow-md font-nunito">
         <Header/>
         <Navbar/>
       </div>

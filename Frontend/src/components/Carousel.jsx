@@ -15,7 +15,7 @@ function Carousel() {
         Banner01,
         Banner02,
         Banner03,
-        Banner04,
+        Banner04
     ];
 
     const [activeIndex, setActiveIndex] = useState(0);
