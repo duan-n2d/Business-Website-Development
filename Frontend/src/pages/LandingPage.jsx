@@ -4,7 +4,6 @@ import Header from "../components/Header";
 import NavBar from "../components/NavBar";
 import Footer from "../components/Footer";
 import Banner from "../components/Banner";
-import BlogRec from "../components/BlogRec";
 
 import imageBanner from "../assets/banners/landing.png";
 
@@ -18,7 +17,6 @@ export default function LandingPage() {
             </div>
             <div className="w-full mt-52">
                 <Banner url={imageBanner}/>
-                <BlogRec/>
             </div>
             <Footer/>
         </div>

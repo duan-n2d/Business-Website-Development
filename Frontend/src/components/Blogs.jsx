@@ -16,7 +16,7 @@ function Blogs() {
     {
       category: '#Bí kíp Produce',
       imageUrl: Blog2,
-      heading: 'Chỉnh tạp âm khi thu',
+      heading: 'Xóa tạp âm khi thu',
       excerpt: 'Để mang đến âm thanh chuyên nghiệp và tinh tế, việc biết cách sử dụng công cụ...',
       link: '#',
     },
@@ -48,7 +48,7 @@ function Blogs() {
     {
       category: '#Bí kíp Produce',
       imageUrl: Blog2,
-      heading: 'Chỉnh tạp âm khi thu',
+      heading: 'Xóa tạp âm khi thu',
       excerpt: 'Để mang đến âm thanh chuyên nghiệp và tinh tế, việc biết cách sử dụng công cụ chỉnh tạp âm là quan trọng. Bài viết này sẽ giới thiệu về các công cụ và kỹ thuật chỉnh tạp âm mà mọi người nên biết để nâng cao...',
       link: '#',
     },
@@ -306,25 +306,22 @@ function Blogs() {
 
         {/* Blog Cards */}
         <div className='xl:w-[60%] lg:w-[60%] lg:ml-[2%] ml-[5%] lg:mr-[3%] mr-[5%] xl:text-16 md:text-14'>
-          {currentPosts.map((post, index) => (
-            <div key={index} className='md:flex bg-[#F9FFD7] mb-10'>
-              <div className='article-card__image max-h-56 min-w-0'>
-                <a href={post.link}>
-                  <img className='w-[100%] h-[100%] max-w-[400px] object-cover' src={post.imageUrl} alt={post.heading} />
-                </a>
+          {currentPosts.map((blog, index) => (
+            <a href={`/${blog.id}`}>
+              <div key={index} className='md:flex bg-[#F9FFD7] mb-10'>
+                <div className='article-card__image max-h-56 min-w-0'>
+                  <img className='w-[100%] h-[100%] max-w-[400px] object-cover' src={blog.imageUrl} alt={blog.heading} />
+                </div>
+                <div className='article-card__copy p-5 text-justify xl:w-[63%] w-[100%]'>
+                  <h5 className='article-card__pre-heading italic'>{blog.category}</h5>
+                  <h4 className='article-card__heading font-bold text-20'>{blog.heading}
+                  </h4>
+                  <p className='article-card__excerpt xl:max-h-24 lg:max-h-20 max-h-24 overflow-hidden overflow-ellipsis'>
+                    <span className='article-card__excerpt-copy'>{blog.excerpt}</span>
+                  </p>
+                </div>
               </div>
-              <div className='article-card__copy p-5 text-justify xl:w-[63%] w-[100%]'>
-                <h5 className='article-card__pre-heading'>
-                  <a href={post.link} className='italic'>{post.category}</a>
-                </h5>
-                <h4 className='article-card__heading'>
-                  <a href={post.link} className='font-bold text-20'>{post.heading}</a>
-                </h4>
-                <p className='article-card__excerpt xl:max-h-24 lg:max-h-20 max-h-24 overflow-hidden overflow-ellipsis'>
-                  <span className='article-card__excerpt-copy'>{post.excerpt}</span>
-                </p>
-              </div>
-            </div>
+            </a>
           ))}
         </div>
       </div>
