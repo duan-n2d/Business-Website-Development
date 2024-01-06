@@ -9,7 +9,7 @@ function Header() {
 
     // Check token
     const token = localStorage.getItem('tokenStore') || null;
-    if (token) {
+    if (token !== null) {
         // Verify token
         const base64Url = token.split('.')[1];
         const base64 = base64Url.replace('-', '+').replace('_', '/');
@@ -111,6 +111,16 @@ function Header() {
 
                             <div className="w-1/3 flex justify-between items-center text-[#173F5F] text-[16px]">
 
+                                <div className="cart relative">
+                                    
+                                    <div className="t-0 absolute left-4">
+                                        <p className="flex h-2 w-2 items-center justify-center rounded-full bg-red-500 p-2.5 text-[12px] text-white">3</p>
+                                    </div>
+                                    <PiShoppingCartFill className="w-8 h-8"/>
+                                </div>
+
+                                |
+
                                 <div className="contact">
                                     <div className="font-bold uppercase">Liên hệ</div>
                                 </div>
@@ -120,16 +130,7 @@ function Header() {
                                 <div className="account">
                                     <div className="font-bold uppercase">Hello  {userInfo.last_name}</div>
                                 </div>
-
-                                |
-
-                                <div className="cart relative">
-                                
-                                    <div className="t-0 absolute left-4">
-                                        <p className="flex h-2 w-2 items-center justify-center rounded-full bg-red-500 p-2.5 text-[12px] text-white">3</p>
-                                    </div>
-                                    <PiShoppingCartFill className="w-8 h-8"/>
-                                </div>
+                
                             </div>
                         </div>
                     </div>
