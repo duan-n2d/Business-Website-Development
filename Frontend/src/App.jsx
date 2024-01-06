@@ -16,6 +16,8 @@ import LandingPage from './pages/LandingPage'
 import PolicyPage from './pages/PolicyPage'
 import UserProfile from './pages/UserProfile'
 
+import ProductDetail from './components/ProductDetail'
+
 
 function App() {
   // const user = useSelector(state => state.user)
@@ -35,6 +37,7 @@ function App() {
         <Route path='/profile' element={<UserProfile/>} />
         <Route path='*' element={<ErrorPage/>} />
         <Route path='/admin' element={<Admin/>} />
+        <Route path='/product/:id' element={<ProductDetail/>} />
       </Routes>
     </>
   )
