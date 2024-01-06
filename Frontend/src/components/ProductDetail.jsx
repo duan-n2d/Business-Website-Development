@@ -1,21 +1,47 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { useParams } from 'react-router-dom';
 import { Star, Cube, Truck, ArrowRight, Minus, Plus } from "@phosphor-icons/react";
-import img1 from '../assets/logoweb__.jpg';
-import img2 from '../assets/E09-ENOLEBCH1.jpg';
-import img3 from '../assets/Y01-C40II.jpg';
-import img4 from '../assets/other-image-3.jpg';
-// import { Star, Cube, Truck, ArrowRight, Minus, Plus } from "@phosphor-icons/react";
+// import img1 from '../assets/logoweb__.jpg';
+import axios from "axios";
 
-const images = [img1, img2, img3, img4];
+const API = 'http://localhost:5000/api/auth/';
+// const API = 'https://gakki.onrender.com/api/auth/';
+
+// const images = [img1, img2, img3, img4];
 
 const ProductDetails = () => {
   const { id } = useParams();
   const [product, setProduct] = useState(null);
+  const [images, setImages] = useState([]);
+
+  useEffect(() => {
+    axios.get(`${API}product/${id}`)
+      .then((response) => {
+        setProduct(response.data);
+      })
+      .catch((error) => {
+        console.error('Error fetching product data:', error);
+      });
+
+    if (product) {
+      axios.get(`${API}product/${id}/img`)
+        .then((response) => {
+          setImages(response.data);
+        })
+        .catch((error) => {
+          console.error('Error fetching product images:', error);
+        });
+    }
+  }, [id]);
+
+  console.log(product)
+  console.log(images)
 
   const [isZoomed, setZoomed] = useState(false);
   const [position, setPosition] = useState({ x: 0, y: 0 });
-  const [selectedImage, setSelectedImage] = useState(img1);
+  const [selectedImage, setSelectedImage] = useState(images[0]);
+
+  console.log(selectedImage)
 
   const handleMouseMove = (e) => {
     const { left, top, width, height } = e.target.getBoundingClientRect();
@@ -55,7 +81,7 @@ const ProductDetails = () => {
         {/* Title */}
         <div className="py-5 pl-4">
           <h1 className="font-bold text-30">
-            Fender CB-60SCE Acoustic Bass Guitar, Natural
+            {product?.product.product_name}
           </h1>
           <div className="flex">
             <span className="flex gap-2">
@@ -163,12 +189,12 @@ const ProductDetails = () => {
         </div>
 
         {/* Thông số kỹ thuật */}
-        <div className="grid grid-cols-1 mx-5 my-9 gap-10 lg:grid-cols-2" >
-          <div className="w-[100%]">
+        <div className="flex justify-between px-5 my-9 w-full" >
+          <div className="w-full lg:w-[40%]">
             <p className="text-center text-[#1B3735] font-bold text-24 mb-10">Thông Số Kỹ Thuật</p>
             <table className="text-[#1B3735] w-[100%] border border-black" cellPadding={10}>
               <tr className="bg-[#CAFFD6]">
-                <td className="border border-black font-bold">
+                <td className="border border-black font-bold w-3/12">
                   Thông tin
                 </td>
                 <td className="font-bold">
@@ -211,10 +237,10 @@ const ProductDetails = () => {
           </div>
           
           {/* Thông tin sản phẩm */}
-          <div>
+          <div className="w-full lg:w-7/12">
             <p className="text-center text-[#1B3735] font-bold text-24 mb-10">Thông Tin Sản Phẩm </p>
             <p className="w-[100%] mx-auto bg-[#FFF5E3] p-9 text-justify">
-              Series Classic Design hoàn thiện cùng CB-60SCE, bass acoustic vượt xa tầm khúc của mình. Model này sử dụng taper mảnh, dáng cần dễ thao tác như trên tất cả guitar Classic Design. Mặt đàn gỗ solid spruce và lưng & mặt bên gỗ mahogany góp phần vào thân đàn kích thước concert, tạo nên âm bass dịu và articulate. Người bạn đồng hành hoàn hảo khi hoạt động độc lập, CB-60SCE được trang bị electronics Fishman® linh hoạt, thích hợp cả trên sân khấu và trong studio.
+              {product?.product.product_description}
             </p>
           </div>
         </div>

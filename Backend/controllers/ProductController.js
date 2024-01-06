@@ -314,7 +314,7 @@ const getImagesByProductId = async (req, res) => {
         }
         let res_images = [];
         for (let i = 0; i < images.length; i++){
-            res_images.push(images[i].image_url);
+            res_images.push('https://drive.google.com/uc?id=' + images[i].image_url);
         }
         res.json(res_images);
     }

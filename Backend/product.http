@@ -47,4 +47,4 @@ GET http://localhost:5000/api/auth/product/LC-28-NAT
 ### get products by category
 GET http://localhost:5000/api/auth/products-by-category/NEW
 ### GET IMAGE OF PRODUCT
-GET http://localhost:5000/api/auth/product/LC-28-NAT/img
+GET http://localhost:5000/api/auth/product/HMN-0641020116/img
