@@ -15,6 +15,7 @@ import Blog from './pages/Blog'
 import LandingPage from './pages/LandingPage'
 import PolicyPage from './pages/PolicyPage'
 import UserProfile from './pages/UserProfile'
+import Product from './pages/Product'
 
 
 function App() {
@@ -35,6 +36,7 @@ function App() {
         <Route path='/profile' element={<UserProfile/>} />
         <Route path='*' element={<ErrorPage/>} />
         <Route path='/admin' element={<Admin/>} />
+        <Route path='/product/:id' element={<Product/>} />
       </Routes>
     </>
   )
