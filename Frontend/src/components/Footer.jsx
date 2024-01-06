@@ -30,14 +30,14 @@ const Footer = () => {
   ];
 
   const policyLinks = [
-    { url: '/policy/', text: 'Điều khoản dịch vụ' },
-    { url: '/policy/1', text: 'Chính sách bảo mật' },
-    { url: '/policy/3', text: 'Chính sách đổi trả' },
-    { url: '/policy/3', text: 'Chế độ bảo hành' },
+    { url: '/policy/termsOfService', text: 'Điều khoản dịch vụ' },
+    { url: '/policy/security', text: 'Chính sách bảo mật' },
+    { url: '/policy/refund', text: 'Chính sách đổi trả' },
+    { url: '/policy/warranty', text: 'Chế độ bảo hành' },
   ];
 
   return (
-    <footer className="bg-white font-nunito">
+    <footer className="bg-white font-nunito w-[90%] mx-auto">
       <div className="bg-green-100">
         <div className=' hidden md:w-10/12 md:mx-auto md:grid md:grid-cols-4 md:gap-4 items-center text-[18px] py-8'>
         {trustItems.map((item, index) => (
@@ -57,14 +57,13 @@ const Footer = () => {
 
       {/* Phần Contact */}
       <div className="flex-col justify-center">
-        <hr className="w-full md:w-10/12" />
         <div className="mx-auto flex justify-center space-x-10 md:space-x-20 my-5">
           <a href="#"><img src={Facebook} alt="Facebook" className="w-10 h-10" /></a>
           <a href="#"><img src={Instagram} alt="Instagram" className="w-10 h-10" /></a>
         </div>
-        <hr className="w-full  md:w-10/12" />
+        <hr className="w-full mx-auto" />
 
-        <div className="w-full lg:w-10/12 mx-auto grid grid-cols-1 sm:grid-cols-2 sm:gap-2 md:grid-cols-4 md:gap-2">
+        <div className="w-full mx-auto grid grid-cols-1 md:grid-cols-2 sm:gap-2 lg:grid-cols-4 md:gap-2">
           <div className="py-5 px-2 text-center">
             <img src={Gakki} alt="Gakki" className="w-48 mx-auto" />
             <div className="text-justify mt-1">
@@ -73,7 +72,7 @@ const Footer = () => {
           </div>
 
           <div className="py-5 px-2">
-            <div className="text-center font-bold text-red-500 text-[22px] my-2">THÔNG TIN LIÊN HỆ</div>
+            <div className="sm:text-center font-bold text-red-500 text-[22px] my-2">THÔNG TIN LIÊN HỆ</div>
             <div className="text-justify">
               {contactInfo.map((contact, index) => (
                 <div key={index} className="flex items-center my-1">
@@ -88,10 +87,10 @@ const Footer = () => {
             </div>
           </div>
 
-          <div className="py-5 px-2">
-            <div className="font-bold text-red-500 text-[22px] my-2">CHÍNH SÁCH VÀ HỖ TRỢ</div>
+          <div className="py-5 px-2 lg:ml-5">
+            <div className="font-bold text-red-500 text-[22px] my-2 lg:text-center">CHÍNH SÁCH VÀ HỖ TRỢ</div>
             <div className="font-semibold">
-              <ul className="list-policy">
+              <ul className="list-policy xl:ml-[5%] lg:ml-[10%]">
                 {policyLinks.map((policy, index) => (
                   <li key={index} className='pb-2'>
                     <a href={policy.url} className="hover:underline">
@@ -103,20 +102,19 @@ const Footer = () => {
             </div>
           </div>
 
-          <div className="py-5 px-2 font-semibold flex-col justify-center">
-            <div className="text-center my-3 font-bold">Đăng ký nhận thông báo qua email</div>
-              <div className='ml-2 mt-3 w-full flex justify-center'>
-                <div className="mx-auto">
+          <div className="py-5 px-2 font-semibold flex-col">
+            <div className="sm:text-center my-3 font-bold">Đăng ký nhận thông báo qua email</div>
+              <div className='mt-3 w-full flex'>
+                <div className="sm:mx-auto">
                   <ul className="list-support">
                     <li className='pb-2'><a href="#"><p className="border-black border-0 p-2 text-center font-semibold rounded-md bg-green-200">Đăng ký &rarr;</p></a></li>
-                    <li className='pb-2'><a href="#" className="hover:underline">Hướng dẫn mua hàng</a></li>
-                    <li className='pb-2'><a href="#" className="hover:underline">Tìm cửa hàng</a></li>
+                    <li className='pb-2'><a href="#">Hướng dẫn mua hàng</a></li>
+                    <li className='pb-2'><a href="#">Tìm cửa hàng</a></li>
                   </ul>
                 </div>
               </div>
             </div>
           </div>
-          <hr className="w-[90%] border-black ml-[5%]" />
       </div>
     </footer>
   );

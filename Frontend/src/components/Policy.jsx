@@ -153,10 +153,10 @@ const Policy = () =>{
           term = securityPolicy;
           break;
         case 2:
-          term = warrantyPolicy;
+          term = refundPolicy;
           break;
         case 3:
-          term = refundPolicy;
+          term = warrantyPolicy;
           break;
         default:
             term = termsOfService;
