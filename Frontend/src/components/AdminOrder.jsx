@@ -9,71 +9,71 @@ import { IoIosArrowDown } from "react-icons/io";
 
 function AdminOrder() {
     const Orders = [
-        {
-            ID: '#2301',
-            Customer: 'Nguyễn Thảo Nguyên',
-            OrderDate: '24/12/2023',
-            Status: 'Đã thanh toán',
-            Shipment: 'Đang giao',
-            SubTotal: '1.000.000'
-        },
-        {
-            ID: '#4302',
-            Customer: 'Nguyễn Thảo Nguyên',
-            OrderDate: '24/12/2023',
-            Status: 'Đã thanh toán',
-            Shipment: 'Đang giao',
-            SubTotal: '1.000.000'
-        },
-        {
-            ID: '#7603',
-            Customer: 'Nguyễn Thảo Nguyên',
-            OrderDate: '24/12/2023',
-            Status: 'Đã thanh toán',
-            Shipment: 'Đang giao',
-            SubTotal: '1.000.000'
-        },
-        {
-            ID: '#1204',
-            Customer: 'Nguyễn Thảo Nguyên',
-            OrderDate: '24/12/2023',
-            Status: 'Đã thanh toán',
-            Shipment: 'Đang giao',
-            SubTotal: '1.000.000'
-        },
-        {
-            ID: '#6705',
-            Customer: 'Nguyễn Thảo Nguyên',
-            OrderDate: '24/12/2023',
-            Status: 'Đã thanh toán',
-            Shipment: 'Đang giao',
-            SubTotal: '1.000.000'
-        },
-        {
-            ID: '#4506',
-            Customer: 'Nguyễn Thảo Nguyên',
-            OrderDate: '24/12/2023',
-            Status: 'Đã thanh toán',
-            Shipment: 'Đang giao',
-            SubTotal: '1.000.000'
-        },
-        {
-            ID: '#5607',
-            Customer: 'Nguyễn Thảo Nguyên',
-            OrderDate: '24/12/2023',
-            Status: 'Đã thanh toán',
-            Shipment: 'Đang giao',
-            SubTotal: '1.000.000'
-        },
-        {
-            ID: '#2308',
-            Customer: 'Nguyễn Thảo Nguyên',
-            OrderDate: '24/12/2023',
-            Status: 'Đã thanh toán',
-            Shipment: 'Đang giao',
-            SubTotal: '1.000.000'
-        },
-    ]
+      {
+        ID: "#2301",
+        Customer: "Nguyễn Thảo Nguyên",
+        OrderDate: "24/12/2023",
+        Status: "Đã thanh toán",
+        Shipment: "Đã giao",
+        SubTotal: "3.000.000",
+      },
+      {
+        ID: "#4302",
+        Customer: "Nguyễn Duy Duẩn",
+        OrderDate: "26/12/2023",
+        Status: "Đã thanh toán",
+        Shipment: "Đã giao",
+        SubTotal: "1.000.000",
+      },
+      {
+        ID: "#7603",
+        Customer: "Võ Thành Nhân",
+        OrderDate: "30/12/2023",
+        Status: "Đã thanh toán",
+        Shipment: "Đã giao",
+        SubTotal: "1.000.000",
+      },
+      {
+        ID: "#1204",
+        Customer: "Nguyễn Mai Như Luận",
+        OrderDate: "06/01/2024",
+        Status: "Đã thanh toán",
+        Shipment: "Đang giao",
+        SubTotal: "8.000.000",
+      },
+      {
+        ID: "#6705",
+        Customer: "Nguyễn Phương Duyên",
+        OrderDate: "05/01/2024",
+        Status: "Đã thanh toán",
+        Shipment: "Đang giao",
+        SubTotal: "5.590.000",
+      },
+      {
+        ID: "#4506",
+        Customer: "Nguyễn Bùi Quỳnh Anh",
+        OrderDate: "04/01/2024",
+        Status: "Đã thanh toán",
+        Shipment: "Đang giao",
+        SubTotal: "6.700.000",
+      },
+      {
+        ID: "#5607",
+        Customer: "Nguyễn Lê Anh Thư",
+        OrderDate: "03/01/2024",
+        Status: "Đã thanh toán",
+        Shipment: "Đang giao",
+        SubTotal: "5.000.000",
+      },
+      {
+        ID: "#2308",
+        Customer: "Nguyễn Ngọc Diệp",
+        OrderDate: "02/01/2024",
+        Status: "Đã thanh toán",
+        Shipment: "Đã giao",
+        SubTotal: "3.050.000",
+      },
+    ];
 
     return (
         <div className="w-full h-[1100px] mx-auto  font-nunito">

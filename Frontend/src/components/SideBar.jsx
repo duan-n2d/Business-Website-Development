@@ -52,8 +52,8 @@ const Sidebar = ({ setSelectedComponent }) => {
                 onClick={handleLogout}
                 className="flex items-center w-full p-2 text-base text-gray-900 transition duration-75 rounded-lg group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700"
               >
-                <PiIcons.PiSignOutBold className="flex-shrink-0 w-6 h-6 text-gray-500 transition duration-75 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-white" />
-                <span className="ms-3">Đăng xuất</span>
+                {/* <PiIcons.PiSignOutBold className="flex-shrink-0 w-6 h-6 text-gray-500 transition duration-75 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-white" />
+                <span className="ms-3">Đăng xuất</span> */}
               </button>
             </li>
           </ul>

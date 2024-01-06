@@ -28,7 +28,7 @@ function Header() {
         if (userInfo.role === 'admin') {
             return (
                 // fix header top when scroll
-                <div className="fixed right-0 top-0 w-full  bg-green-50">
+                <div className="fixed right-0 top-0 w-full  bg-green-50 font-nunito">
                     <div className="mx-auto flex justify-between items-center">
                         <div className="logo w-[307px] justify-center items-center bg-white">
                             <a href="">

@@ -1,61 +1,70 @@
-import React from 'react';
-import { useState } from 'react';
-import axios from 'axios';
+import React from "react";
+import { useState } from "react";
+import axios from "axios";
 
-import Logo from '../assets/Gakki.png';
-import LoginBanner from '../assets/banners/banner_login.png';
-import LoginBackground from '../assets/banners/bg_login_page.png';
+import Logo from "../assets/Gakki.png";
+import LoginBanner from "../assets/banners/banner_login.png";
+import LoginBackground from "../assets/banners/bg_login_page.png";
 
-const Login = () =>{
-  const [username, setUsername] = useState('');
-  const [password, setPassword] = useState('');
+const Login = () => {
+  const [username, setUsername] = useState("");
+  const [password, setPassword] = useState("");
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const res = await axios.post('http://localhost:5000/api/auth/login', {
+      const res = await axios.post("http://localhost:5000/api/auth/login", {
         username,
         password,
       });
 
-      localStorage.setItem('tokenStore', res.data.accessToken);
+      localStorage.setItem("tokenStore", res.data.accessToken);
 
       console.log(res.data.accessToken);
 
       const role = res.data.role;
 
-      if (role === 'admin') {
-        window.location.href = '/admin';
+      if (role === "admin") {
+        window.location.href = "/admin";
       } else {
-        window.location.href = '/';
+        window.location.href = "/";
       }
-    } catch (err){
+    } catch (err) {
       alert(err.response.data.msg);
     }
-  }
+  };
 
   return (
-    <div className="py-6 bg-cover bg-repeat bg-center h-screen"
-    style={{backgroundImage: `url(${LoginBackground})`}}>
-      
+    <div
+      className="py-6 bg-cover bg-repeat bg-center h-screen font-nunito"
+      style={{ backgroundImage: `url(${LoginBackground})` }}
+    >
       <div className="flex bg-white rounded-[38px] shadow-lg overflow-hidden mx-auto max-w-sm lg:max-w-4xl">
         <div
           className="hidden lg:block lg:w-3/5 bg-cover bg-no-repeat"
-          style={{ backgroundImage: `url(${LoginBanner})`}}
+          style={{ backgroundImage: `url(${LoginBanner})` }}
         ></div>
 
         <div className="w-full p-8 lg:w-2/5 bg-orange-100 rounded-[38px]">
           <div className="flex justify-center">
-            <img src={Logo} alt="Logo" className="w-1/2 mx-auto object-cover object-center h-[50px] w-[100px] transform scale-150" />
+            <img
+              src={Logo}
+              alt="Logo"
+              className="w-1/2 mx-auto object-cover object-center h-[50px] w-[100px] transform scale-150"
+            />
           </div>
 
-          <h2 className="mt-4 text-2xl font-extrabold text-gray-800 text-center uppercase">Đăng nhập</h2>
+          <h2 className="mt-4 text-20 font-bold text-gray-800 text-center uppercase">
+            Đăng nhập
+          </h2>
 
-          <form onSubmit = {handleSubmit}>
+          <form onSubmit={handleSubmit}>
             <div className="mt-4">
-              <label className="block text-gray-700 text-sm font-bold mb-2">Địa chỉ email/Số điện thoại</label>
+              <label className="block text-gray-700 text-sm font-bold mb-2">
+                Địa chỉ email/Số điện thoại
+              </label>
               <input
-                className="bg-gray-200 text-gray-700 focus:outline-none focus:shadow-outline border border-gray-300 rounded-[80px] py-2 px-4 block w-full appearance-none"
+                className="bg-white-200 text-gray-700 focus:outline-none focus:shadow-outline border border-gray-300 rounded-[80px] py-2 px-4 block w-full appearance-none"
                 type="text"
                 value={username}
                 onChange={(e) => setUsername(e.target.value)}
@@ -65,13 +74,15 @@ const Login = () =>{
 
             <div className="mt-4">
               <div className="flex justify-between">
-                <label className="block text-gray-700 text-sm font-bold mb-2">Mật khẩu</label>
+                <label className="block text-gray-700 text-sm font-bold mb-2">
+                  Mật khẩu
+                </label>
                 <a href="#" className="text-xs text-gray-500">
                   Quên mật khẩu?
                 </a>
               </div>
               <input
-                className="bg-gray-200 text-gray-700 focus:outline-none focus:shadow-outline border border-gray-300 rounded-[80px] py-2 px-4 block w-full appearance-none"
+                className="bg-white-200 text-gray-700 focus:outline-none focus:shadow-outline border border-gray-300 rounded-[80px] py-2 px-4 block w-full appearance-none"
                 type="password"
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
@@ -80,17 +91,22 @@ const Login = () =>{
             </div>
 
             <div className="mt-8">
-              <button className="bg-green-200 text-gray-800 font-bold py-2 px-4 w-full rounded-[80px]" type='submit'>
+              <button
+                className="bg-green-200 text-gray-800 font-bold py-2 px-4 w-full rounded-[80px]  hover:text-white py-2 px-4 hover:border-transparent rounded"
+                type="submit"
+              >
                 Đăng nhập
               </button>
             </div>
           </form>
 
           <div className="mt-4">
-            <p className='text-xs text-center text-gray-500'>Bạn chưa có tài khoản?</p>
+            <p className="text-xs text-center text-gray-500">
+              Bạn chưa có tài khoản?
+            </p>
           </div>
           <div className="mt-4">
-            <button className="bg-orange-300 text-gray-800 font-bold py-2 px-4 w-full rounded-[80px]">
+            <button className="bg-orange-300 text-gray-800 font-bold py-2 px-4 w-full rounded-[80px]  hover:text-white py-2 px-4 hover:border-transparent rounded">
               <a href="/register">Tạo tài khoản</a>
             </button>
           </div>
@@ -127,7 +143,9 @@ const Login = () =>{
                 />
               </svg>
             </div>
-            <h1 className="px-4 py-3 w-5/6 text-center text-gray-600 font-bold">Sign in with Google</h1>
+            <h1 className="px-4 py-3 w-5/6 text-center text-gray-600 font-bold">
+              Sign in with Google
+            </h1>
           </a>
 
           <a
@@ -138,13 +156,14 @@ const Login = () =>{
               <svg
                 className="w-6 h-6 text-blue-600 fill-current"
                 xmlns="http://www.w3.org/2000/svg"
-                viewBox="0 0 24 24">
-                <path
-                  d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"
-                />
+                viewBox="0 0 24 24"
+              >
+                <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z" />
               </svg>
             </div>
-            <h1 className="px-4 py-3 w-5/6 text-center text-gray-600 font-bold">Sign in with Facebook</h1>
+            <h1 className="px-4 py-3 w-5/6 text-center text-gray-600 font-bold">
+              Sign in with Facebook
+            </h1>
           </a>
         </div>
       </div>

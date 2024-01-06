@@ -3,18 +3,19 @@ import Header from "../components/Header";
 import Sidebar from "../components/SideBar";
 import Sales from "../components/Sales";
 import AdminBlog from "../components/AdminBlog";
+import AdminAllBlog from "../components/AdminAllBlog";
 import AdminProduct from "../components/AdminProducts";
 import AdminOrder from "../components/AdminOrder";
 import AdminCustomer from "../components/AdminCustomer";
 
 export default function Admin() {
-    const [selectedComponent, setSelectedComponent] = useState("dashboard");
-  
-    const scrollToTop = () => {
-      window.scrollTo(0, 0);
-    }; 
+  const [selectedComponent, setSelectedComponent] = useState("dashboard");
 
-    const renderComponent = () => {
+  const scrollToTop = () => {
+    window.scrollTo(0, 0);
+  };
+
+  const renderComponent = () => {
     switch (selectedComponent) {
       case "dashboard":
         return <Sales />;
@@ -23,7 +24,7 @@ export default function Admin() {
       case "customer":
         return <AdminCustomer />;
       case "blog":
-        return <AdminBlog />;
+        return <AdminAllBlog />;
       case "product":
         return <AdminProduct />;
       default:

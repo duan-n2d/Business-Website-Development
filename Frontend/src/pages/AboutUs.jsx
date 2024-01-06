@@ -19,9 +19,9 @@ import Footer from "../components/Footer";
 function AboutUs() {
   return (
     <>
-      <div className="fixed right-0 z-50 top-0 w-full  bg-green-50 shadow-md">
-        <Header/>
-        <Navbar/>
+      <div className="fixed right-0 z-50 top-0 w-full  bg-green-50 shadow-md font-nunito">
+        <Header />
+        <Navbar />
       </div>
       <div className="relative mt-60 text-[#1B3735]">
         <div className=" container mx-auto px-[50px] font-nunito mt-8">
@@ -30,15 +30,16 @@ function AboutUs() {
             <div className="flex-1 basic-1/2">
               <div className="flex flex-col mx-2 my-2 basic-1/2">
                 <p className="text-18 font-medium mx-5 mt-5 text-justify pb-[10px] basic-1/2">
-                  Xuất phát điểm là những người yêu nhạc cụ, chúng mình luôn mong
-                  muốn có thể đưa những âm thanh tuyệt vời này đến mọi người, đó
-                  cũng là lý do mà Gakki ra đời trong một mùa đông ấm áp.
+                  Xuất phát điểm là những người yêu nhạc cụ, chúng mình luôn
+                  mong muốn có thể đưa những âm thanh tuyệt vời này đến mọi
+                  người, đó cũng là lý do mà Gakki ra đời trong một mùa đông ấm
+                  áp.
                 </p>
                 <p className="text-18 font-medium mx-5 mb-5 text-justify pb-5 basic-1/2">
                   Chúng mình cũng đem đến dịch vụ khách hàng tốt nhất, từ quá
                   trình mua sắm đến bạn hàng, bạn sẽ luôn được hỗ trợ trong quá
-                  trình mua hàng, vận chuyển và thanh toán, mọi sự cố xảy ra chúng
-                  mình đều sẽ cố gắng xử lý nhanh nhất có thể
+                  trình mua hàng, vận chuyển và thanh toán, mọi sự cố xảy ra
+                  chúng mình đều sẽ cố gắng xử lý nhanh nhất có thể
                 </p>
                 <img
                   src={hinh2}
@@ -50,12 +51,12 @@ function AboutUs() {
             <div className="flex-1 basic-1/2">
               <div className="flex flex-col-reverse mx-2 mt-2 basic-1/2 max-[900px]:flex-col">
                 <p className="text-18 font-medium m4 text-justify pt-5 basic-1/2">
-                  Tại Gakki, chúng mình cung cấp đa dạng các loại nhạc cụ bao gồm
-                  Piano, Guitar, và đa dạng các loại phụ kiện khác bổ trợ. Các sản
-                  phẩm đều đa dạng ở mức giá để cho các bạn lựa chọn và phù hợp
-                  với tất cả các bạn, dù là với mục đích tìm đến nhạc cụ để tìm
-                  kiếm sự yên lành sau cuộc sống mệt mỏi hoặc là theo đuổi con
-                  đường chơi nhạc cụ chuyên nghiệp.
+                  Tại Gakki, chúng mình cung cấp đa dạng các loại nhạc cụ bao
+                  gồm Piano, Guitar, và đa dạng các loại phụ kiện khác bổ trợ.
+                  Các sản phẩm đều đa dạng ở mức giá để cho các bạn lựa chọn và
+                  phù hợp với tất cả các bạn, dù là với mục đích tìm đến nhạc cụ
+                  để tìm kiếm sự yên lành sau cuộc sống mệt mỏi hoặc là theo
+                  đuổi con đường chơi nhạc cụ chuyên nghiệp.
                 </p>
                 <img
                   src={logo}
@@ -71,8 +72,8 @@ function AboutUs() {
                 <p className="text-18 text-medium text-justify pb-5 basic-1/2">
                   Chúng mình cũng đem đến dịch vụ khách hàng tốt nhất, từ quá
                   trình mua sắm đến bạn hàng, bạn sẽ luôn được hỗ trợ trong quá
-                  trình mua hàng, vận chuyển và thanh toán, mọi sự cố xảy ra chúng
-                  mình đều sẽ cố gắng xử lý nhanh nhất có thể.
+                  trình mua hàng, vận chuyển và thanh toán, mọi sự cố xảy ra
+                  chúng mình đều sẽ cố gắng xử lý nhanh nhất có thể.
                 </p>
                 <img
                   src={hinh_3}
@@ -88,10 +89,10 @@ function AboutUs() {
                   sẽ tìm được người bạn nhạc cụ tuyệt vời cho mình nhé ^^
                 </p>
                 <p className="m4 text-18 text-medium text-justify basic-1/2">
-                  Với đội ngũ chăm sóc khách hàng chất lượng và sản phẩm đa dạng,
-                  chúng mình tin rằng Gakki sẽ là điểm đến lý tưởng cho những
-                  người đam mê âm nhạc, từ những người mới bắt đầu cho tới những
-                  người chơi chuyên nghiệp.
+                  Với đội ngũ chăm sóc khách hàng chất lượng và sản phẩm đa
+                  dạng, chúng mình tin rằng Gakki sẽ là điểm đến lý tưởng cho
+                  những người đam mê âm nhạc, từ những người mới bắt đầu cho tới
+                  những người chơi chuyên nghiệp.
                 </p>
                 <img
                   src={hinh4}
@@ -107,7 +108,7 @@ function AboutUs() {
             <div className="relative overflow-hidden w-full pt-[56.25%]">
               <iframe
                 className="absolute top-0 left-0 bottom-0 right-0 w-full h-full z-10"
-                src="https://www.youtube.com/embed/dQw4w9WgXcQ?si=5vAlOhguVgqbfmGL"
+                src="https://www.youtube.com/embed/R0JKCYZ8hng?si=oa1kuOJnAykez3Xg"
                 allowFullScreen
               ></iframe>
             </div>
@@ -122,8 +123,8 @@ function AboutUs() {
 
               <p className="text-18 font-medium text-left max-[1000px]:px-[0px]">
                 Với mong muốn chữa lành những trái tim bằng âm vang giai điệu,
-                chúng tôi hi vọng sẽ là người bạn đồng hành trên con đường âm nhạc
-                của bạn.
+                chúng tôi hi vọng sẽ là người bạn đồng hành trên con đường âm
+                nhạc của bạn.
               </p>
               <button className="w-64 my-5 bg-transparent hover:bg-[#1B3735] text-20 font-semibold hover:text-white py-2 px-4 border border-[#1B3735] hover:border-transparent rounded">
                 BẮT ĐẦU NGAY
@@ -145,8 +146,8 @@ function AboutUs() {
                   Đảm bảo chất lượng
                 </h1>
                 <h2 className="text-16 font-medium text-justify mx-[15px] mb-[30px]">
-                  Các sản phẩm của Gakki luôn được kiểm định chặt chẽ từ nguồn gốc
-                  đến chất lượng
+                  Các sản phẩm của Gakki luôn được kiểm định chặt chẽ từ nguồn
+                  gốc đến chất lượng
                 </h2>
               </div>
               <div className="rounded-2xl container mx-auto outline outline-gray-100 h-auto w-[266px] hover:outline-blue-300">
@@ -173,8 +174,8 @@ function AboutUs() {
                   Hỗ trợ kịp thời
                 </h1>
                 <h2 className="text-16 font-medium text-justify mx-[15px] mb-[30px]">
-                  Mọi thắc mắc của bạn sẽ được đội ngũ tư vấn viên của Gakki giải
-                  đáp kịp thời
+                  Mọi thắc mắc của bạn sẽ được đội ngũ tư vấn viên của Gakki
+                  giải đáp kịp thời
                 </h2>
               </div>
               <div className="rounded-2xl container mx-auto outline outline-gray-100 h-auto w-[266px] hover:outline-blue-300">
@@ -187,8 +188,8 @@ function AboutUs() {
                   Ưu đãi giá tốt
                 </h1>
                 <h2 className="text-16 font-medium text-justify mx-[15px] mb-[30px]">
-                  Gakki luôn cố gắng đem đến các bạn những sản phẩm có giá ưu đãi
-                  nhất
+                  Gakki luôn cố gắng đem đến các bạn những sản phẩm có giá ưu
+                  đãi nhất
                 </h2>
               </div>
             </div>
