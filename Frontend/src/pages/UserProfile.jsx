@@ -4,6 +4,8 @@ import NavBar from "../components/NavBar";
 import Footer from "../components/Footer";
 import UserAccount from "../components/UserAccount";
 import UserHistory from "../components/UserHistory";
+import ChangeAddress from "../components/ChangeAddress";
+import ChangePW from "../components/ChangePW";
 import { PiUser, PiArrowsCounterClockwise, PiClockCounterClockwise, PiHouseLineDuotone } from "react-icons/pi";
 
 const sideBarUser = [
@@ -71,8 +73,10 @@ const UserProfile = () => {
           </div>
           <div className="user-content w-full lg:w-[70%] mt-10 lg:mt-0">
             <div id="account bg-red-900">
-              {component === "UserAccount" && <UserAccount />}
-              {component === "UserHistory" && <UserHistory />}
+                {component === "UserAccount" && <UserAccount />}
+                {component === "UserHistory" && <UserHistory />}
+                {component === "ChangeAddress" && <ChangeAddress />}
+                {component === "ChangePassword" && <ChangePW />}
             </div>
           </div>
         </div>
