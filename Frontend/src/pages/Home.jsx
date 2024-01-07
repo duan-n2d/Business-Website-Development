@@ -28,6 +28,7 @@ export default function Home() {
             <div className="mt-52">
                 <Carousel/>
                 <ProductCategory id={headerData[1]}/>
+                <BlogRec data = {dummyBlogData}/>
                 <div className="bg-green-100">
                     <ProductCategory id={headerData[0]}/>
                 </div>
