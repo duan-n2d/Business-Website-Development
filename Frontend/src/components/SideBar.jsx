@@ -9,7 +9,6 @@ const menuItems = [
   { id: 'blog', label: 'Bài viết', icon: PiIcons.PiNotePencilBold },
   { id: 'product', label: 'Sản phẩm', icon: PiIcons.PiGuitarFill },
   { id: 'delivery', label: 'Vận chuyển', icon: PiIcons.PiTruckFill },
-  { id: 'logout', label: 'Đăng xuất', icon: PiIcons.PiSignOutBold },
 ];
 
 const Sidebar = ({ setSelectedComponent }) => {

@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import Header from "../components/Header";
 import Sidebar from "../components/SideBar";
 import Sales from "../components/Sales";
-import AdminBlog from "../components/AdminBlog";
+// import AdminBlog from "../components/AdminBlog";
 import AdminAllBlog from "../components/AdminAllBlog";
 import AdminProduct from "../components/AdminProducts";
 import AdminOrder from "../components/AdminOrder";
@@ -46,7 +46,7 @@ export default function Admin() {
         <div className="fixed z-50">
           <Header />
         </div>
-        <div className="content mt-24 ml-64 p-10">{renderComponent()}</div>
+        <div className="content mt-28 ml-64 p-10">{renderComponent()}</div>
       </div>
     </div>
   );
