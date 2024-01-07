@@ -168,12 +168,12 @@ const Policy = () =>{
         <center className='lg:text-30 text-26 font-bold'>{term.title}</center>
         </div>
 
-        <div className='bg-[#ECFAFF] mx-auto mb-10 pb-10'>
+        <div className='bg-[#ECFAFF] mx-auto p-10 px-20 text-justify mb-10'>
         {term.content.map((section, index) => (
             <div key={index}>
             {section.subTitle && (
-                <h3 className='p-10 pb-4 font-bold'>{section.number}. {section.subTitle}</h3>)}
-            <ul className=' pl-20 pr-10'>
+                <h3 className='py-4 font-bold'>{section.number}. {section.subTitle}</h3>)}
+            <ul className=''>
                 {section.terms.map((term, termIndex) => (
                 <li key={termIndex} className='xl:text-18 text-16'>
                     &nbsp; &nbsp; &nbsp; &nbsp;{term}
