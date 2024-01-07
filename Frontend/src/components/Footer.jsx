@@ -30,10 +30,10 @@ const Footer = () => {
   ];
 
   const policyLinks = [
-    { url: '/policy/termsOfService', text: 'Điều khoản dịch vụ' },
-    { url: '/policy/security', text: 'Chính sách bảo mật' },
-    { url: '/policy/refund', text: 'Chính sách đổi trả' },
-    { url: '/policy/warranty', text: 'Chế độ bảo hành' },
+    { url: '/policy/', text: 'Điều khoản dịch vụ' },
+    { url: '/policy/1', text: 'Chính sách bảo mật' },
+    { url: '/policy/2', text: 'Chính sách đổi trả' },
+    { url: '/policy/3', text: 'Chế độ bảo hành' },
   ];
 
   return (
