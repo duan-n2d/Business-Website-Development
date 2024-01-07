@@ -9,7 +9,8 @@ const products = [
   { name: 'Đàn guitar Fender Limited Edition FA-15 3/4 Size Steel String Acoustic, Midnight ', price: '4.070.000 đ', img: 'https://i.ibb.co/zn0MQ3g/F03-097-1170-135-5.jpg" alt="F03-097-1170-135-5" border="0"></a>', masp: "F03-097-1170-135", des: "FA-15 dây thép kích thước ¾ là một cây guitar có vẻ ngoài tuyệt đẹp với mức giá phải chăng. Được sản xuất từ gỗ ép chất lượng cao và headstock Fender 3+3, model này không chỉ dễ chơi mà còn có chất âm tuyệt vời. Với cần đàn nato mang đến âm sắc và cảm nhận sống động, đây là một guitar lý tưởng cho người mới bắt đầu và cầm thủ đang phát triển các kỹ năng chơi nhạc của mình." },
   { name: 'Đàn guitar  Ibanez GRX20-BKN Electricr, Black Night', price: '4.620.000 đ', img: 'https://i.ibb.co/qFdJmdH/dan-guitar-acoustic-poshman-1-removebg.png', masp: "I01-GRX20BKN", des: "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Doloribus asperiores voluptas molestias eos cupiditate? Soluta labore nesciunt voluptates perspiciatis a id repellendus, unde ab dolorem repudiandae, corrupti corporis quae ducimus." },
 ]
-
+import banner1 from '../assets/banner1.png'
+import banner2 from '../assets/banner2.png'
 import frame from '../assets/frame.png'
 function LandingPage() {
   const [showModal, setShowModal] = useState(false);
@@ -38,8 +39,9 @@ function LandingPage() {
   const { days, hours, minutes, seconds } = timeUntilChristmas;
   return (
     <div className='font-nunito mt-3'>
+       <img src={banner2} alt=""  className='mx-auto my-10'/>
       <div className='w-[100%] flex  mx-auto text-center justify-center'>
-
+         
         <hr className='my-auto border-t-2 border-dashed w-[15%] border-[#D8D8D8] ' />
         <p className=' font-bold xl:text-26 text-[12px] mx-3 md:text-20'>ƯU ĐÃI ẤM ÁP CHO MÙA ĐÔNG</p>
         <hr className='my-auto border-[#D8D8D8] border-t-2 border-dashed w-[15%]' />
@@ -87,6 +89,7 @@ function LandingPage() {
           </div>
         </div>
       </div>
+        <img src={banner1} alt=""  className='mx-auto py-6'/>
       <div>
         <div className="w-[100%] px-12 justify-center items-center font-nunito">
           <div className="grid grid-cols-1 gap-9 2xl:grid-cols-4 md:grid-cols-3 md:gap-12 sm:gap-20 lg:grid-cols-4 lg:gap-8 p-4 px-4  ">
