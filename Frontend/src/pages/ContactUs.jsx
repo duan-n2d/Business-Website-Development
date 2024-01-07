@@ -1,7 +1,5 @@
 import React from 'react';
-
 import { PiChatsThin , PiChatsCircleThin , PiPhoneCallThin } from "react-icons/pi"; 
-
 import Header from "../components/Header";
 import NavBar from "../components/NavBar";
 import Footer from "../components/Footer";

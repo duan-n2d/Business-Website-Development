@@ -3,6 +3,9 @@ import { IoIosSearch } from "react-icons/io";
 import { FaPlus } from "react-icons/fa";
 import { ReactDOM } from 'react';
 
+// const API = 'http://localhost:5000/api/auth';
+const API = 'https://gakki.onrender.com/api/auth/'
+
 function Blogs() {
   return (
     <div>

@@ -6,6 +6,10 @@ import guitar from "../assets/carrt/guitar.png";
 import momo from "../assets/carrt/momo.png";
 import mastercard from "../assets/carrt/mastercard.png";
 import napas from "../assets/carrt/napas.png";
+
+// const API = 'http://localhost:5000/api/auth';
+const API = 'https://gakki.onrender.com/api/auth/'
+
 function Cart() {
   return (
     <div className=" container mx-auto px-[50px] font-nunito mt-8 font-nunito">

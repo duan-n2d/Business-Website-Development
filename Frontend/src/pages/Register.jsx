@@ -6,6 +6,9 @@ import Logo from "../assets/Gakki.png";
 import LoginBanner from "../assets/banners/banner_login.png";
 import LoginBackground from "../assets/banners/bg_login_page.png";
 
+// const API = 'http://localhost:5000/api/auth';
+const API = 'https://gakki.onrender.com/api/auth/'
+
 const Register = () => {
   const [u_name, setFirstName] = useState("");
   const [email, setEmail] = useState("");
@@ -21,7 +24,7 @@ const Register = () => {
 
       if (password !== confirm_password) return alert("Không khớp mật khẩu");
 
-      const res = await axios.post("http://localhost:5000/api/auth/register", {
+      const res = await axios.post(`${API}/register`, {
         first_name,
         last_name,
         email,

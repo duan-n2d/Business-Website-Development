@@ -6,6 +6,9 @@ import Logo from "../assets/Gakki.png";
 import LoginBanner from "../assets/banners/banner_login.png";
 import LoginBackground from "../assets/banners/bg_login_page.png";
 
+// const API = 'http://localhost:5000/api/auth';
+const API = 'https://gakki.onrender.com/api/auth/'
+
 const Login = () => {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
@@ -13,7 +16,7 @@ const Login = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const res = await axios.post("http://localhost:5000/api/auth/login", {
+      const res = await axios.post(`${API}/login`, {
         username,
         password,
       });

@@ -7,6 +7,9 @@ import Header from "../components/Header";
 import NavBar from "../components/NavBar";
 import Footer from "../components/Footer";
 
+// const API = 'http://localhost:5000/api/auth';
+const API = 'https://gakki.onrender.com/api/auth/'
+
 function Checkout() {
   const [u_name, setFirstName] = useState("");
   const [email, setEmail] = useState("");

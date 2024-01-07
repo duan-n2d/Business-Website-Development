@@ -1,4 +1,8 @@
 import React from 'react';
+
+// const API = 'http://localhost:5000/api/auth';
+const API = 'https://gakki.onrender.com/api/auth/'
+
 const UserInfos = [
     {
         user_name: "Nguyễn Mai Như Luận",
@@ -6,7 +10,6 @@ const UserInfos = [
         phone_number: "0332323388",
         address: "KTX Khu B, Đông Hòa , Dĩ An, Bình Dương",
         email: "nhuluancbt@gmail.com",
-
     }
 ]
 function UserAccount() {

@@ -1,4 +1,8 @@
 import React, { useState, useEffect } from 'react';
+
+// const API = 'http://localhost:5000/api/auth';
+const API = 'https://gakki.onrender.com/api/auth/'
+
 const products =[
   {  name:'Guitar Ba Đờn',price: '1.500.000Đ',img:'https://i.ibb.co/qFdJmdH/dan-guitar-acoustic-poshman-1-removebg.png',masp:"BD3"},
   {  name:'Guitar Yamaha',price: '2.000.000Đ',img:'https://i.ibb.co/qFdJmdH/dan-guitar-acoustic-poshman-1-removebg.png',masp:"YAH"},

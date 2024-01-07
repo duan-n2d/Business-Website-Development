@@ -10,6 +10,9 @@ import {
   ResponsiveContainer,
 } from "recharts";
 
+// const API = 'http://localhost:5000/api/auth';
+const API = 'https://gakki.onrender.com/api/auth/'
+
 const PoEChart = ({ data }) => {
   return (
     <div className="w-full h-screen font-nunito">

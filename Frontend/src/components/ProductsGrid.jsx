@@ -6,6 +6,9 @@ import { PiMinusBold } from "react-icons/pi";
 import Card from './Card';
 import Banner from './Banner';
 
+// const API = 'http://localhost:5000/api/auth';
+const API = 'https://gakki.onrender.com/api/auth/'
+
 function ProductsGrid() {
   return (
     <div className="container mt-10 flex justify-center font-nunito">

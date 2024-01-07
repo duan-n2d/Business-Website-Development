@@ -8,6 +8,9 @@ import ChangeAddress from "../components/ChangeAddress";
 import ChangePW from "../components/ChangePW";
 import { PiUser, PiArrowsCounterClockwise, PiClockCounterClockwise, PiHouseLineDuotone } from "react-icons/pi";
 
+// const API = 'http://localhost:5000/api/auth';
+const API = 'https://gakki.onrender.com/api/auth/'
+
 const sideBarUser = [
   {
     name: "Thông tin tài khoản",

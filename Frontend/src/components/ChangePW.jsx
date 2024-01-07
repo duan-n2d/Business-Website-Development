@@ -1,5 +1,8 @@
 import React from 'react';
 
+// const API = 'http://localhost:5000/api/auth';
+const API = 'https://gakki.onrender.com/api/auth/'
+
 function ChangePW() {
     return (
         <main className='font-nunito'>

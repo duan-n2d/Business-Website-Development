@@ -7,6 +7,9 @@ import { BsTag } from "react-icons/bs";
 import { CiCalendar } from "react-icons/ci";
 import { IoIosArrowDown } from "react-icons/io";
 
+// const API = 'http://localhost:5000/api/auth';
+const API = 'https://gakki.onrender.com/api/auth/'
+
 function AdminOrder() {
     const Orders = [
       {

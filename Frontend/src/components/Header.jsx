@@ -2,8 +2,8 @@ import logo from "../assets/Gakki.png";
 import { PiPackageFill, PiBellRinging, PiMapPinFill, PiEnvelopeFill, PiMagnifyingGlassBold, PiShoppingCartFill} from "react-icons/pi";
 import axios from "axios";
 
-const API = "http://localhost:5000/api/auth";
-// const API = "https://gakki.onrender.com/api/auth/";
+// const API = "http://localhost:5000/api/auth";
+const API = "https://gakki.onrender.com/api/auth/";
 
 function Header() {
 

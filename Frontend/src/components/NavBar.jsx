@@ -2,7 +2,8 @@ import React, { useState, useEffect } from 'react';
 import { PiListBold, PiXBold, PiPlusBold, PiMinusBold } from 'react-icons/pi';
 import axios from 'axios';
 
-const API = "http://localhost:5000/api/auth";
+// const API = 'http://localhost:5000/api/auth';
+const API = 'https://gakki.onrender.com/api/auth/'
 
 function NavBar() {
   const [toggle, setToggle] = useState(false);

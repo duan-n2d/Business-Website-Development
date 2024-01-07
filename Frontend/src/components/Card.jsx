@@ -2,8 +2,8 @@ import React, { useState, useEffect } from 'react';
 import { PiArrowRightBold } from 'react-icons/pi';
 import axios from 'axios';
 
-const API = 'http://localhost:5000/api/auth/';
-// const API = 'https://gakki.onrender.com/api/auth/';
+// const API = 'http://localhost:5000/api/auth/';
+const API = 'https://gakki.onrender.com/api/auth/';
 
 const Card = (product) => {
   const id = product.id;

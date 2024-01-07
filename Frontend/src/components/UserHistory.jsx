@@ -1,6 +1,9 @@
 import React, { useEffect, useState } from 'react';
 import { PiCreditCardBold, PiMoneyBold } from 'react-icons/pi';
 
+// const API = 'http://localhost:5000/api/auth';
+const API = 'https://gakki.onrender.com/api/auth/'
+
 function AdminHistory() {
     const Orders = [
         {

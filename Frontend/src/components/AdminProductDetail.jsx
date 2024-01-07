@@ -9,6 +9,9 @@ const productdetails =[
   {brand_name:"Fender", brand_id:"FDR",category_id:"ACO", category_name:"Acoustic" },
 ]
 
+// const API = 'http://localhost:5000/api/auth';
+// const API = 'https://gakki.onrender.com/api/auth/'
+
 function AdminProductDetail() {
   return (
     <div className='font-nunito w-[95%] mx-auto text-[#1B3735] font-nunito'>

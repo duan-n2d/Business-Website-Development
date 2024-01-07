@@ -5,6 +5,9 @@ import BlogImg1 from "../assets/banners/Blog_01.png";
 import BlogImg2 from "../assets/banners/Blog_02.png";
 import BlogImg3 from "../assets/banners/Blog_03.png";
 
+// const API = 'http://localhost:5000/api/auth';
+const API = 'https://gakki.onrender.com/api/auth/'
+
 const BlogRec = () => {
   // object to array
   // const objectBlog = Object.values(listBlog);
