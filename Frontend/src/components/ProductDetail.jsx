@@ -30,15 +30,15 @@ const ProductDetails = () => {
       });
   }, [id]);
 
-  useEffect(() => {
-    axios.get(`${API}product/${id}/categories`)
-      .then((response) => {
-        setCategory(response.data[0]);
-      })
-      .catch((error) => {
-        console.error('Error fetching product category:', error);
-      });
-  }, [id]);
+  // useEffect(() => {
+  //   axios.get(`${API}product/${id}/categories`)
+  //     .then((response) => {
+  //       setCategory(response.data[0]);
+  //     })
+  //     .catch((error) => {
+  //       console.error('Error fetching product category:', error);
+  //     });
+  // }, [id]);
 
   useEffect(() => {
     axios.get(`${API}product/${id}/img`)
@@ -196,7 +196,7 @@ const ProductDetails = () => {
         </div>
 
         {/* Thông số kỹ thuật */}
-        <div className="flex justify-between px-5 my-9 w-full" >
+        <div className="flex-wrap lg:flex justify-between px-5 my-9 w-full" >
           <div className="w-full lg:w-[40%]">
             <p className="text-center text-[#1B3735] font-bold text-24 mb-10">Thông Số Kỹ Thuật</p>
             <table className="text-[#1B3735] w-[100%] border border-black" cellPadding={10}>
@@ -222,7 +222,7 @@ const ProductDetails = () => {
           </div>
           
           {/* Thông tin sản phẩm */}
-          <div className="w-full lg:w-7/12">
+          <div className="w-full lg:w-7/12 mt-10 lg:mt-0">
             <p className="text-center text-[#1B3735] font-bold text-24 mb-10">Thông Tin Sản Phẩm </p>
             <p className="w-[100%] mx-auto bg-[#FFF5E3] p-9 text-justify">
               {product?.product.product_description}

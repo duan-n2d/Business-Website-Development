@@ -4,6 +4,7 @@ import Header from "../components/Header";
 import NavBar from "../components/NavBar";
 import Footer from "../components/Footer";
 import ProductDetail from '../components/ProductDetail'
+import ProductCategory from "../components/ProductCategory";
 
 export default function AllProduct() {
     return (
@@ -15,6 +16,7 @@ export default function AllProduct() {
             <div className="mt-60 flex justify-center items-center">
                 <div className=" w-full md:w-10/12 mx-auto">
                     <ProductDetail/>
+                    <ProductCategory/>
                 </div>
             </div>
             <Footer/>
