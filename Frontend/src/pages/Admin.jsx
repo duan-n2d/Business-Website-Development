@@ -46,7 +46,7 @@ export default function Admin() {
         <div className="fixed z-50">
           <Header />
         </div>
-        <div className="content mt-28 ml-64 p-10">{renderComponent()}</div>
+        <div className="content mt-20 ml-64 p-10">{renderComponent()}</div>
       </div>
     </div>
   );
