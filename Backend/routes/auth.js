@@ -54,7 +54,8 @@ const { getAllProducts,
     addProduct,
     updateProduct,
     deleteProduct,
-    getImagesByProductId } = require('../controllers/ProductController')
+    getImagesByProductId,
+    getCategoriesOfProduct } = require('../controllers/ProductController')
 const { getAllReviewsByProductId,
     getAllReviewsByUserId,
     getReviewById,
@@ -139,6 +140,7 @@ router.get('/products-active', getProductActive)
 router.get('/products-by-category/:id', getProductByCategoryId)
 router.get('/products-by-brand', getProductByBrandId)
 router.get('/product/:id/img', getImagesByProductId)
+router.get('/product/:id/categories', getCategoriesOfProduct)
 
 // Review
 router.get('/reviews-by-product', getAllReviewsByProductId)

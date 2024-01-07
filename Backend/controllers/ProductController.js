@@ -314,9 +314,32 @@ const getImagesByProductId = async (req, res) => {
         }
         let res_images = [];
         for (let i = 0; i < images.length; i++){
-            res_images.push(images[i].image_url);
+            res_images.push('https://drive.google.com/uc?id=' + images[i].image_url);
         }
         res.json(res_images);
+    }
+    catch (error) {
+        console.log(error);
+        res.status(500).json({ success: false, message: "Internal server error" })
+    }
+}
+
+const getCategoriesOfProduct = async (req, res) => {
+    const product_id = req.params.id;
+
+    if (!product_id)
+        return res
+            .status(400)
+            .json({ success: false, message: "Missing product id" });
+
+    try {
+        const categories = await ProductCategory.find({ product_id: product_id });
+        // return list json categories: category_id
+        let res_categories = [];
+        for (let i = 0; i < categories.length; i++){
+            res_categories.push(categories[i].category_id);
+        }
+        res.json(res_categories);
     }
     catch (error) {
         console.log(error);
@@ -333,5 +356,6 @@ module.exports = {
     addProduct,
     updateProduct,
     deleteProduct,
-    getImagesByProductId
+    getImagesByProductId,
+    getCategoriesOfProduct
 }

@@ -36,10 +36,6 @@ const Card = (product) => {
     fetchImage();
   }, [id]);
 
-  const url = 'https://drive.google.com/uc?id=';
-  console.log(data);
-  console.log(image);
-
   return (
     <div className="max-w-2xl min-h-[345px] font-nunito">
       {data && image && (
@@ -53,7 +49,7 @@ const Card = (product) => {
                 </button>
               </div>
               {image && image[0] && (
-                <img src={`${url}${image[0]}`} alt="Product Image" className="mx-auto pt-3" />
+                <img src={`${image[0]}`} alt="Product Image" className="mx-auto pt-3" />
               )}
             </div>
             <div className="h-[90px] flex flex-col justify-center items-center text-gray-800 my-auto">

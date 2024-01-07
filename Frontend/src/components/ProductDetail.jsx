@@ -1,21 +1,55 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { useParams } from 'react-router-dom';
 import { Star, Cube, Truck, ArrowRight, Minus, Plus } from "@phosphor-icons/react";
-import img1 from '../assets/logoweb__.jpg';
-import img2 from '../assets/E09-ENOLEBCH1.jpg';
-import img3 from '../assets/Y01-C40II.jpg';
-import img4 from '../assets/other-image-3.jpg';
-// import { Star, Cube, Truck, ArrowRight, Minus, Plus } from "@phosphor-icons/react";
+import axios from "axios";
 
-const images = [img1, img2, img3, img4];
+const API = 'http://localhost:5000/api/auth/';
+// const API = 'https://gakki.onrender.com/api/auth/';
 
 const ProductDetails = () => {
   const { id } = useParams();
   const [product, setProduct] = useState(null);
-
+  const [images, setImages] = useState([]);
   const [isZoomed, setZoomed] = useState(false);
   const [position, setPosition] = useState({ x: 0, y: 0 });
-  const [selectedImage, setSelectedImage] = useState(img1);
+  const [selectedImage, setSelectedImage] = useState(null);
+  const [specifications, setSpecifications] = useState([]);
+  const [price, setPrice] = useState(0);
+  const [rating, setRating] = useState(5);
+
+  useEffect(() => {
+    axios.get(`${API}product/${id}`)
+      .then((response) => {
+        setProduct(response.data);
+        setSpecifications(Object.entries(response.data.product.specifications));
+        setPrice(response.data.product.current_price.toString().replace(/\B(?=(\d{3})+(?!\d))/g, "."));
+        setRating(response.data.product.rating);
+      })
+      .catch((error) => {
+        console.error('Error fetching product data:', error);
+      });
+  }, [id]);
+
+  // useEffect(() => {
+  //   axios.get(`${API}product/${id}/categories`)
+  //     .then((response) => {
+  //       setCategory(response.data[0]);
+  //     })
+  //     .catch((error) => {
+  //       console.error('Error fetching product category:', error);
+  //     });
+  // }, [id]);
+
+  useEffect(() => {
+    axios.get(`${API}product/${id}/img`)
+        .then((response) => {
+          setImages(response.data);
+          setSelectedImage(response.data[0]);
+        })
+        .catch((error) => {
+          console.error('Error fetching product images:', error);
+        });
+  }, [id]);
 
   const handleMouseMove = (e) => {
     const { left, top, width, height } = e.target.getBoundingClientRect();
@@ -55,18 +89,17 @@ const ProductDetails = () => {
         {/* Title */}
         <div className="py-5 pl-4">
           <h1 className="font-bold text-30">
-            Fender CB-60SCE Acoustic Bass Guitar, Natural
+            {product?.product.product_name}
           </h1>
           <div className="flex">
-            <span className="flex gap-2">
-              <Star className="" size={36}></Star>
-              <Star className="" size={36}></Star>
-              <Star className="" size={36}></Star>
-              <Star className="" size={36}></Star>
-              <Star className="" size={36}></Star>
-            </span>
+            {rating > 0 && [...Array(rating)].map((_, index) => (
+              <Star key={index} size={30}  weight="fill" className="text-[#FFD700]"></Star>
+            ))}
+            {rating < 5 && [...Array(5 - rating)].map((_, index) => (
+              <Star key={index} size={30} weight="fill" className="text-[ #808080]"></Star>
+            ))}
             <span>
-              <button className="mt-2 sm:ml-10 ml-5 w-32">
+              <button className="my-1 sm:ml-10 ml-5 w-32">
                 <a href="#" className="font-medium text-[#1B3735] text-18 hover:underline">Thêm đánh giá</a>
               </button>
             </span>
@@ -97,7 +130,7 @@ const ProductDetails = () => {
             >
               <img
                 className="w-[100%] focus:bg-[#D9D9D9]"
-                src={selectedImage}
+                src={selectedImage || images[0]}
                 alt="Hình ảnh"
                 style={{ display: isZoomed ? 'none' : 'block', height: '500px' }}
               />
@@ -114,7 +147,7 @@ const ProductDetails = () => {
           <div className="lg:w-[40%] mx-auto bg-[#F3FFF1] w-[95%] py-10 xl:px-10 lg:px-7 px-10 sm:mt-0 mt-10">
             <div className="flex">
               <div className="w-full">
-                <p className="font-bold xl:text-[32px] lg:text-30 text-24">1.000.000Đ</p>
+                <p className="font-bold xl:text-[32px] lg:text-30 text-24">{price} VNĐ</p>
                 <div className="flex lg:my-3 sm:my-5 my-6">
                   <p className="mr-5 xl:text-24 lg:text-20 text-18 my-auto">
                     Số lượng:
@@ -135,7 +168,7 @@ const ProductDetails = () => {
                   </div>
                 </div>
               </div>
-              <img src={img1} alt="Icon" className="w-[90px] h-[90px]" />
+              <img src={images[0]} alt="Icon" className="w-[90px] h-[90px]" />
             </div>
 
             <center className="my-5">
@@ -163,58 +196,36 @@ const ProductDetails = () => {
         </div>
 
         {/* Thông số kỹ thuật */}
-        <div className="grid grid-cols-1 mx-5 my-9 gap-10 lg:grid-cols-2" >
-          <div className="w-[100%]">
+        <div className="flex-wrap lg:flex justify-between px-5 my-9 w-full" >
+          <div className="w-full lg:w-[40%]">
             <p className="text-center text-[#1B3735] font-bold text-24 mb-10">Thông Số Kỹ Thuật</p>
             <table className="text-[#1B3735] w-[100%] border border-black" cellPadding={10}>
               <tr className="bg-[#CAFFD6]">
-                <td className="border border-black font-bold">
+                <td className="border border-black font-bold w-3/12">
                   Thông tin
                 </td>
                 <td className="font-bold">
                   Thông Số
                 </td>
               </tr>
-              <tr className="border border-black">
-                <td className="border border-black">
-                  Kiểu thân
-                </td>
-                <td className="border border-black">
-                  Concert-sized
-                </td>
-              </tr>
-              <tr className="border border-black">
-                <td className="border border-black">
-                  Gỗ Thân
-                </td>
-                <td className="border border-black" >
-                  Solid Spruce Top, Laminated Mahogany Back & Sides
-                </td>
-              </tr>
-              <tr className="border border-black">
-                <td className="border border-black">
-                  Màu Thân
-                </td>
-                <td>
-                  Natural
-                </td>
-              </tr >
-              <tr className="border border-black">
-                <td className="border border-black" >
-                  Mặt cần
-                </td>
-                <td>
-                  Laurel
-                </td>
-              </tr>
+              {specifications.map((spec, index) => (
+                <tr key={index}>
+                  <td className="border border-black">
+                    {spec[0]}
+                  </td>
+                  <td className="border border-black">
+                    {spec[1]}
+                  </td>
+                </tr>
+              ))}
             </table>
           </div>
           
           {/* Thông tin sản phẩm */}
-          <div>
+          <div className="w-full lg:w-7/12 mt-10 lg:mt-0">
             <p className="text-center text-[#1B3735] font-bold text-24 mb-10">Thông Tin Sản Phẩm </p>
             <p className="w-[100%] mx-auto bg-[#FFF5E3] p-9 text-justify">
-              Series Classic Design hoàn thiện cùng CB-60SCE, bass acoustic vượt xa tầm khúc của mình. Model này sử dụng taper mảnh, dáng cần dễ thao tác như trên tất cả guitar Classic Design. Mặt đàn gỗ solid spruce và lưng & mặt bên gỗ mahogany góp phần vào thân đàn kích thước concert, tạo nên âm bass dịu và articulate. Người bạn đồng hành hoàn hảo khi hoạt động độc lập, CB-60SCE được trang bị electronics Fishman® linh hoạt, thích hợp cả trên sân khấu và trong studio.
+              {product?.product.product_description}
             </p>
           </div>
         </div>
