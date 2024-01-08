@@ -9,6 +9,7 @@ function Header() {
 
     // Check token
     const token = localStorage.getItem('tokenStore') || null;
+    // console.log(token);
     if (token !== null) {
         // Verify token
         const base64Url = token.split('.')[1];

@@ -31,7 +31,7 @@ function NavBar() {
     { name: 'Trang chủ', link: '/' },
     { name: 'Có gì mới', link: '#' },
     { name: 'Thương hiệu', link: '#', subItems: brandNames },
-    { name: 'Sản phẩm', link: '#', subItems: ['Đàn guitar', 'Ukulele'] },
+    { name: 'Sản phẩm', link: '/all-products', subItems: ['Đàn guitar', 'Ukulele'] },
     { name: 'Sale off', link: '/landing' },
     { name: 'Blog', link: '/blogs' },
     { name: 'Về Gakki', link: '/about-us' },
@@ -55,7 +55,7 @@ function NavBar() {
 
   return (
     <nav className="sticky top-0 w-full z-1000 bg-green-300 flex justify-center items-center">
-      <div className='w-full md:w-10/12 mx-auto'>
+      <div className='w-full lg:w-10/12 mx-auto'>
         <div className='items-center py-2 my-auto'>
           <div className={`${toggle ? "hidden " : "flex "} md:hidden justify-end items-center`}>
             <PiListBold className="w-9 h-9"
