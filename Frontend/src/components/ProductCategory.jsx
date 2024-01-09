@@ -2,8 +2,8 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import Card from '../components/Card';
 
-const API = "http://localhost:5000/api/auth/";
-// const API = "https://gakki.onrender.com/api/auth/";
+// const API = "http://localhost:5000/api/auth/";
+const API = "https://gakki.onrender.com/api/auth/";
 
 function ProductCategory(header) {
   const [products, setProducts] = useState([]);

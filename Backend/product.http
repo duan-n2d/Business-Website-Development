@@ -1,6 +1,3 @@
-### Get all products
-GET http://localhost:5000/api/auth/products
-
 ### Create a product
 POST http://localhost:5000/api/auth/add-product
 Content-Type: application/json
@@ -40,11 +37,3 @@ Content-Type: application/json
         "1T3Mlecu-15qr26nFZHccFHN7Wzukqzne"
     ]
 }
-
-### Get a product by id
-GET http://localhost:5000/api/auth/product/LC-28-NAT
-
-### get products by category
-GET http://localhost:5000/api/auth/products-by-category/NEW
-### GET IMAGE OF PRODUCT
-GET http://localhost:5000/api/auth/product/HMN-0641020116/img

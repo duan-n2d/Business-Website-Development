@@ -2,6 +2,9 @@ import React from "react";
 import { CiCalendar } from "react-icons/ci";
 import { IoIosArrowDown } from "react-icons/io";
 
+// const API = 'http://localhost:5000/api/auth';
+const API = 'https://gakki.onrender.com/api/auth/'
+
 function AdminBlog() {
     return (
         <div className='w-full mx-auto font-nunito'>

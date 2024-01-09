@@ -3,8 +3,8 @@ import { useParams } from 'react-router-dom';
 import { Star, Cube, Truck, ArrowRight, Minus, Plus } from "@phosphor-icons/react";
 import axios from "axios";
 
-const API = 'http://localhost:5000/api/auth/';
-// const API = 'https://gakki.onrender.com/api/auth/';
+// const API = 'http://localhost:5000/api/auth/';
+const API = 'https://gakki.onrender.com/api/auth/';
 
 const ProductDetails = () => {
   const { id } = useParams();
