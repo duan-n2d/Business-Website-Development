@@ -109,8 +109,8 @@ const Footer = () => {
                 <div className="mx-auto">
                   <ul className="list-support">
                     <li className='pb-2'><a href="#"><p className="border-black border-0 p-2 text-center font-semibold rounded-md bg-green-200">Đăng ký &rarr;</p></a></li>
-                    <li className='pb-2'><a href="#" className="hover:underline">Hướng dẫn mua hàng</a></li>
-                    <li className='pb-2'><a href="#" className="hover:underline">Tìm cửa hàng</a></li>
+                    <li className='pb-2'><a href="/contact-us" className="hover:underline">Hướng dẫn mua hàng</a></li>
+                    <li className='pb-2'><a href="https://maps.app.goo.gl/Zd8tverfXZN9vuks8" className="hover:underline">Tìm cửa hàng</a></li>
                   </ul>
                 </div>
               </div>

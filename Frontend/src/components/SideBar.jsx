@@ -17,7 +17,7 @@ const Sidebar = ({ setSelectedComponent }) => {
   };
 
   const handleLogout = () => {
-    localStorage.removeItem('token');
+    localStorage.removeItem('tokenStore');
     window.location.href = '/login';
   };
 

@@ -11,9 +11,9 @@ const API = 'https://gakki.onrender.com/api/auth/'
 
 function getProduct(products, setproducts) {
   axios
-    .get(`${API}/products`)
+    .get(`${API}products`)
     .then((response) => {
-      setproducts(response.data.products);
+      setproducts(response.data);
     })
     .catch((error) => {
       console.error("Error fetching data:", error);
@@ -45,7 +45,7 @@ function AdminProduct() {
     axios
       .get(`${API}/products`)
       .then((response) => {
-        setproducts(response.data.products);
+        setproducts(response.data);
       })
       .catch((error) => {
         console.error("Error fetching data:", error);
@@ -84,7 +84,7 @@ function AdminProduct() {
       <div>
         <div className="pb-5">
           <div className="bg-white rounded-2xl flex pt-5 pb-5 font-bold xl:text-20 md:text-18 xl:text-left align-middle shadow">
-            <center className="w-[10%] justify-center">STT</center>
+            <center className="w-[12%] justify-center">STT</center>
             <div className="w-[32%]">Tên sản phẩm</div>
             <div className="w-[15%]">Thương hiệu</div>
             <div className="w-[13%]">Loại</div>
@@ -101,12 +101,12 @@ function AdminProduct() {
           {getPageItems().map((item, index) => (
             <div className="" key={item.ID}>
               <div className="py-5 flex xl:text-16 text-14 space-y-3">
-                <center className="w-[10%] mr-9 pt-3">{item.ID}</center>
+                <center className="w-[9%] mr-9 pt-3">{item.ID}</center>
                 <div className="w-[32%]">{item.Title}</div>
-                <div className="w-[12%]">{item.Brand}</div>
+                <div className="w-[15%]">{item.Brand}</div>
                 <div className="w-[13%]">{item.Category}</div>
                 <div className="w-[15%]">{item.Status}</div>
-                <div className="w-[10%]">{item.Price}</div>
+                <div className="w-[9%]">{item.Price}</div>
                 <center>
                   <button
                     className="w-[14%]"
