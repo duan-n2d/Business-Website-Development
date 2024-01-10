@@ -155,7 +155,7 @@ router.put('/update-product', updateProduct)
 router.patch('/delete-product', deleteProduct)
 router.get('/products-active', getProductActive)
 router.get('/products-by-category/:id', getProductByCategoryId)
-router.get('/products-by-brand', getProductByBrandId)
+router.get('/products-by-brand/:id', getProductByBrandId)
 router.get('/product/:id/img', getImagesByProductId)
 router.get('/product/:id/categories', getCategoriesOfProduct)
 

@@ -25,6 +25,8 @@ function App() {
       <Routes className = 'root font-nunito '>
         <Route path='/' element={<Home/>} />
         <Route path='/all-products' element={<AllProduct/>} />
+        <Route path='/products/brand/:id' element={<AllProduct/>} />
+        <Route path='/products/category/:id' element={<AllProduct/>} />
         <Route path='/check-out' element={<Checkout/>} />
         <Route path='/landing' element={<LandingPage/>} />
         <Route path='/blogs' element={<Blog/>} />

@@ -8,19 +8,8 @@ import BlogImg3 from "../assets/banners/Blog_03.png";
 // const API = 'http://localhost:5000/api/auth';
 const API = 'https://gakki.onrender.com/api/auth/'
 
-const BlogRec = () => {
-  // object to array
-  // const objectBlog = Object.values(listBlog);
-  // if (!Array.isArray(objectBlog)) {
-  //   return null;
-  // }
-  // const blogs = objectBlog[0];
-
-  const blogs = [
-    { id: 1, title: 'Blog 1', imageUrl: BlogImg1, hashtag: '#Tag1', content: 'Content 1' },
-    { id: 2, title: 'Blog 2', imageUrl: BlogImg2, hashtag: '#Tag2', content: 'Content 2' },
-    { id: 3, title: 'Blog 3', imageUrl: BlogImg3, hashtag: '#Tag3', content: 'Content 3' },
-  ];
+const BlogRec = (blogData) => {
+  const blogs = blogData.data;
 
   return (
     <div className="w-full md:w-10/12 mx-auto bg-white flex-col justify-center font-nunito">

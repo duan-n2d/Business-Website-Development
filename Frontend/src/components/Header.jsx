@@ -7,6 +7,8 @@ import {
   PiEnvelopeFill,
   PiMagnifyingGlassBold,
   PiShoppingCartFill,
+  PiPlusBold,
+  PiMinusBold,
 } from 'react-icons/pi';
 
 import logo from '../assets/Gakki.png';
@@ -40,8 +42,13 @@ function Header() {
     fetchUserInfo();
   }, [token]);
 
-    const url = window.location.href;
-    const isUrlAdmin = url.includes("/admin");
+  const url = window.location.href;
+  const isUrlAdmin = url.includes("/admin");
+
+  const handleLogout = () => {
+    localStorage.removeItem('tokenStore');
+    window.location.href = '/login';
+  };
 
   const adminHeader = (
     <div className="fixed right-0 top-0 w-full  bg-green-50"> 
@@ -70,7 +77,9 @@ function Header() {
                     <div className="account flex justify-between items-center">
                         <div className="font-bold"> Welcome back!</div>
                         <div className="avatar px-5">
-                            <img className="w-12 h-12 rounded-full" src={gakki} alt="" />
+                            <a href="">Tài khoản
+                                <img className="w-12 h-12 rounded-full" src={gakki} alt="" />
+                            </a>
                         </div>
                     </div>
                 </div>
@@ -127,25 +136,39 @@ function Header() {
                 </div>
 
                 <div className="w-1/3 flex justify-between items-center text-[#173F5F] text-[16px]">
-
                     <div className="cart relative">
-                        
-                        <div className="t-0 absolute left-4">
-                            <p className="flex h-2 w-2 items-center justify-center rounded-full bg-red-500 p-2.5 text-[12px] text-white">3</p>
-                        </div>
-                        <PiShoppingCartFill className="w-8 h-8"/>
-                    </div>
-
-                    |
-
-                    <div className="contact">
-                        <div className="font-bold uppercase">Liên hệ</div>
+                        <a href="/cart">
+                            <div className='flex justify-center items-center'>
+                                <div className="font-bold uppercase">
+                                    <div className="t-0 absolute left-4">
+                                        <p className="flex h-2 w-2 items-center justify-center rounded-full bg-red-500 p-2.5 text-[12px] text-white">3</p>
+                                    </div>
+                                    <PiShoppingCartFill className="w-8 h-8"/>
+                                </div>
+                                &nbsp;
+                                &nbsp;
+                                <div className="font-bold uppercase">Giỏ hàng</div>
+                            </div>
+                        </a>
                     </div>
 
                     |
 
                     <div className="account">
-                        <div className="font-bold">{`Hello ${userInfo ? userInfo.first_name : null}`}</div>
+                        <div className="font-bold">
+                            <div className="font-bold uppercase">
+                                <a href="">Tài khoản</a>
+                            </div>
+                        </div>
+                    </div>
+                    |
+
+                    <div className="account">
+                        <div className="font-bold">
+                            <div className="font-bold uppercase">
+                                <a onClick={handleLogout}>Đăng xuất</a>
+                            </div>
+                        </div>
                     </div>
 
                 </div>
@@ -218,14 +241,28 @@ function Header() {
                     |
 
                     <div className="contact">
-                        <div className="font-bold uppercase">Liên hệ</div>
+                        <div className="font-bold uppercase">
+                            <a href="/contact-us">Liên hệ</a>
+                        </div>
                     </div>
 
 
                     |
 
                     <div className="cart relative">
-                        <PiShoppingCartFill className="w-8 h-8"/>
+                        <a href="/cart">
+                            <div className='flex justify-center items-center'>
+                                <div className="font-bold uppercase">
+                                    <div className="t-0 absolute left-4">
+                                        <p className="flex h-2 w-2 items-center justify-center rounded-full bg-red-500 p-2.5 text-[12px] text-white">3</p>
+                                    </div>
+                                    <PiShoppingCartFill className="w-8 h-8"/>
+                                </div>
+                                &nbsp;
+                                &nbsp;
+                                <div className="font-bold uppercase">Giỏ hàng</div>
+                            </div>
+                        </a>
                     </div>
                 </div>
             </div>

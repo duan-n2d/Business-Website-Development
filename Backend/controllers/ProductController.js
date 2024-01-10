@@ -62,14 +62,14 @@ const getProductByCategoryId = async (req, res) => {
 }
 
 const getProductByBrandId = async (req, res) => {
-    const { brand_id } = req.body;
+    const id = req.params.id;
 
-    if (!brand_id)
+    if (!id)
         return res
             .status(400)
             .json({ success: false, message: "Missing brand id" });
     try {
-        const products = await Product.find({ brand_id: brand_id });
+        const products = await Product.find({ brand_id: id });
         res.json(products);
     }
     catch (error) {

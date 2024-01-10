@@ -1,4 +1,4 @@
-
+http://localhost:5000/api/auth/
 ### add Brand
 POST http://localhost:5000/api/auth/add-brand
 Content-Type: application/json
@@ -25,9 +25,9 @@ Content-Type: application/json
   {
     "first_name": "Hoàng",
     "last_name": "Phan",
-    "email": "hoang.phann@example.com",
-    "phone_number": "5552345178",
-    "password": "hoangpass234",
+    "email": "duyduan@example.com",
+    "phone_number": "25552345178",
+    "password": "1",
     "role": "user"
   }
 
@@ -99,4 +99,10 @@ Content-Type: application/json
 }
 
 ### Get images of product
-GET http://localhost:5000/api/auth/product/F03-097-1610-722/img
+GET https://gakki.onrender.com/api/auth/categories
+###
+GET https://gakki.onrender.com/api/auth/users
+###
+GET http://localhost:5000/api/auth/products-by-brand/CAS
+###
+GET https://gakki.onrender.com/api/auth/products-by-category/GUI

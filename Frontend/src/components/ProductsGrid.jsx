@@ -6,7 +6,7 @@ import Card from './Card';
 // const API = 'http://localhost:5000/api/auth';
 const API = 'https://gakki.onrender.com/api/auth/';
 
-function ProductsGrid() {
+function ProductsGrid(group) {
   const sortOptions = [{ name: 'Giá', value: 'price' }, { name: 'Tên', value: 'name' }, { name: 'Thương hiệu', value: 'brand' }];
   const [products, setProducts] = useState([]);
   const [sortBy, setSortBy] = useState(sortOptions[0].value);
@@ -14,21 +14,48 @@ function ProductsGrid() {
   const [error, setError] = useState(null);
 
   useEffect(() => {
-    axios.get(`${API}/products`)
-      .then((res) => {
-        setProducts(res.data);
-        // each product: format price from 1000000 to 1.000.000 VNĐ
-        res.data.product.forEach((product) => {
-          product.current_price = product.current_price.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
+    if (group.id) {
+      const url = window.location.href;
+      const isBrand = url.includes('brand');
+      const isCategory = url.includes('category');
+      let path = '';
+
+      if (isBrand) {
+        path = `${API}products-by-brand/${group.id}`;
+      }else if (isCategory) {
+        path = `${API}products-by-category/${group.id}`;
+      }
+
+      axios.get(path)
+        .then((res) => {
+          setProducts(res.data);
+          res.data.product.forEach((product) => {
+            product.current_price = product.current_price.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
+          });
+          console.log(res.data);
+        })
+        .catch((err) => {
+          setError(err);
+        })
+        .finally(() => {
+          setLoading(false);
         });
-        console.log(res.data);
-      })
-      .catch((err) => {
-        setError(err);
-      })
-      .finally(() => {
-        setLoading(false);
-      });
+    }
+    else {
+      axios.get(`${API}/products`)
+        .then((res) => {
+          setProducts(res.data);
+          res.data.product.forEach((product) => {
+            product.current_price = product.current_price.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
+          });
+          console.log(res.data);
+        })
+        .catch((err) => {
+          setError(err);
+        })
+        .finally(() => {
+          setLoading(false);
+        });}
   }, []);
 
   const renderFilterSection = (title) => (

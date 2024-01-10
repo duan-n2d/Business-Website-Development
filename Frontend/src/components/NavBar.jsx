@@ -25,13 +25,20 @@ function NavBar() {
     getBrands();
   }, []);
 
-  const brandNames = brands.map((brand) => brand.brand_name);
+  const brandNames = brands.map((brand) => ({'name': brand.brand_name, 'id': ('brand/'+ brand.brand_id)}));
 
   const categories = [
     { name: 'Trang chủ', link: '/' },
     { name: 'Có gì mới', link: '#' },
-    { name: 'Thương hiệu', link: '#', subItems: brandNames },
-    { name: 'Sản phẩm', link: '/all-products', subItems: ['Đàn guitar', 'Ukulele'] },
+    { name: 'Thương hiệu', link: '#'
+    , subItems: brandNames 
+    },
+    { name: 'Sản phẩm', link: '/all-products', subItems: [
+      {'name':'Guitar', 'id': 'category/GUI'},
+      {'name': 'Ukulele', 'id': 'category/UKU'},
+      {'name': 'Organ', 'id': 'category/ORG'},
+      {'name': 'Piano', 'id': 'category/PIA'}
+    ]},
     { name: 'Sale off', link: '/landing' },
     { name: 'Blog', link: '/blogs' },
     { name: 'Về Gakki', link: '/about-us' },
@@ -92,8 +99,8 @@ function NavBar() {
                   >
                     {category.subItems.map((item, index) => (
                       <div key={index} className='detail-item pl-5 py-2 hover:bg-[#F9FFD7]'>
-                        <a href='#' className='transition'>
-                          {item}
+                        <a href={`/products/${item.id}`}className='transition'>
+                          {item.name}
                         </a>
                       </div>
                     ))}
@@ -128,8 +135,8 @@ function NavBar() {
                   <ul className={`${showDetails ? "flex" : "hidden"} col-span-12 flex-col justify-center items-center w-full first:mt-2 text-[#1B3735]`}>
                     {category.subItems.map((item, index) => (
                       <li key={index} className='border-t bg-white hover:bg-[#F9FFD7] transition font-medium w-[100%] flex justify-center p-2.5'>
-                        <a href='#' className='font-bold uppercase relative py-1 mx-auto text-[18px]'>
-                          {item}
+                        <a href={`/products/${item.id}`} className='font-bold uppercase relative py-1 mx-auto text-[18px]'>
+                          {item.name}
                         </a>
                       </li>
                     ))}
