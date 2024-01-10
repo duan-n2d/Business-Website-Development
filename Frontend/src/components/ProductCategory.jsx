@@ -36,7 +36,7 @@ function ProductCategory(header) {
         <p className='font-bold uppercase text-[26px]'>{title}</p>
       </div>
       <div className='p-10 flex-column justify-center items-center'>
-        <div className='w-full md:w-10/12 mx-auto grid grid-cols-4 gap-4'>
+        <div className='w-full md:w-10/12 mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4'>
           {products.map((product) => (
             <div className='' key={product.product_id}>
               <Card className="mx-auto" id={product.product_id} />
@@ -47,5 +47,4 @@ function ProductCategory(header) {
     </div>
   );
 }
-
 export default ProductCategory;
