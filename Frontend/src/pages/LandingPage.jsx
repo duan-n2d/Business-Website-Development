@@ -4,11 +4,9 @@ import Header from "../components/Header";
 import NavBar from "../components/NavBar";
 import Footer from "../components/Footer";
 import Banner from "../components/Banner";
-import BlogRec from "../components/BlogRec";
-import Landing from "../pages/LandingPage";
+import Landing from "../components/LandingPage";
 
 import imageBanner from "../assets/banners/landing.png";
-
 
 export default function LandingPage() {
     return (
@@ -18,9 +16,8 @@ export default function LandingPage() {
                 <NavBar/>
             </div>
             <div className="w-full mt-52">
-                <Landing/>
                 <Banner url={imageBanner}/>
-                <BlogRec/>
+                <Landing className="mb-10"/>
             </div>
             <Footer/>
         </div>

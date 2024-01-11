@@ -12,8 +12,10 @@ const products = [
 import banner1 from '../assets/banner1.png'
 import banner2 from '../assets/banner2.png'
 import frame from '../assets/frame.png'
-function LandingPage() {
+function Landing() {
+
   const [showModal, setShowModal] = useState(false);
+
   const calculateDaysUntilChristmas = () => {
     const today = new Date();
     const christmas = new Date(today.getFullYear(), 0, 15);
@@ -29,16 +31,20 @@ function LandingPage() {
       seconds: secondsUntilChristmas,
     };
   };
+
   const [timeUntilChristmas, setTimeUntilChristmas] = useState(calculateDaysUntilChristmas);
+
   useEffect(() => {
     const intervalId = setInterval(() => {
       setTimeUntilChristmas(calculateDaysUntilChristmas);
     }, 1000);
     return () => clearInterval(intervalId);
   }, []);
+
   const { days, hours, minutes, seconds } = timeUntilChristmas;
+  
   return (
-    <div className='font-nunito mt-3'>
+    <div className='font-nunito mt-3 mb-10'>
        <img src={banner2} alt=""  className='mx-auto my-10'/>
       <div className='w-[100%] flex  mx-auto text-center justify-center'>
          
@@ -113,7 +119,7 @@ function LandingPage() {
                     </button>
                     {showModal ? (
                       <>
-                        <div className="fixed inset-0 z-10 overflow-y-auto">
+                        <div className="fixed inset-0 z-50 overflow-y-auto">
                           <div
                             className="fixed inset-0 w-full h-full bg-black opacity-40"
                             onClick={() => setShowModal(false)}
@@ -181,4 +187,4 @@ function LandingPage() {
     </div>
   );
 }
-export default LandingPage;
+export default Landing;

@@ -54,7 +54,7 @@ const UserProfile = () => {
           <div className="user-side-bar w-full lg:w-[25%]">
             <div className="avatar w-full flex justify-center items-center">
               <img
-                src="https://i.pravatar.cc/500?img=32"
+                src="https://static.vecteezy.com/system/resources/previews/009/292/244/original/default-avatar-icon-of-social-media-user-vector.jpg"
                 alt="avatar"
                 className="my-5 w-32 h-32 rounded-full"
               />
