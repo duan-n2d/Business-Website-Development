@@ -3,7 +3,8 @@ import React from "react";
 import Header from "../components/Header";
 import NavBar from "../components/NavBar";
 import Footer from "../components/Footer";
-import Blogs from "../components/Blogs"
+import Blogs from "../components/Blogs";
+import BlogRec from "../components/BlogRec";
 
 export default function AllProduct() {
     return (
@@ -14,6 +15,7 @@ export default function AllProduct() {
             </div>
             <div className="mt-60 justify-center items-center">
                 <Blogs className="w-full md:w-10/12 mx-auto"/>
+                <BlogRec/>
             </div>
             <Footer/>
         </div>

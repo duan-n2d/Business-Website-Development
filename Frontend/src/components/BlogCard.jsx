@@ -15,9 +15,9 @@ const BlogCard = (blog ) => {
           <img className='' src={blog.imageUrl} alt={blog.title}/>
         </div>
         <div className=''>
-          <p className='hash-tag italic text-[16px]'>{blog.hashtag}</p>
-          <p className='title font-bold text-[20px]'>{blog.title}</p>
-          <p className='content text-[16px]'>{blog.content}</p>
+          <p className='hash-tag italic text-[16px] mt-2'>{blog.category}</p>
+          <p className='title font-bold text-[20px]'>{blog.heading}</p>
+          <p className='content text-justify text-[16px]'>{blog.excerpt}</p>
           <p className='action text-[#0a62f0] text[16px]'>Đọc thêm</p>
         </div>
       </a>
