@@ -29,11 +29,9 @@ const loginController = async (req, res) => {
         const user = await User.findOne({ user_id: account.user_id });
 
         const accessToken = jwt.sign(
-            { user_id: account.user_id }, // Sử dụng user_id thay vì account_id
-            {role: user.role},
+            { user_id: account.user_id, role: user.role },
             process.env.ACCESS_TOKEN_SECRET,
-            { expiresIn: "1h"},
-            { algorithm: "HS256"},
+            { expiresIn: "1h", algorithm: "HS256" } // Gộp các options vào một object duy nhất
         );
 
         res.json({

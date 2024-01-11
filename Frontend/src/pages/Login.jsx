@@ -23,8 +23,6 @@ const Login = () => {
 
       localStorage.setItem("tokenStore", res.data.accessToken);
 
-      console.log(res.data.accessToken);
-
       const role = res.data.role;
 
       if (role === "admin") {
