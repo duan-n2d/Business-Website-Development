@@ -166,7 +166,7 @@ function Header() {
                     <div className="account">
                         <div className="font-bold">
                             <div className="font-bold uppercase">
-                                <a onClick={handleLogout}>Đăng xuất</a>
+                                <button onClick={handleLogout}>Đăng xuất</button>
                             </div>
                         </div>
                     </div>

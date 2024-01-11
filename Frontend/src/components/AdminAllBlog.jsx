@@ -92,7 +92,7 @@ function handleCreatePostClick() {
       {/* Menu */}
       {/* Order */}
       <div className="w-[100%] h-[1100px] mx-auto">
-        <div className="flex flex-row mt-12">
+        <div className="flex flex-row">
           <header className="text-30 font-bold mb-20">Blogs</header>
 
           <button

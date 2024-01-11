@@ -23,12 +23,12 @@ Content-Type: application/json
 // Account in models/Account.js
 
   {
-    "first_name": "Hoàng",
-    "last_name": "Phan",
-    "email": "duyduan@example.com",
-    "phone_number": "25552345178",
+    "first_name": "Admin",
+    "last_name": "Web",
+    "email": "admin@gakki.com",
+    "phone_number": "0326632501",
     "password": "1",
-    "role": "user"
+    "role": "admin"
   }
 
 ### Login
@@ -36,8 +36,8 @@ POST http://localhost:5000/api/auth/login
 Content-Type: application/json
 
 {
-  "username": "hoang.phann@example.com",
-  "password": "hoangpass234"
+  "username": "admin@gakki.com",
+  "password": "1"
 }
 
 ### Get user by id
@@ -106,3 +106,6 @@ GET https://gakki.onrender.com/api/auth/users
 GET http://localhost:5000/api/auth/products-by-brand/CAS
 ###
 GET https://gakki.onrender.com/api/auth/products-by-category/GUI
+
+###
+GET http://localhost:5000/api/auth/product/HMN-0641020116/img
