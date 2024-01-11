@@ -16,7 +16,7 @@ import LandingPage from './pages/LandingPage'
 import PolicyPage from './pages/PolicyPage'
 import UserProfile from './pages/UserProfile'
 import Product from './pages/Product'
-import Cart from './components/Cart'
+import Cart from './pages/Cart'
 
 
 function App() {

@@ -1,4 +1,7 @@
-http://localhost:5000/api/auth/
+GET http://localhost:5000/api/auth/cart-by-user/GU0052
+
+### 
+GET http://localhost:5000/api/auth/cart/331e1409-cdd1-42bf-97b7-a09de5880d31
 ### add Brand
 POST http://localhost:5000/api/auth/add-brand
 Content-Type: application/json

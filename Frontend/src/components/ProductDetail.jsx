@@ -3,6 +3,16 @@ import { useParams } from 'react-router-dom';
 import { Star, Cube, Truck, ArrowRight, Minus, Plus } from "@phosphor-icons/react";
 import axios from "axios";
 
+import brand_1 from '../assets/brands/Casio.png';
+import brand_2 from '../assets/brands/Epiphone.png';
+import brand_3 from '../assets/brands/Fender.png';
+import brand_4 from '../assets/brands/Harmony.png';
+import brand_5 from '../assets/brands/Ibanez.png';
+import brand_6 from '../assets/brands/Kapok.png';
+import brand_7 from '../assets/brands/Kurtman.png';
+import brand_8 from '../assets/brands/Squier.png';
+import brand_9 from '../assets/brands/Yamaha.png';
+
 // const API = 'http://localhost:5000/api/auth/';
 const API = 'https://gakki.onrender.com/api/auth/';
 
@@ -16,6 +26,7 @@ const ProductDetails = () => {
   const [specifications, setSpecifications] = useState([]);
   const [price, setPrice] = useState(0);
   const [rating, setRating] = useState(5);
+  const [brand, setBrand] = useState(null);
 
   useEffect(() => {
     axios.get(`${API}product/${id}`)
@@ -24,21 +35,45 @@ const ProductDetails = () => {
         setSpecifications(Object.entries(response.data.product.specifications));
         setPrice(response.data.product.current_price.toString().replace(/\B(?=(\d{3})+(?!\d))/g, "."));
         setRating(response.data.product.rating);
+        
+        switch (response.data.product.brand_id) {
+          case "CAS":
+            setBrand(brand_1);
+            break;
+          case "E09":
+            setBrand(brand_2);
+            break;
+          case "F03":
+            setBrand(brand_3);
+            break;
+          case "HMN":
+            setBrand(brand_4);
+            break;
+          case "I01":
+            setBrand(brand_5);
+            break;
+          case "KAP":
+            setBrand(brand_6);
+            break;
+          case "KUR":
+            setBrand(brand_7);
+            break;
+          case "SQU":
+            setBrand(brand_8);
+            break;
+          case "Y01":
+            setBrand(brand_9);
+            break;
+          default:
+            setBrand(null);
+            break;
+        }
       })
       .catch((error) => {
         console.error('Error fetching product data:', error);
       });
   }, [id]);
 
-  // useEffect(() => {
-  //   axios.get(`${API}product/${id}/categories`)
-  //     .then((response) => {
-  //       setCategory(response.data[0]);
-  //     })
-  //     .catch((error) => {
-  //       console.error('Error fetching product category:', error);
-  //     });
-  // }, [id]);
 
   useEffect(() => {
     axios.get(`${API}product/${id}/img`)
@@ -168,7 +203,7 @@ const ProductDetails = () => {
                   </div>
                 </div>
               </div>
-              <img src={images[0]} alt="Icon" className="w-[90px] h-[90px]" />
+              <img src={brand} alt="Icon" className="w-[90px] h-[90px]" />
             </div>
 
             <center className="my-5">

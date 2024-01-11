@@ -90,11 +90,11 @@ function Header() {
 
   const userHeader = (
     <div className="justify-center items-center bg-[#fff]">
-        <div className="flex items-center justify-center bg-[#1B3735]">
+        <div className="hidden lg:flex items-center justify-center bg-[#1B3735]">
             <div className="text-white uppercase py-0.5">Miễn phí vận chuyển cho đơn hàng trên 500k</div>
         </div>
 
-        <div className="flex">
+        <div className="hidden lg:flex">
             <div className="w-2/3"></div>
             <div className="w-1/3 pr-[10%] flex justify-between items-center pt-2">
                 <div className="flex">
@@ -179,11 +179,11 @@ function Header() {
 
   const guestHeader = (
     <div className="justify-center items-center bg-[#fff]">
-        <div className="flex items-center justify-center bg-[#1B3735]">
+        <div className="hidden lg:flex items-center justify-center bg-[#1B3735]">
             <div className="text-white uppercase py-0.5">Miễn phí vận chuyển cho đơn hàng trên 500k</div>
         </div>
 
-        <div className="flex">
+        <div className="hidden lg:flex">
             <div className="w-2/3"></div>
             <div className="w-1/3 pr-[10%] flex justify-between items-center pt-2">
                 <div className="flex">

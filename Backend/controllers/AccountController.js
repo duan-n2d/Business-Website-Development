@@ -39,6 +39,7 @@ const loginController = async (req, res) => {
             message: "Login successfully",
             accessToken,
             role: user.role,
+            user_id: user.user_id,
         });
     }
     catch (error) {

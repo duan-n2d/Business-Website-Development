@@ -16,10 +16,12 @@ const { getAllBrands,
     deleteBrand } = require('../controllers/BrandController')
 const { getCartByUserId,
     getCartById,
-    createCartItem } = require('../controllers/CartController')
+    createCartItem,
+    updateCartItem } = require('../controllers/CartController')
 const { getAllCategories,
     getCategoryById,
-    createCategory } = require('../controllers/CategoryController')
+    createCategory,
+    addCartItem } = require('../controllers/CategoryController')
 const { getAllDiscountController,
     getAllDiscountActive,
     getDiscountById,
@@ -98,9 +100,10 @@ router.put('/update-brand', updateBrand)
 router.patch('/delete-brand', deleteBrand)
 
 // Cart
-router.get('/cart-by-user', getCartByUserId)
-router.get('/cart', getCartById)
+router.get('/cart-by-user/:id', getCartByUserId)
+router.get('/cart/:id', getCartById)
 router.post('/create-cart-item', createCartItem)
+router.put('/update-cart', updateCartItem)
 
 // Category
 router.get('/categories', getAllCategories)

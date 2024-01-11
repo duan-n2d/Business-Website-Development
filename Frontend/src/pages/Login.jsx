@@ -22,6 +22,9 @@ const Login = () => {
       });
 
       localStorage.setItem("tokenStore", res.data.accessToken);
+      localStorage.setItem("role", res.data.role);
+      localStorage.setItem("user_id", res.data.user_id);
+
 
       console.log(res.data.accessToken);
 
