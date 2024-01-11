@@ -26,13 +26,15 @@ const loginController = async (req, res) => {
                 .status(400)
                 .json({ success: false, message: "Incorrect username or password" });
 
+        const user = await User.findOne({ user_id: account.user_id });
+
         const accessToken = jwt.sign(
             { user_id: account.user_id }, // Sử dụng user_id thay vì account_id
+            {role: user.role},
             process.env.ACCESS_TOKEN_SECRET,
             { expiresIn: "1h"},
+            { algorithm: "HS256"},
         );
-
-        const user = await User.findOne({ user_id: account.user_id });
 
         res.json({
             success: true,
