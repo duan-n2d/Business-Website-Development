@@ -54,11 +54,7 @@ const Register = () => {
 
         <div className="w-full p-8 lg:w-2/5 bg-orange-100 rounded-[38px]">
           <div className="flex justify-center">
-            <img
-              src={Logo}
-              alt="Logo"
-              className="w-1/2 mx-auto object-cover object-center h-[50px] w-[100px] transform scale-150"
-            />
+            <a href="/"><img src={Logo} alt="Logo" className="w-1/2 mx-auto object-cover object-center h-[50px] w-[100px] transform scale-150"/></a>
           </div>
 
           <h2 className="mt-4 text-20 font-bold text-gray-800 text-center uppercase">

@@ -16,6 +16,7 @@ import LandingPage from './pages/LandingPage'
 import PolicyPage from './pages/PolicyPage'
 import UserProfile from './pages/UserProfile'
 import Product from './pages/Product'
+import Cart from './components/Cart'
 
 
 function App() {
@@ -36,6 +37,7 @@ function App() {
         <Route path='/login' element={<Login/>} />
         <Route path='/register' element={<Register/>} />
         <Route path='/profile' element={<UserProfile/>} />
+        <Route path='/cart' element={<Cart/>} />
         <Route path='/404' element={<ErrorPage/>} />
         <Route path='*' element={<ErrorPage/>} />
         <Route path='/admin' element={<Admin/>} />

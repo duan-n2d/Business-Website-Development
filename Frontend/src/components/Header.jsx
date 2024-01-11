@@ -77,7 +77,7 @@ function Header() {
                     <div className="account flex justify-between items-center">
                         <div className="font-bold"> Welcome back!</div>
                         <div className="avatar px-5">
-                            <a href="">Tài khoản
+                            <a href="/profile">Tài khoản
                                 <img className="w-12 h-12 rounded-full" src={gakki} alt="" />
                             </a>
                         </div>
@@ -157,7 +157,7 @@ function Header() {
                     <div className="account">
                         <div className="font-bold">
                             <div className="font-bold uppercase">
-                                <a href="">Tài khoản</a>
+                                <a href="/profile">Tài khoản</a>
                             </div>
                         </div>
                     </div>

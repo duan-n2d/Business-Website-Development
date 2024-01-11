@@ -35,13 +35,14 @@ const sideBarUser = [
 ];
 
 const UserProfile = () => {
+  const [token, setToken] = useState(localStorage.getItem('tokenStore') || null);
   const [component, setComponent] = useState("UserAccount");
 
   const handleComponentChange = (part) => {
     setComponent(part);
   };
 
-  return (
+  if (token) {(
     <div className="font-nunito flex-col justyfy-center items-center">
       <div className="fixed right-0 z-50 top-0 w-full bg-green-50 shadow-md">
         <Header />
@@ -86,7 +87,11 @@ const UserProfile = () => {
       </div>
       <Footer />
     </div>
-  );
+  )
+  }
+  else {
+    window.location.href = '/login';
+  }
 };
 
 export default UserProfile;
