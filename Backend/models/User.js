@@ -35,6 +35,9 @@ const UserSchema = new mongoose.Schema({
     country: {
         type: String,
     },
+    dob: {
+        type: Date,
+    },
     role: {
         type: String,
         required: true

@@ -22,6 +22,8 @@ const Login = () => {
       });
 
       localStorage.setItem("tokenStore", res.data.accessToken);
+      localStorage.setItem("user_id", res.data.user_id);
+      localStorage.setItem("role", res.data.role);
 
       const role = res.data.role;
 
@@ -35,7 +37,16 @@ const Login = () => {
     }
   };
 
-  return (
+  const role = localStorage.getItem("role");
+  if ( role !== null )
+  {
+    if (role === "admin") {
+      window.location.href = "/admin";
+    } else {
+      window.location.href = "/";
+    }
+  }
+  else { return(
     <div
       className="py-6 bg-cover bg-repeat bg-center h-screen font-nunito"
       style={{ backgroundImage: `url(${LoginBackground})` }}
@@ -170,7 +181,7 @@ const Login = () => {
         </div>
       </div>
     </div>
-  );
+  )}
 };
 
 export default Login;

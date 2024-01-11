@@ -35,14 +35,15 @@ const sideBarUser = [
 ];
 
 const UserProfile = () => {
-  const [token, setToken] = useState(localStorage.getItem('tokenStore') || null);
   const [component, setComponent] = useState("UserAccount");
+  const user_id = localStorage.getItem('user_id')||null;
 
   const handleComponentChange = (part) => {
     setComponent(part);
   };
 
-  if (token) {(
+  if (user_id !== null) {
+  return (
     <div className="font-nunito flex-col justyfy-center items-center">
       <div className="fixed right-0 z-50 top-0 w-full bg-green-50 shadow-md">
         <Header />

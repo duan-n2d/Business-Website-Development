@@ -18,6 +18,8 @@ const Sidebar = ({ setSelectedComponent }) => {
 
   const handleLogout = () => {
     localStorage.removeItem('tokenStore');
+    localStorage.removeItem('user_id');
+    localStorage.removeItem('role');
     window.location.href = '/login';
   };
 

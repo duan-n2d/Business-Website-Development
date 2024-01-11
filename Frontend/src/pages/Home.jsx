@@ -6,6 +6,7 @@ import Footer from "../components/Footer";
 import Carousel from "../components/Carousel";
 import BlogRec from "../components/BlogRec";
 import ProductCategory from "../components/ProductCategory";
+import Brand from "../components/Brand";
 
 import BlogImg1 from "../assets/banners/Blog_01.png";
 import BlogImg2 from "../assets/banners/Blog_02.png";
@@ -27,6 +28,7 @@ export default function Home() {
             </div>
             <div className="mt-52">
                 <Carousel/>
+                <Brand/>
                 <ProductCategory id={headerData[1]}/>
                 <BlogRec data = {dummyBlogData}/>
                 <div className="bg-green-100">

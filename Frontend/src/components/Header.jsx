@@ -6,9 +6,7 @@ import {
   PiMapPinFill,
   PiEnvelopeFill,
   PiMagnifyingGlassBold,
-  PiShoppingCartFill,
-  PiPlusBold,
-  PiMinusBold,
+  PiShoppingCartFill
 } from 'react-icons/pi';
 
 import logo from '../assets/Gakki.png';
@@ -17,36 +15,10 @@ import gakki from '../assets/logo.ico';
 const API = 'https://gakki.onrender.com/api/auth/';
 
 function Header() {
-  const [token, setToken] = useState(localStorage.getItem('tokenStore') || null);
-  const [userInfo, setUserInfo] = useState(null);
-
-  useEffect(() => {
-    const fetchUserInfo = async () => {
-      try {
-        if (token) {
-          const base64Url = token.split('.')[1];
-          const base64 = base64Url.replace('-', '+').replace('_', '/');
-          const user = JSON.parse(window.atob(base64));
-
-          const res = await axios.get(`${API}/user/${user.user_id}`, {
-            headers: { Authorization: `Bearer ${token}` },
-          });
-
-          setUserInfo(res.data.user);
-        }
-      } catch (error) {
-        console.error('Error fetching user info:', error);
-      }
-    };
-
-    fetchUserInfo();
-  }, [token]);
-
-  const url = window.location.href;
-  const isUrlAdmin = url.includes("/admin");
-
   const handleLogout = () => {
     localStorage.removeItem('tokenStore');
+    localStorage.removeItem('user_id');
+    localStorage.removeItem('role');
     window.location.href = '/login';
   };
 
@@ -270,15 +242,26 @@ function Header() {
     </div>
   );
 
-  return (
-    <>
-      {!userInfo ? guestHeader : null}
-      {userInfo && userInfo.role === 'admin' ? (
-        isUrlAdmin ? adminHeader : userHeader
-      ) : null}
-      {userInfo && userInfo.role !== 'admin' ? userHeader : null}
-    </>
-  );
+  const role = localStorage.getItem('role')||null;
+  const url = window.location.href;
+  const isUrlAdmin = url.includes("/admin");
+  
+  if (role === null){
+    return guestHeader;
+  }
+  else {
+    if (role === 'admin'){
+      if (isUrlAdmin){
+        return adminHeader;
+      }
+        else {
+            return userHeader;
+        }
+    }
+    else {
+      return userHeader;
+    }
+  }
 }
 
 export default Header;

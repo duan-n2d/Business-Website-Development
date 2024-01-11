@@ -35,7 +35,7 @@ const getUserByIdController = async (req, res) => {
 }
 
 const updateUserController = async (req, res) => {
-  const { user_id, name, email, phone_number, address, city, country, password } = req.body;
+  const { user_id, name, email, dob, phone_number, address, city, country} = req.body;
   if (!user_id)
       return res
       .status(400)
@@ -67,16 +67,18 @@ const updateUserController = async (req, res) => {
       return res
       .status(400)
       .json({ success: false, message: "User not found" });
-    
-    user.name = name;
+
+    const first_name = name.split(" ").slice(0, -1).join(" ");
+    const last_name = name.split(" ").slice(-1).join(" ");
+    user.first_name = first_name;
+    user.last_name = last_name;
     user.email = email;
+    user.dob = dob;
     user.phone_number = phone_number;
     user.address = address;
     user.city = city;
     user.country = country;
 
-    // user has 2 accounts with username: 1 with email, 1 with phone_number
-    // update both accounts
     const accounts = await Account.find({ user_id: user_id });
     if (!accounts)
       return res
@@ -104,7 +106,6 @@ const updateUserController = async (req, res) => {
 }
 
 const deleteUserController = async (req, res) => {
-  // only change is_active to false
   const { user_id } = req.body;
 
   if (!user_id)
@@ -142,7 +143,6 @@ const deleteUserController = async (req, res) => {
       res.status(500).json({ success: false, message: "Internal server error" });
   }
 }
-
 
 module.exports = {
   getAllUserController,

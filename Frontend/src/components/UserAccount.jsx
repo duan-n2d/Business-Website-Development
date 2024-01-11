@@ -1,18 +1,45 @@
-import React from 'react';
+import axios from 'axios';
+import React, {useEffect, useState} from 'react';
 
 // const API = 'http://localhost:5000/api/auth';
 const API = 'https://gakki.onrender.com/api/auth/'
 
-const UserInfos = [
-    {
-        user_name: "Nguyễn Mai Như Luận",
-        dob: "22/04/2003",
-        phone_number: "0332323388",
-        address: "KTX Khu B, Đông Hòa , Dĩ An, Bình Dương",
-        email: "nhuluancbt@gmail.com",
-    }
-]
 function UserAccount() {
+    const user_id = localStorage.getItem("user_id");
+    const [user_name, setUsername] = useState("");
+    const [dob, setDob] = useState(null);
+    const [phone_number, setPhoneNumber] = useState("");
+    const [address, setAddress] = useState("");
+    const [email, setEmail] = useState("");
+
+    useEffect(() => {
+        axios.get(`${API}/user/${user_id}`)
+            .then((res) => {
+                const user = res.data.user;
+                setUsername(user.first_name + " " + user.last_name);
+                if (user.dob === undefined) {
+                    setDob(null);
+                } else {
+                    setDob(user.dob);
+                }
+                setPhoneNumber(user.phone_number);
+                if (user.address === undefined || user.city === undefined || user.country === undefined) {
+                    setAddress("Địa chỉ, thành phố, quốc gia");
+                } else {
+                    setAddress(user.address + ", " + user.city + ", " + user.country);
+                }
+                setEmail(user.email);
+            })
+            .catch((err) => {
+                console.log(err);
+            });
+    }, []);
+
+    const handleUpdate = () => {
+        // update from input of form
+        
+    }
+
     return (
         <div className='font-nunito'>
             <div className='w-[90%] mx-auto mt-10 bg-[#F3FFF1]'>
@@ -26,82 +53,53 @@ function UserAccount() {
                             <div className='grid grid-cols-1 gap-12'>
 
                                 <div>
-                                    {UserInfos.map((UserInfo, index) => (
-                                        <div key={index} className='flex text-22 font-bold text-[#1b3735]'>
+                                        <div className='flex text-22 font-bold text-[#1b3735]'>
                                             <label htmlFor="">Họ và tên :</label>
-                                            <input className='w-[70%] mx-auto px-4 text-18 font-medium' type="text" placeholder={UserInfo.user_name} />
+                                            <input className='w-[70%] mx-auto px-4 text-18 font-medium' type="text" placeholder={user_name} />
                                         </div>
-                                    ))}
                                 </div>
                                 <div>
-                                    {UserInfos.map((UserInfo, index) => (
-                                        <div key={index} className='flex text-22 font-bold  text-[#1b3735]'>
+                                        <div className='flex text-22 font-bold  text-[#1b3735]'>
                                             <label htmlFor="">Ngày sinh</label>
-                                            <input className=' w-[70%] mx-auto px-4 text-18 font-medium' type="date" />
+                                            <input className=' w-[70%] mx-auto px-4 text-18 font-medium' type="date"
+                                            placeholder={dob}/>
                                         </div>
-                                    ))}
                                 </div>
                                 <div>
-                                    {UserInfos.map((UserInfo, index) => (
-                                        <div key={index} className='flex text-22 font-bold text-[#1b3735]'>
+                                        <div className='flex text-22 font-bold text-[#1b3735]'>
                                             <label htmlFor="">Số điện thoại:</label>
-                                            <input className='w-[70%] mx-auto px-4 text-18 font-medium' type="text" placeholder={UserInfo.phone_number} />
+                                            <input className='w-[70%] mx-auto px-4 text-18 font-medium' type="text" placeholder={phone_number} />
                                         </div>
-                                    ))}
                                 </div>
                                 <div>
-                                    {UserInfos.map((UserInfo, index) => (
-                                        <div key={index} className='flex text-22 font-bold text-[#1b3735]'>
+                                        <div className='flex text-22 font-bold text-[#1b3735]'>
                                             <label htmlFor="">Địa chỉ</label>
-                                            <input className='w-[70%] mx-auto px-4 text-18 font-medium' type="email" placeholder={UserInfo.address} />
+                                            <input className='w-[70%] mx-auto px-4 text-18 font-medium' type="email" placeholder={address} />
                                         </div>
-                                    ))}
                                 </div>
                                 <div>
-                                    {UserInfos.map((UserInfo, index) => (
-                                        <div key={index} className='flex text-22 font-bold text-[#1b3735]'>
+                                        <div className='flex text-22 font-bold text-[#1b3735]'>
                                             <label htmlFor="">Email</label>
-                                            <input className='w-[70%] mx-auto px-4 text-18 font-medium' type="text" placeholder={UserInfo.email} />
+                                            <input className='w-[70%] mx-auto px-4 text-18 font-medium' type="text" placeholder={email} />
                                         </div>
-                                    ))}
                                 </div>
-
-
-
-
-
 
                             </div>
 
-
-
                         </form>
-<div className='text-center py-4'>
-    <button className='border-2 rounded-lg border-[#0f4a1d] px-4 py-2 hover:bg-[#0f4a1d] hover:text-white text-22 font-bold font-nunito focus:bg-[#0f4a1d] focus:text-white'>
-        Cập nhật thông tin
-    </button>
-</div>
-
-
-
-
-
+                        <div className='text-center py-4'>
+                            <button className='border-2 rounded-lg border-[#0f4a1d] px-4 py-2 hover:bg-[#0f4a1d] hover:text-white text-22 font-bold font-nunito focus:bg-[#0f4a1d] focus:text-white'
+                            onClick={handleUpdate}
+                            >
+                                Cập nhật thông tin
+                            </button>
+                        </div>
 
                     </div>
 
-
-
-
-
                 </div>
 
-
-
-
             </div>
-
-
-
 
         </div>
     );

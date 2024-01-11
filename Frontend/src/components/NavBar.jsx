@@ -29,7 +29,7 @@ function NavBar() {
 
   const categories = [
     { name: 'Trang chủ', link: '/' },
-    { name: 'Có gì mới', link: '#' },
+    { name: 'Có gì mới', link: '/products/category/NEW' },
     { name: 'Thương hiệu', link: '#'
     , subItems: brandNames 
     },
