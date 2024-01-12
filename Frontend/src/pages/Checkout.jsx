@@ -1,5 +1,4 @@
-import React from "react";
-import { useState } from "react";
+import React, { useEffect, useState } from "react";
 import axios from "axios";
 import Image from "../assets/carrt/guitar.png";
 import Image2 from "../assets/aboutus/hinh2.png";
@@ -11,7 +10,9 @@ import Footer from "../components/Footer";
 const API = 'https://gakki.onrender.com/api/auth/'
 
 function Checkout() {
-  const [u_name, setFirstName] = useState("");
+  const user_id = localStorage.getItem("user_id");
+  const cart = localStorage.getItem('cart') ? JSON.parse(localStorage.getItem('cart')) : []
+  const [u_name, setUserName] = useState("");
   const [email, setEmail] = useState("");
   const [phone_number, setPhoneNumber] = useState("");
   const [dOB, setDOB] = useState("");
@@ -23,22 +24,53 @@ function Checkout() {
   const [delivery, setDelivery] = useState("");
   const [voucher, setVoucher] = useState("");
 
-  var totalPrice = 0;
+  useEffect(() => {
+    axios.get(`${API}/user/${user_id}`)
+    .then((res) => {
+      // u_name = res.data.user.first_name + ' ' + res.data.user.last_name
+      setUserName(res.data.user.first_name + ' ' + res.data.user.last_name)
+      setEmail(res.data.user.email)
+      setPhoneNumber(res.data.user.phone_number)
+      setDOB(res.data.user.dOB)
+      setSpecificAddress(res.data.user.specific_address)
+      setCity(res.data.user.city)
+      setDistrict(res.data.user.district)
+      setWard(res.data.user.ward)
+    })
+    .catch((err) => {
+      console.log(err)
+    })
+  }, []);
+
+  const totalPrice = localStorage.getItem('totalPrice') ? JSON.parse(localStorage.getItem('totalPrice')) : 0
   var discount = 0;
-  var shippingFee = 0;
+  var shippingFee = 100000;
 
   var total = totalPrice - discount + shippingFee;
 
-  const resCities = axios.get("http://provinces.open-api.vn/api/p/");
-  const resVouchers = axios.get("http://localhost:5000/api/discounts");
+  // const []
 
-  const handleSubmit = async (e) => {
+  // alert Success
+  const handleSubmit = (e) => {
     e.preventDefault();
+    localStorage.removeItem('cart')
+    localStorage.removeItem('totalPrice')
+    alert("Đặt hàng thành công")
+    window.location.href = "/";
+  } 
+
+  const handleVoucher = (e) => {
+    e.preventDefault();
+    alert("Voucher không hợp lệ")
   };
 
-  const handleVoucher = async (e) => {
-    e.preventDefault();
-  };
+  const handleChangePaymentMethod = (e) => {
+    setPayment(e.target.value);
+  }
+
+  const handleChangeDeliveryMethod = (e) => {
+    setDelivery(e.target.value);
+  }
 
   return (
     <>
@@ -73,6 +105,7 @@ function Checkout() {
                       <input
                         className="gakki-input w-2/3 py-1 focus:outline-none focus:shadow-outline px-4 block appearance-none"
                         type="text"
+                        placeholder={u_name}
                       />
                     </div>
 
@@ -83,6 +116,7 @@ function Checkout() {
                       <input
                         className="gakki-input w-2/3 py-1 focus:outline-none focus:shadow-outline px-4 block appearance-none"
                         type="date"
+                        placeholder={dOB}
                       />
                     </div>
 
@@ -93,6 +127,7 @@ function Checkout() {
                       <input
                         className="gakki-input w-2/3 py-1 focus:outline-none focus:shadow-outline px-4 block appearance-none"
                         type="text"
+                        placeholder={phone_number}
                       />
                     </div>
 
@@ -101,6 +136,7 @@ function Checkout() {
                       <input
                         className="gakki-input w-2/3 py-1 focus:outline-none focus:shadow-outline px-4 block appearance-none"
                         type="email"
+                        placeholder={email}
                       />
                     </div>
 
@@ -113,7 +149,7 @@ function Checkout() {
                           <input
                             className="gakki-input w-1/2 py-1 focus:outline-none focus:shadow-outline px-4 block appearance-none mr-2"
                             type="text"
-                            placeholder="Số nhà, tên đường, địa chỉ cụ thể"
+                            placeholder={specific_address||"Số nhà, tên đường, địa chỉ cụ thể"}
                           />
                           {/* List box: city */}
                           <select
@@ -151,26 +187,33 @@ function Checkout() {
                   <p className="px-8 py-3 gakki-h4">Phương thức giao hàng</p>
                 </div>
 
-                {/*radio button*/}
                 <div className="my-6 bg-[#ECFAFF] rounded-[10px]">
                   <div className="px-8 py-3">
-                    <input
-                      type="radio"
-                      id="fast"
-                      name="delivery"
-                      value="fast"
-                    />
-                    <label htmlFor="fast">&nbsp; Giao hàng nhanh</label>
+                    <label htmlFor="fast">
+                      <input
+                        type="radio"
+                        id="fast"
+                        name="delivery"
+                        value="fast"
+                        checked={delivery === 'fast'}
+                        onChange={handleChangeDeliveryMethod}
+                      />
+                      &nbsp; Giao hàng nhanh
+                    </label>
                   </div>
 
                   <div className="px-8 py-3">
-                    <input
-                      type="radio"
-                      id="normal"
-                      name="delivery"
-                      value="normal"
-                    />
-                    <label htmlFor="normal">&nbsp; Giao hàng tiết kiệm</label>
+                    <label htmlFor="normal">
+                      <input
+                        type="radio"
+                        id="normal"
+                        name="delivery"
+                        value="normal"
+                        checked={delivery === 'normal'}
+                        onChange={handleChangeDeliveryMethod}
+                      />
+                      &nbsp; Giao hàng tiết kiệm
+                    </label>
                   </div>
                 </div>
               </div>
@@ -180,31 +223,50 @@ function Checkout() {
                   <p className="px-8 py-3 gakki-h4">Thông tin thanh toán</p>
                 </div>
 
-                {/*radio button*/}
                 <div className="my-6 bg-[#ECFAFF] rounded-[10px]">
                   <div className="px-8 py-3">
-                    <input type="radio" id="cash" name="payment" value="cash" />
                     <label htmlFor="cash">
+                      <input
+                        type="radio"
+                        id="cash"
+                        name="payment"
+                        value="cash"
+                        checked={payment === 'cash'}
+                        onChange={handleChangePaymentMethod}
+                      />
                       &nbsp; Thanh toán khi nhận hàng
                     </label>
                   </div>
 
                   <div className="px-8 py-3">
-                    <input
-                      type="radio"
-                      id="online"
-                      name="payment"
-                      value="online"
-                    />
-                    <label htmlFor="online">&nbsp; Thanh toán online</label>
+                    <label htmlFor="online">
+                      <input
+                        type="radio"
+                        id="online"
+                        name="payment"
+                        value="online"
+                        checked={payment === 'online'}
+                        onChange={handleChangePaymentMethod}
+                      />
+                      &nbsp; Thanh toán online
+                    </label>
                   </div>
 
                   <div className="px-8 py-3">
-                    <input type="radio" id="atm" name="payment" value="atm" />
-                    <label htmlFor="atm">&nbsp; Chuyển khoản ATM</label>
+                    <label htmlFor="atm">
+                      <input
+                        type="radio"
+                        id="atm"
+                        name="payment"
+                        value="atm"
+                        checked={payment === 'atm'}
+                        onChange={handleChangePaymentMethod}
+                      />
+                      &nbsp; Chuyển khoản ATM
+                    </label>
                   </div>
                 </div>
-              </div>
+            </div>
             </div>
 
             {/*Column 2*/}
@@ -216,26 +278,27 @@ function Checkout() {
                   <p className="gakki-h4 mx-auto">Thông tin đơn hàng</p>
                 </div>
                 <hr className="h-0.5 bg-neutral-200" />
-
-                <div className="my-3 flex justify-between items-center">
-                  <div className="w-1/5">
-                    <img src={Image}></img>
-                  </div>
-                  <div className="w-4/5 pl-5">
-                    <div className="produtc-name">
-                      <p className="gakki-h5">Đàn guitar Fender Natural</p>
+                { cart.map((item, index) => (
+                  <div key={index} className="my-3 flex justify-between items-center">
+                    <div className="w-1/5">
+                      <img src={item.image}></img>
                     </div>
-
-                    <div className="w-full flex justify-between items-center">
-                      <div className="w-1/2">
-                        <p className="quantity">Số lượng: 1</p>
+                    <div className="w-4/5 pl-5">
+                      <div className="produtc-name">
+                        <p className="gakki-h5">{item.name}</p>
                       </div>
-                      <div className="w-1/2 pr-5">
-                        <p className="price">1.000.000 VND</p>
+
+                      <div className="w-full flex justify-between items-center">
+                        <div className="w-1/2">
+                          <p className="quantity">Số lượng: {item.quantity}</p>
+                        </div>
+                        <div className="w-1/2 pr-5">
+                          <p className="price">{item.price} VND</p>
+                        </div>
                       </div>
                     </div>
                   </div>
-                </div>
+                ))}
                 <hr className="h-0.5 bg-neutral-200" />
 
                 <div className="my-3 flex justify-between items-center">

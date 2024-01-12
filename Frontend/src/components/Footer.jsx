@@ -59,7 +59,7 @@ const Footer = () => {
       <div className="flex-col justify-center">
         <hr className="w-full md:w-10/12" />
         <div className="mx-auto flex justify-center space-x-10 md:space-x-20 my-5">
-          <a href="#"><img src={Facebook} alt="Facebook" className="w-10 h-10" /></a>
+          <a href="https://www.facebook.com/gakkishop"><img src={Facebook} alt="Facebook" className="w-10 h-10" /></a>
           <a href="#"><img src={Instagram} alt="Instagram" className="w-10 h-10" /></a>
         </div>
         <hr className="w-full  md:w-10/12" />

@@ -12,6 +12,7 @@ import AboutUs from './pages/AboutUs'
 import ContactUs from './pages/ContactUs'
 import Checkout from './pages/Checkout'
 import Blog from './pages/Blog'
+import Blogs from './pages/Blogs'
 import LandingPage from './pages/LandingPage'
 import PolicyPage from './pages/PolicyPage'
 import UserProfile from './pages/UserProfile'
@@ -30,7 +31,8 @@ function App() {
         <Route path='/products/category/:id' element={<AllProduct/>} />
         <Route path='/check-out' element={<Checkout/>} />
         <Route path='/landing' element={<LandingPage/>} />
-        <Route path='/blogs' element={<Blog/>} />
+        <Route path='/blogs' element={<Blogs/>} />
+        <Route path='/blog/:id' element={<Blog/>} />
         <Route path='/about-us' element={<AboutUs/>} />
         <Route path='/contact-us' element={<ContactUs/>} />
         <Route path='/policy/:id?' element={<PolicyPage/>} />

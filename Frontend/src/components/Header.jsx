@@ -22,6 +22,16 @@ function Header() {
     window.location.href = '/login';
   };
 
+  const cart = JSON.parse(localStorage.getItem('cart')) || [];
+    const [cartCount, setCartCount] = useState(cart.length);
+
+    useEffect(() => {
+        setCartCount(cart.length);
+        if (cart.length === 0) {
+            setCartCount(3);
+        }
+    }, [cart]);
+
   const adminHeader = (
     <div className="fixed right-0 top-0 w-full  bg-green-50"> 
         <div className="mx-auto flex justify-between items-center">
@@ -113,7 +123,7 @@ function Header() {
                             <div className='flex justify-center items-center'>
                                 <div className="font-bold uppercase">
                                     <div className="t-0 absolute left-4">
-                                        <p className="flex h-2 w-2 items-center justify-center rounded-full bg-red-500 p-2.5 text-[12px] text-white">3</p>
+                                        <p className="flex h-2 w-2 items-center justify-center rounded-full bg-red-500 p-2.5 text-[12px] text-white">{cartCount}</p>
                                     </div>
                                     <PiShoppingCartFill className="w-8 h-8"/>
                                 </div>
@@ -226,7 +236,7 @@ function Header() {
                             <div className='flex justify-center items-center'>
                                 <div className="font-bold uppercase">
                                     <div className="t-0 absolute left-4">
-                                        <p className="flex h-2 w-2 items-center justify-center rounded-full bg-red-500 p-2.5 text-[12px] text-white">3</p>
+                                        <p className="flex h-2 w-2 items-center justify-center rounded-full bg-red-500 p-2.5 text-[12px] text-white">{cartCount}</p>
                                     </div>
                                     <PiShoppingCartFill className="w-8 h-8"/>
                                 </div>

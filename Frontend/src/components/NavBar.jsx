@@ -61,7 +61,7 @@ function NavBar() {
   };
 
   return (
-    <nav className="sticky top-0 w-full z-1000 bg-green-300 flex justify-center items-center text-14 lg:text-16">
+    <nav className="sticky top-0 w-full z-1000 bg-[#B7EDAB] flex justify-center items-center text-14 lg:text-16">
       <div className='w-full md:w-10/12 mx-auto'>
         <div className='items-center py-2 my-auto'>
           <div className={`${toggle ? "hidden " : "flex "} md:hidden justify-start items-center`}>
