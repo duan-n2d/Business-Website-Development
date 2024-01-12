@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { PiCreditCardBold, PiMoneyBold } from 'react-icons/pi';
+import image from '../assets/AnyConv.png';
 
 // const API = 'http://localhost:5000/api/auth';
 const API = 'https://gakki.onrender.com/api/auth/'
@@ -8,7 +9,7 @@ function AdminHistory() {
     const Orders = [
         {
             OrderID: '#11222',
-            img: './src/assets/AnyConv.png',
+            img: image,
             productName: 'Đàn guitar gỗ tự nhiên 111xxzx',
             qty: 1,
             subTotal: 1000000,
@@ -16,7 +17,7 @@ function AdminHistory() {
         },
         {
             OrderID: '#11222',
-            img: './src/assets/AnyConv.png',
+            img: image,
             productName: 'Đàn guitar gỗ tự nhiên 111xxzx',
             qty: 1,
             subTotal: 1000000,
@@ -24,7 +25,7 @@ function AdminHistory() {
         },
         {
             OrderID: '#11223',
-            img: './src/assets/AnyConv.png',
+            img: image,
             productName: 'Đàn guitar gỗ tự nhiên 111xxzx',
             qty: 1,
             subTotal: 1000000,
@@ -32,7 +33,7 @@ function AdminHistory() {
         },
         {
             OrderID: '#11223',
-            img: './src/assets/AnyConv.png',
+            img: image,
             productName: 'Đàn guitar gỗ tự nhiên 111xxzx',
             qty: 2,
             subTotal: 4000000,
@@ -40,7 +41,7 @@ function AdminHistory() {
         },
         {
             OrderID: '#11223',
-            img: './src/assets/AnyConv.png',
+            img: image,
             productName: 'Đàn guitar gỗ tự nhiên 111xxzx',
             qty: 3,
             subTotal: 5000000,
@@ -48,7 +49,7 @@ function AdminHistory() {
         },
         {
             OrderID: '#11224',
-            img: './src/assets/AnyConv.png',
+            img: image,
             productName: 'Đàn guitar gỗ tự nhiên 111xxzx',
             qty: 3,
             subTotal: 5000000,
@@ -56,7 +57,7 @@ function AdminHistory() {
         },
         {
             OrderID: '#11224',
-            img: './src/assets/AnyConv.png',
+            img: image,
             productName: 'Đàn guitar gỗ tự nhiên 111xxzx',
             qty: 3,
             subTotal: 5000000,
@@ -64,7 +65,7 @@ function AdminHistory() {
         },
         {
             OrderID: '#11225',
-            img: './src/assets/AnyConv.png',
+            img: image,
             productName: 'Đàn guitar gỗ tự nhiên 111xxzx',
             qty: 3,
             subTotal: 5000000,
@@ -72,7 +73,7 @@ function AdminHistory() {
         },
         {
             OrderID: '#11226',
-            img: './src/assets/AnyConv.png',
+            img: image,
             productName: 'Đàn guitar gỗ tự nhiên 111xxzx',
             qty: 3,
             subTotal: 5000000,
@@ -80,7 +81,7 @@ function AdminHistory() {
         },
         {
             OrderID: '#11226',
-            img: './src/assets/AnyConv.png',
+            img: image,
             productName: 'Đàn guitar gỗ tự nhiên 111xxzx',
             qty: 3,
             subTotal: 5000000,
@@ -135,7 +136,7 @@ function AdminHistory() {
     };
 
     return (
-        <main className='w-[60%] font-nunito'>
+        <main className='w-full font-nunito'>
             <div className='text-center bg-[#F3FFF1] flex xl:text-22 md:text-20 p-2 font-bold rounded-[10px]'>
                 <button
                     className={`w-[20%] focus:text-[#DD2B0C] ${currentStatus === null ? 'text-[#DD2B0C]' : ''

@@ -6,7 +6,7 @@ const API = 'https://gakki.onrender.com/api/auth/'
 function ChangeAddress() {
     return (
         <main className='font-nunito'>
-            <div className='lg:w-[56%] lg:mx-auto w-[90%] mx-[5%] bg-[#F3FFF1]'>
+            <div className='w-full lg:mx-auto mx-[5%] bg-[#F3FFF1]'>
                 <div className='p-5 px-10'>
                     <center className='text-30 font-bold mb-10'>Đổi địa chỉ</center>
 

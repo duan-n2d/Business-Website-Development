@@ -42,7 +42,7 @@ function UserAccount() {
 
     return (
         <div className='font-nunito'>
-            <div className='w-[90%] mx-auto mt-10 bg-[#F3FFF1]'>
+            <div className='w-full mx-auto mt-10 bg-[#F3FFF1]'>
 
                 <div className='w-[85%] mx-auto'>
                     <p className='font-bold text-26 text-[#1b3735] text-center py-6'>
