@@ -17,85 +17,85 @@ const API = 'https://gakki.onrender.com/api/auth/'
 function Blogs() {
   const blogNews = [
     {
+      url: 'blog/2',
       category: '#Bí kíp Produce',
       imageUrl: Blog2,
       heading: 'Xóa tạp âm khi thu',
-      excerpt: 'Để mang đến âm thanh chuyên nghiệp và tinh tế, việc biết cách sử dụng công cụ...',
-      link: '#',
+      excerpt: 'Để mang đến âm thanh chuyên nghiệp và tinh tế, việc biết cách sử dụng công cụ...'
     },
     {
+      url: 'blog/4',
       category: '#Bí kíp Produce',
       imageUrl: Blog4,
       heading: 'Kỹ thuật thu âm cần phải nhớ',
-      excerpt: 'Hướng dẫn về cách nhận biết và giảm thiểu nhiễu trong quá trình thu âm...',
-      link: '#',
+      excerpt: 'Hướng dẫn về cách nhận biết và giảm thiểu nhiễu trong quá trình thu âm...'
     },
 
     {
+      url: 'blog/6',
       category: '#Kiến thức âm nhạc',
       imageUrl: Blog6,
       heading: 'Kỹ thuật Piano',
-      excerpt: 'Cung cấp một cái nhìn tổng quan về các kỹ thuật cơ bản cần thiết cho người mới...',
-      link: '#',
+      excerpt: 'Cung cấp một cái nhìn tổng quan về các kỹ thuật cơ bản cần thiết cho người mới...'
     },
   ]
 
   const blogPosts = [
     {
+      url: 'blog/1',
       category: '#Hướng dẫn chọn đàn',
       imageUrl: Blog1,
       heading: 'Mua đàn nào là tốt?',
-      excerpt: 'Bạn mới bắt đầu học đàn và đang đối diện với thách thức lựa chọn loại đàn phù hợp? Bài viết này sẽ dẫn bạn qua một hành trình chi tiết để giúp bạn tìm ra cây đàn hoàn hảo cho mình.',
-      link: '#',
+      excerpt: 'Bạn mới bắt đầu học đàn và đang đối diện với thách thức lựa chọn loại đàn phù hợp? Bài viết này sẽ dẫn bạn qua một hành trình chi tiết để giúp bạn tìm ra cây đàn hoàn hảo cho mình.'
     },
     {
+      url: 'blog/2',
       category: '#Bí kíp Produce',
       imageUrl: Blog2,
-      heading: 'Xóa tạp âm khi thu',
-      excerpt: 'Để mang đến âm thanh chuyên nghiệp và tinh tế, việc biết cách sử dụng công cụ chỉnh tạp âm là quan trọng. Bài viết này sẽ giới thiệu về các công cụ và kỹ thuật chỉnh tạp âm mà mọi người nên biết để nâng cao...',
-      link: '#',
+      heading: 'Neural DSP Quad Cortex Processor: Amplifier & Effects Modelling Thế Hệ Mới',
+      excerpt: 'Quad Cortex là công cụ nhỏ gọn mang đến vô vàn lựa chọn thú vị để bạn định hình chất nhạc của mình... '
     },
     {
+      url: 'blog/3',
       category: '#Kiến thức âm nhạc',
       imageUrl: Blog3,
-      heading: 'EQ là gì?',
-      excerpt: 'Mỗi loại nhạc cụ đều có những đặc điểm âm thanh riêng biệt. Bài viết này sẽ phân tích cách sử dụng EQ để điều chỉnh và tối ưu hóa đặc tính âm thanh của từng loại nhạc cụ.',
-      link: '#',
+      heading: 'Cách Bảo Quản và Bảo Dưỡng Đàn Piano Đúng Cách',
+      excerpt: 'Việc bảo quản và bảo dưỡng đàn piano đúng cách là yếu tố quan trọng để đảm bảo rằng âm nhạc luôn phát ra với chất lượng tốt nhất. Trong bài viết này, chúng ta sẽ khám phá những bí quyết...'
     },
     {
+      url: 'blog/4',
       category: '#Bí kíp Produce',
       imageUrl: Blog4,
       heading: 'Kỹ thuật thu âm cần phải nhớ',
-      excerpt: 'Hướng dẫn về cách nhận biết và giảm thiểu nhiễu trong quá trình thu âm. Bài viết sẽ tập trung vào chiến lược phòng ngừa và cách xử lý hiệu quả các loại nhiễu âm từ môi trường xung quanh.',
-      link: '#',
+      excerpt: 'Hướng dẫn về cách nhận biết và giảm thiểu nhiễu trong quá trình thu âm. Bài viết sẽ tập trung vào chiến lược phòng ngừa và cách xử lý hiệu quả các loại nhiễu âm từ môi trường xung quanh.'
     },
     {
+      url: 'blog/5',
       category: '#Hướng dẫn chọn đàn',
       imageUrl: Blog5,
-      heading: 'Nhạc cụ thịnh hành nhất năm 2023',
-      excerpt: 'Liệt kê và phân tích những mẫu guitar nổi bật và được ưa chuộng nhất trong năm 2023, từ acoustic đến electric, để giúp người chơi và người yêu nhạc có cái nhìn tổng quan về xu hướng mới.',
-      link: '#',
+      heading: 'Các mẫu guitar Fender chất lượng trong 2022',
+      excerpt: 'Fender mang đến nhiều điều thú vị và hứng khởi cho năm 2022! Chú ý đặc biệt đến hướng phát triển của họ cho dòng guitar Telecaster, một biểu tượng trong thế giới nhạc cụ.'
     },
     {
+      url: 'blog/6',
       category: '#Kiến thức âm nhạc',
       imageUrl: Blog6,
-      heading: 'Kỹ thuật Piano',
-      excerpt: 'Cung cấp một cái nhìn tổng quan về các kỹ thuật cơ bản cần thiết cho người mới bắt đầu học chơi piano. Bài viết sẽ bao gồm cách đặt tay, cách đọc nhạc, và những bước quan trọng trong việc xây dựng nền tảng cho sự phát triển về sau.',
-      link: '#',
+      heading: 'Một số tiêu chí cần lưu ý khi chọn guitar cho người mới tập chơi',
+      excerpt: 'Có hai loại guitar phổ biến nhất hiện nay là guitar acoustic (guitar không cần khuếch đại âm thanh) và guitar điện (guitar cần khuếch đại âm thanh bằng loa).'
     },
     {
+      url: 'blog/7',
       category: '#Hướng dẫn chọn đàn',
       imageUrl: Blog7,
-      heading: 'Quà 2023 cho Drummers',
-      excerpt: 'Không cần tìm đâu xa để mua được món quà hợp gu cho mùa lễ hội 2023, dưới đây là bài viết hướng dẫn chọn mua trống do các chuyên gia nhiều kinh nghiệm của chúng tôi gợi ý.',
-      link: '#',
+      heading: 'Lựa chọn mua guitar cũ hay mới khi vừa mới tập chơi đàn guitar ?',
+      excerpt: 'Không cần tìm đâu xa để mua được món quà hợp gu cho mùa lễ hội 2023, dưới đây là bài viết hướng dẫn chọn mua trống do các chuyên gia nhiều kinh nghiệm của chúng tôi gợi ý.'
     },
     {
+      url: 'blog/8',
       category: '#Hướng dẫn chọn đàn',
       imageUrl: Blog8,
-      heading: 'Guitar Pedal Cho Tay Mơ',
-      excerpt: 'Nhờ có pedal effect, âm sắc guitar sẽ được tô điểm bằng nhiều chi tiết cụ thể và bạn có thể bắt chước tiếng đàn của người nhạc sĩ bạn vẫn luôn thần tượng.',
-      link: '#',
+      heading: 'Keyboard nào là phù hợp cho người mới bắt đầu',
+      excerpt: 'Keyboard là một nhạc cụ rất linh hoạt, phù hợp cho cả những nhạc sĩ cần tính đa năng và pianist lão luyện muốn khám phá nhiều âm thanh.'
     },
   ];
 
@@ -149,6 +149,12 @@ function Blogs() {
     setCurrentPage(newPage);
   };
 
+  const filterType = [
+    "#Hướng dẫn chọn đàn",
+    "#Bí kíp Produce",
+    "#Kiến thức âm nhạc"
+  ];
+
   // css filter
   const Filter = {
     backgroundColor: "black"
@@ -165,7 +171,7 @@ function Blogs() {
       <div className='lg:flex lg:justify-between'>
 
         <div className='lg:w-[22%] lg:ml-[3%] xl:mr-[2%] xl:text-16 lg:text-14'>
-          {/* Part 1 */}
+          {/* Filter & Search */}
           <div className=' ml-[5%] mr-[5%]'>
             <div className='flex'>
               <h4 className='font-bold w-[95%]'>Tìm kiếm theo từ khóa</h4>
@@ -193,88 +199,39 @@ function Blogs() {
 
             {/* Filter */}
             <div className='leading-10'>
-              {/* Filter Hướng dẫn chọn đàn */}
-              <div style={FilterHover}
-                className={`flex rounded-[7px] ${selectedCategory === '#Hướng dẫn chọn đàn' ? 'bg-gray-200' : ''}`}
-              >
-                <p
-                  className={`w-[95%] pl-2 font-bold ${selectedCategory === '#Hướng dẫn chọn đàn' ? 'text-16' : ''}`}
-                  onClick={() => {
-                    if (selectedCategory === '#Hướng dẫn chọn đàn') {
-                      setSelectedCategory('');
-                      setIsCategorySelected(false);
-                    } else {
-                      setSelectedCategory('#Hướng dẫn chọn đàn');
-                      setIsCategorySelected(true);
-                    }
-                  }}
+              {filterType.map((name, index) => (
+                <div>
+                <div
+                  style={FilterHover}
+                  className={`flex rounded-[7px] ${selectedCategory === name ? 'bg-gray-200' : ''}`}
+                  key={index}
                 >
-                  Hướng dẫn chọn đàn
-                </p>
-                {selectedCategory === '#Hướng dẫn chọn đàn' ? (
+                  <p
+                    className={`w-[95%] pl-2 font-bold ${selectedCategory === name ? 'text-16' : ''}`}
+                    onClick={() => {
+                      if (selectedCategory === name) {
+                        setSelectedCategory('');
+                        setIsCategorySelected(false);
+                      } else {
+                        setSelectedCategory(name);
+                        setIsCategorySelected(true);
+                      }
+                    }}
+                  >
+                    {name}
+                  </p>
+                  {selectedCategory === name ? (
                   <PiCheckBold size={25} className='mt-2 mr-2' />
-                ) : (
+                  ) : (
                   <PiPlusBold size={25} className='mt-2 mr-2' />
-                )}
-              </div>
-              <hr className='border-black border-1 mt-5 mb-5' />
-
-              {/* Filter Bí kíp Produce */}
-              <div style={FilterHover}
-                className={`flex rounded-[7px] ${selectedCategory === '#Bí kíp Produce' ? 'bg-gray-200' : ''}`}
-              >
-                <p
-                  className={`w-[95%] pl-2 font-bold ${selectedCategory === '#Bí kíp Produce' ? 'text-16' : ''
-                    }`}
-                  onClick={() => {
-                    if (selectedCategory === '#Bí kíp Produce') {
-                      setSelectedCategory('');
-                      setIsCategorySelected(false);
-                    } else {
-                      setSelectedCategory('#Bí kíp Produce');
-                      setIsCategorySelected(true);
-                    }
-                  }}
-                >
-                  Bí kíp Produce
-                </p>
-                {selectedCategory === '#Bí kíp Produce' ? (
-                  <PiCheckBold size={25} className='mt-2 mr-2' />
-                ) : (
-                  <PiPlusBold size={25} className='mt-2 mr-2' />
-                )}
-              </div>
-              <hr className='border-black border-1 mt-5 mb-5' />
-
-              {/* Filter Kiến thức âm nhạc */}
-              <div style={FilterHover}
-                className={`flex rounded-[7px] ${selectedCategory === '#Kiến thức âm nhạc' ? 'bg-gray-200' : ''}`}
-              >
-                <p
-                  className={`w-[95%] pl-2 font-bold ${selectedCategory === '#Kiến thức âm nhạc' ? 'text-16' : ''
-                    }`}
-                  onClick={() => {
-                    if (selectedCategory === '#Kiến thức âm nhạc') {
-                      setSelectedCategory('');
-                      setIsCategorySelected(false);
-                    } else {
-                      setSelectedCategory('#Kiến thức âm nhạc');
-                      setIsCategorySelected(true);
-                    }
-                  }}
-                >
-                  Kiến thức âm nhạc
-                </p>
-                {selectedCategory === '#Kiến thức âm nhạc' ? (
-                  <PiCheckBold size={25} className='mt-2 mr-2' />
-                ) : (
-                  <PiPlusBold size={25} className='mt-2 mr-2' />
-                )}
-              </div>
-              <hr className='border-black border-1 mt-5 mb-5' />
+                  )}
+                </div>
+                  <hr className='border-black border-1 mt-5 mb-5' />
+                </div>
+              ))}
             </div>
 
-            {/* Part 2 */}
+            {/* BlogNews */}
             <div className='hidden lg:block'>
               <div className='items-center p-2 mt-5 w-[100%] bg-[#1B3735] text-white text-center font-bold'>
                 Bài viết mới nhất
@@ -282,25 +239,27 @@ function Blogs() {
               <br />
               {blogNews.map((post, index) => (
                 <div key={index} className='mb-10'>
-                  <div className='bg-[#CAFFD661] pb-2'>
-                    <div className='article-card__image'>
-                      <a href={post.link}>
-                        <img width={1500} src={post.imageUrl} alt={post.heading} />
-                      </a>
+                  <a href={post.url}>
+                    <div className='bg-[#CAFFD661] pb-2'>
+                      <div className='article-card__image'>
+                        <a href={post.url}>
+                          <img width={1500} src={post.imageUrl} alt={post.heading} />
+                        </a>
+                      </div>
+                      <div className='article-card__copy p-2 text-justify'>
+                        <h5 className='article-card__pre-heading'>
+                          <a href={post.url} className='italic'>{post.category}</a>
+                        </h5>
+                        <h4 className='article-card__heading'>
+                          <a href={post.url} className='font-bold text-16 text-center '>{post.heading}</a>
+                        </h4>
+                        <p className='article-card__excerpt'>
+                          <span className='article-card__excerpt-copy'>{post.excerpt}</span>
+                          <a href={post.url} className='text-yellow-500'>Đọc thêm</a>
+                        </p>
+                      </div>
                     </div>
-                    <div className='article-card__copy p-2 text-justify'>
-                      <h5 className='article-card__pre-heading'>
-                        <a href={post.link} className='italic'>{post.category}</a>
-                      </h5>
-                      <h4 className='article-card__heading'>
-                        <a href={post.link} className='font-bold text-16 text-center '>{post.heading}</a>
-                      </h4>
-                      <p className='article-card__excerpt'>
-                        <span className='article-card__excerpt-copy'>{post.excerpt}</span>
-                        <a href={post.link} className='text-yellow-500'>Đọc thêm</a>
-                      </p>
-                    </div>
-                  </div>
+                  </a>
                 </div>
               ))}
             </div>
@@ -310,7 +269,7 @@ function Blogs() {
         {/* Blog Cards */}
         <div className='xl:w-[60%] lg:w-[60%] lg:ml-[2%] ml-[5%] lg:mr-[3%] mr-[5%] xl:text-16 md:text-14'>
           {currentPosts.map((blog, index) => (
-            <a key={index} href={`/${blog.id}`}>
+            <a key={index} href={blog.url}>
               <div className='md:flex bg-[#F9FFD7] mb-10'>
                 <div className='article-card__image max-h-56 min-w-0'>
                   <img className='w-[100%] h-[100%] max-w-[400px] object-cover' src={blog.imageUrl} alt={blog.heading} />
