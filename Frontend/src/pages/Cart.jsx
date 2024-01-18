@@ -101,7 +101,8 @@ function Cart() {
     { id: 3, image: guitar, name: "Sản phẩm 3", price: 1000000, quantity: 1, isChecked: true }
   ]);
 
-  console.log(cart);
+  // length of cart
+  console.log(cart.length);
 
   const handleIncrement = (productId) => {
     setCart((prevCart) =>
@@ -142,11 +143,14 @@ function Cart() {
   }, [cart]);
 
   const handleGoToCheckout = () => {
-    // save to local storage
-    localStorage.setItem('cart', JSON.stringify(cart));
-    localStorage.setItem('totalPrice', totalPrice);
-    // redirect to checkout page
-    window.location.href = '/check-out';
+    if (cart.length === 0) {
+      alert("Bạn chưa có sản phẩm nào trong giỏ hàng");
+    } else {
+      localStorage.setItem('cart', JSON.stringify(cart));
+      localStorage.setItem('totalPrice', totalPrice);
+      // redirect to checkout page
+      window.location.href = '/check-out';
+    }
   }
 
   const handleGoToShop = () => {
@@ -166,7 +170,7 @@ function Cart() {
             Giỏ hàng của bạn
           </h1>
           <h1 className="text-16 lg:mx-[60px] lg:text-left sm:text-center sm:mx-auto font-semi-bold leading-8 text-[#1B3735] mb-3">
-            Bạn đang có 2 sản phẩm trong giỏ hàng
+            Bạn đang có {cart.length} sản phẩm trong giỏ hàng
           </h1>
           <div className="flex lg:flex-row flex-col">
             <div className="lg:flex px-5 flex-row lg:ml-[60px] lg:w-[915px] hidden h-[57px] bg-[#F3FFF1] rounded-xl">
@@ -204,7 +208,7 @@ function Cart() {
 
           <div className="flex lg:flex-row flex-col">
             <div className="lg:mt-[10px] lg:ml-[60px] lg:w-[915px] sm:w-[666px] sm:mx-[30px]">
-              <div className="flex flex-col  bg-[#ECFAFF] px-5 pb-5  rounded-xl">
+              <div className={cart.length === 0 ? `"flex flex-col  bg-[#FFF] px-5 pb-5  rounded-xl"` : `"flex flex-col  bg-[#ECFAFF] px-5 pb-5  rounded-xl"`}>
                 {cart.map((product) => (
                   <div className="flex flex-row w-full mt-5 lg:mb-0 mb-10" key={product.id}>
                     <CartItem
@@ -242,10 +246,10 @@ function Cart() {
                 </div>
 
                 <div className="flex flex-row mx-[14px]">
-                  <h1 className="text-20 my-auto font-bold leading-8 text-orange-700 basis-1/2">
+                  <h1 className="text-20 my-auto font-bold leading-8 text-orange-700 w-[40%]">
                     Tổng tiền:
                   </h1>
-                  <h1 className="text-20 lg:ml-[80px] sm:ml-[400px] my-auto font-bold leading-8 text-[#1B3735] basis-1/2">
+                  <h1 className="text-20 lg:ml-[80px] sm:ml-[400px] my-auto font-bold leading-8 text-[#1B3735] w-[60%]">
                     {totalPrice} đ
                   </h1>
                 </div>

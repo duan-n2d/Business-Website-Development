@@ -17,9 +17,7 @@ const Sidebar = ({ setSelectedComponent }) => {
   };
 
   const handleLogout = () => {
-    localStorage.removeItem('tokenStore');
-    localStorage.removeItem('user_id');
-    localStorage.removeItem('role');
+    localStorage.clear();
     window.location.href = '/login';
   };
 

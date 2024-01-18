@@ -36,6 +36,24 @@ const Card = (product) => {
     fetchImage();
   }, [id]);
 
+  const handleAddToCart = async () => {
+    const cart_id = localStorage.getItem('cart_id');
+    const product_id = id;
+    const quantity = 1;
+
+    try {
+      const res = await axios.post(`${API}/create-cart-item`, {
+        cart_id,
+        product_id,
+        quantity
+      });
+
+      alert("Thêm vào giỏ hàng thành công!");
+    } catch (error) {
+      console.error('Error adding product to cart:', error);
+    }
+  }
+
   return (
     <div className="max-w-2xl min-h-[345px] font-nunito">
       {data && image && (
@@ -61,7 +79,8 @@ const Card = (product) => {
               </p>
             </div>
             <div className="mb-2 items-center text-gray-800 mx-auto">
-              <button className="mt-3 flex mx-auto outline-none outline-green-300 rounded py px-3 hover:bg-green-300">
+              <button className="mt-3 flex mx-auto outline-none outline-green-300 rounded py px-3 hover:bg-green-300"
+              onClick={handleAddToCart}>
                 <p>Đặt mua </p>
                 <PiArrowRightBold className="w-6 h-6" />
               </button>

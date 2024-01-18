@@ -1,7 +1,16 @@
 GET http://localhost:5000/api/auth/cart-by-user/GU0052
 
 ### 
-GET http://localhost:5000/api/auth/cart/331e1409-cdd1-42bf-97b7-a09de5880d31
+GET http://localhost:5000/api/auth/cart/ff50a655-977a-41e4-944b-f50e03498308
+###
+POST http://localhost:5000/api/auth/create-cart-item
+Content-Type: application/json
+
+{
+    "cart_id": "ff50a655-977a-41e4-944b-f50e03498308",
+    "product_id": "HMN-0641020116",
+    "quantity": 1
+}
 ### add Brand
 POST http://localhost:5000/api/auth/add-brand
 Content-Type: application/json
@@ -45,6 +54,8 @@ Content-Type: application/json
 
 ### Get user by id
 GET http://localhost:5000/api/auth/user/GU0040
+### 
+GET http://localhost:5000/api/auth/cart/ff50a655-977a-41e4-944b-f50e03498308
 
 ### Delete user
 PATCH http://localhost:5000/api/auth/delete-user

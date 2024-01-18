@@ -16,9 +16,7 @@ const API = 'https://gakki.onrender.com/api/auth/';
 
 function Header() {
   const handleLogout = () => {
-    localStorage.removeItem('tokenStore');
-    localStorage.removeItem('user_id');
-    localStorage.removeItem('role');
+    localStorage.clear();
     window.location.href = '/login';
   };
 

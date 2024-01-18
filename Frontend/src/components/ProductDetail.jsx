@@ -118,6 +118,44 @@ const ProductDetails = () => {
       setQuantity((prevQuantity) => prevQuantity - 1);
     }
   };
+
+  const handleAddToCart = async () => {
+    const cart_id = localStorage.getItem('cart_id');
+    const product_id = id;
+    const quantity = 1;
+
+    try {
+      const res = await axios.post(`${API}/create-cart-item`, {
+        cart_id,
+        product_id,
+        quantity
+      });
+    } catch (error) {
+      console.error('Error adding product to cart:', error);
+      alert("Thêm vào giỏ hàng thất bại!");
+    }
+    // update to cart in local storage
+    let cart = JSON.parse(localStorage.getItem('cart'));
+    
+    const resProduct = await axios.get(`${API}/product/${product_id}`);
+    const productDetail = resProduct.data.product;
+    const resImage = await axios.get(`${API}/product/${product_id}/img`);
+    const productImage = resImage.data[0];
+    const productPrice = productDetail.current_price;
+    const productChecked = true;
+
+    cart.push({
+      id: product_id,
+      image: productImage,
+      name: productDetail.product_name,
+      price: productPrice,
+      quantity: quantity,
+      isChecked: productChecked
+    })
+
+    localStorage.setItem("cart", JSON.stringify(cart));
+  }
+
   return (
     <div className="font-nunito mx-5">
       <form action="#">
@@ -207,7 +245,8 @@ const ProductDetails = () => {
             </div>
 
             <center className="my-5">
-              <button type="submit" className="text-white font-bold rounded bg-[#2D4B49] px-5 h-[56.24px] border border-[#96FEAE] flex justify-center align-middle items-center gap-3">
+              <button type="submit" className="text-white font-bold rounded bg-[#2D4B49] px-5 h-[56.24px] border border-[#96FEAE] flex justify-center align-middle items-center gap-3"
+              onClick={handleAddToCart}>
                 <p className="m-auto font-bold xl:text-22 text-20 text-white">THÊM VÀO GIỎ HÀNG</p>
                 <ArrowRight color="#96FEAE"></ArrowRight>
               </button>

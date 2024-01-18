@@ -27,10 +27,47 @@ const Login = () => {
 
       const role = res.data.role;
 
+      const resCart = await axios.get(`${API}/cart-by-user/${res.data.user_id}`);
+
+      const cart_id =  resCart.data.cart.cart_id;
+
+      const resCartDetail = await axios.get(`${API}/cart/${cart_id}`);
+      console.log(resCartDetail.data);
+
+      const products = resCartDetail.data.products;
+      
+      console.log(products);
+
+      let cart = [];
+
+      for (let i = 0; i < products.length; i++) {
+        const product = products[i];
+        const product_id = product.product_id;
+        const resProduct = await axios.get(`${API}/product/${product_id}`);
+        const productDetail = resProduct.data.product;
+        const resImage = await axios.get(`${API}/product/${product_id}/img`);
+        const productImage = resImage.data[0];
+        const productQuantity = product.quantity;
+        const productPrice = productDetail.current_price;
+        const productChecked = true;
+
+        cart.push({
+          id: product_id,
+          image: productImage,
+          name: productDetail.product_name,
+          price: productPrice,
+          quantity: productQuantity,
+          isChecked: productChecked
+        })
+      }
+
+      localStorage.setItem("cart_id", cart_id);
+      localStorage.setItem("cart", JSON.stringify(cart));
+
       if (role === "admin") {
-        window.location.href = "/admin";
+        // window.location.href = "/admin";
       } else {
-        window.location.href = "/";
+        // window.location.href = "/";
       }
     } catch (err) {
       alert(err.response.data.msg);
