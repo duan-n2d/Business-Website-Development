@@ -1,7 +1,7 @@
 # ECOMMERCE WEBSITE - MERN
 ## Project at UEL
-**Deploy to hosting: [GakkiShop](https://gakki-shop.web.app/#)**
-**MERN**
+### Deploy to hosting: [GakkiShop](https://gakki-shop.web.app/#)**
+### **MERN**
 1. MongoDB
 2. Express JS
 3. React framework with Vite.
