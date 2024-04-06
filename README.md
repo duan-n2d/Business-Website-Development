@@ -1,6 +1,7 @@
 # ECOMMERCE WEBSITE - MERN
 ## Project at UEL
-### Deploy to hosting: [GakkiShop](https://gakki-shop.web.app/#)**
+### Deploy to hosting: [GakkiShop](https://gakki-shop.web.app/#).
+However, it needs a few minutes for loading all data from MongoDB Cloud
 ### **MERN**
 1. MongoDB
 2. Express JS
