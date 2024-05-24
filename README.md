@@ -113,6 +113,7 @@ project-ecommerce/
 ## Contributing
 If you'd like to contribute to this project, please follow the Contribution Guidelines.
 ## License:
-...
+This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
+
 ## Others:
 - Vite guide: https://vitejs.dev/guide/
